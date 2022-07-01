@@ -1,1 +1,19 @@
+title: My Website
+
+
+author: The Multirotor Robot Design Team
+
+
+navbar-links:
+  Home: "https://missourimrr.github.io/docs"
+  Contact: "contact"
+  Resources:
+    - Our web: "https://multirotor.mst.edu"
+    - Our linktree: "linktr.ee/sandt_multirotor"
+
+
+avatar: ""
+round-avatar: true
+
+
 theme: jekyll-theme-cayman
