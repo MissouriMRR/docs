@@ -1,3 +1,3 @@
-## Welcome to the Multirotor Documentation
+## Missouri S&T Multirotor Design Team Software Docs
 
-Knowledge is power. Use it as such.
+Knowledge is power.
