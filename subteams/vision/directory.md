@@ -1,5 +1,5 @@
 ---
-permalink: /docs/vision/
+permalink: /vision/
 ---
 
 ## Vision Docs
