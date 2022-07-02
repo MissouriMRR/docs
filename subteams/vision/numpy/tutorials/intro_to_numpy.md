@@ -2,6 +2,8 @@
 permalink: /vision/numpy/intro/
 ---
 
+[Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
+
 # Intro to NumPy
 
 ## NumPy 101
@@ -73,3 +75,53 @@ print(x)
 ```
 [0.93155876 0.29574992 0.68585759 0.67382667 0.93817691 0.49314389
  0.72856054 0.08583324 0.21892651 0.85923479]
+
+
+## Reshaping ndarrays
+```
+### Reshaping ndarrays
+x = np.arange(1, 13)
+print(x)
+# array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+```
+[ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+```
+## Reshape by passing tuple w/ (n_rows, n_cols)
+y = x.reshape((3, 4))
+print(y)
+# array([[ 1,  2,  3,  4],
+#        [ 5,  6,  7,  8],
+#        [ 9, 10, 11, 12]])
+```
+\[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+
+```
+## Transpose matrix
+z = y.T
+print(z)
+```
+\[[ 1  5  9]
+ [ 2  6 10]
+ [ 3  7 11]
+ [ 4  8 12]]
+
+```
+## When reshaping can use -1 as parameter, the -1 is 
+# switched to the maximum value it can be to generate 
+# a valid array
+x = np.random.power(7, size=4)
+print(x)
+
+print(x.T)
+
+print(x.reshape((-1, 1)))
+```
+[0.98993759 0.93097049 0.98429427 0.88478864]
+[0.98993759 0.93097049 0.98429427 0.88478864]
+\[[0.98993759]
+ [0.93097049]
+ [0.98429427]
+ [0.88478864]]
