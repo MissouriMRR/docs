@@ -2,9 +2,9 @@
 permalink: /vision/numpy/intro/
 ---
 
-[Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
-
 # Intro to NumPy
+
+[Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
 
 ## NumPy 101
 
