@@ -24,7 +24,6 @@ The NumPy interpreter is also significantly faster than the Python interpreter f
 import numpy as np
 ```
 
-Input:
 ```
 ### Creating an ndarray
 ## Can pass any iterable (array-like) into np.array() to transform it to an ndarray
@@ -33,8 +32,44 @@ x = np.array(['a', 'b', 'c'])
 print(x)
 # array(['a', 'b', 'c'], dtype='<U1')
 ```
-Output:
-```
 ['a' 'b' 'c']
-```
 
+```
+## Numpy version of range, generates an ndarray instead
+x = np.arange(start=0, stop=3, step=1)
+print(x)
+# array([0, 1, 2])
+```
+[0 1 2]
+
+```
+## np.arange allows for non integer step sizes
+x = np.arange(start=0, stop=1, step=.1)
+print(x)
+```
+[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+
+```
+## Many functions to create quick arrays exist
+x = np.zeros(shape=6)
+print(x)
+```
+[0. 0. 0. 0. 0. 0.]
+
+```
+## Generating n dimensional is usually done by passing a tuple
+#  into an array generation function.
+x = np.zeros(shape=(3, 5))
+print(x)
+```
+\[[0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+
+```
+## Numpy can generate large amounts of random numbers very quickly
+x = np.random.uniform(0, 1, size=10)
+print(x)
+```
+[0.93155876 0.29574992 0.68585759 0.67382667 0.93817691 0.49314389
+ 0.72856054 0.08583324 0.21892651 0.85923479]
