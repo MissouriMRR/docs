@@ -64,7 +64,7 @@ print(x)
 x = np.zeros(shape=(3, 5))
 print(x)
 ```
-\[[0. 0. 0. 0. 0.]\
+\[\[0. 0. 0. 0. 0.]\
  \[0. 0. 0. 0. 0.]\
  \[0. 0. 0. 0. 0.]]
 
@@ -94,7 +94,7 @@ print(y)
 #        [ 5,  6,  7,  8],
 #        [ 9, 10, 11, 12]])
 ```
-\[[ 1  2  3  4]\
+\[\[ 1  2  3  4]\
  \[ 5  6  7  8]\
  \[ 9 10 11 12]]
 
@@ -121,7 +121,173 @@ print(x.reshape((-1, 1)))
 ```
 \[0.98993759 0.93097049 0.98429427 0.88478864]\
 \[0.98993759 0.93097049 0.98429427 0.88478864]\
-\[[0.98993759]\
+\[\[0.98993759]\
  \[0.93097049]\
  \[0.98429427]\
  \[0.88478864]]
+
+
+## Combining ndarrays
+```
+### Combining ndarrays
+a = np.arange(6)
+b = a.reshape((2, -1))
+
+print(a)
+print(b)
+```
+\[0 1 2 3 4 5]\
+\[\[0 1 2]\
+ \[3 4 5]]
+
+```
+## Concatenate essentially glues arrays together along axis
+x = np.concatenate((b, b), axis=0)
+print(x)
+```
+\[\[0 1 2]\
+ \[3 4 5]\
+ \[0 1 2]\
+ \[3 4 5]]
+
+```
+x = np.concatenate((b, b), axis=1)
+print(x)
+```
+\[\[0 1 2 0 1 2]\
+ \[3 4 5 3 4 5]]
+
+```
+## vstack is an alias to concatenate: axis=0
+x = np.vstack((b, b))
+print(x)
+```
+\[\[0 1 2]\
+ \[3 4 5]\
+ \[0 1 2]\
+ \[3 4 5]]
+
+```
+## hstack is an alias to concatenate: axis=1
+x = np.hstack((b, b))
+print(x)
+```
+\[\[0 1 2 0 1 2]\
+ \[3 4 5 3 4 5]]
+
+
+## Indexing and Slicing ndarrays
+```
+### Indexing & Slicing ndarrays
+x = np.arange(12).reshape((3, 4))
+print(x)
+
+# [row, column, channel]
+print(x[1, 2])
+```
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+6
+
+```
+x = np.arange(12).reshape((2, 2, 3))
+print(x)
+# array([[[ 0,  1,  2],
+#         [ 3,  4,  5]],
+#
+#        [[ 6,  7,  8],
+#         [ 9, 10, 11]]])
+
+# The third index is the channel. In an image, this would be used for RGB.
+print(x[0, 1, 2])
+```
+\[\[\[ 0  1  2]\
+  \[ 3  4  5]]\
+\
+ \[\[ 6  7  8]\
+  \[ 9 10 11]]]\
+5
+
+```
+## Multiple indexing, passing a list instead of an int
+# Note: values are returned as ndarray
+x = np.arange(0, 18, 3)
+print(x)
+
+print(x[[1, 3, 5]])
+```
+\[ 0  3  6  9 12 15]\
+\[ 3  9 15]
+
+```
+## np.where generates indexing matrix based on what values are true
+#  in given matrix
+x = np.arange(10).reshape((2, -1))
+print(x)
+
+is_odd = x % 2
+# array([[0, 1, 0, 1, 0],
+#        [1, 0, 1, 0, 1]], dtype=int32)
+
+locs = np.where(is_odd)
+print(locs)
+# (array([0, 0, 1, 1, 1], dtype=int64), array([1, 3, 0, 2, 4], dtype=int64))
+print(x[locs])
+# array([1, 3, 5, 7, 9])
+```
+\[\[0 1 2 3 4]\
+ \[5 6 7 8 9]]\
+(array(\[0, 0, 1, 1, 1]), array(\[1, 3, 0, 2, 4]))\
+\[1 3 5 7 9]
+
+```
+## Slicing, the same as pure python with multiple dimensions.
+x = np.arange(5)
+
+print(x)
+
+print(x[::1])
+
+print(x[::2])
+
+print(x[::-1])
+```
+\[0 1 2 3 4]\
+\[0 1 2 3 4]\
+\[0 2 4]\
+\[4 3 2 1 0]
+
+```
+x = np.arange(5) + np.arange(5).reshape((-1, 1))
+print(x)
+print()
+
+print(x[1:4])
+print()
+
+print(x[:, 1:4])
+print()
+
+print(x[1:4, 1:4])
+```
+\[\[0 1 2 3 4]\
+ \[1 2 3 4 5]\
+ \[2 3 4 5 6]\
+ \[3 4 5 6 7]\
+ \[4 5 6 7 8]]\
+\
+\[\[1 2 3 4 5]\
+ \[2 3 4 5 6]\
+ \[3 4 5 6 7]]\
+\
+\[\[1 2 3]\
+ \[2 3 4]\
+ \[3 4 5]\
+ \[4 5 6]\
+ \[5 6 7]]\
+\
+\[\[2 3 4]\
+ \[3 4 5]\
+ \[4 5 6]]
+
