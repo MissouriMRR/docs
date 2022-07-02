@@ -34,7 +34,7 @@ x = np.array(['a', 'b', 'c'])
 print(x)
 # array(['a', 'b', 'c'], dtype='<U1')
 ```
-['a' 'b' 'c']
+\['a' 'b' 'c']
 
 ```
 ## Numpy version of range, generates an ndarray instead
@@ -42,21 +42,21 @@ x = np.arange(start=0, stop=3, step=1)
 print(x)
 # array([0, 1, 2])
 ```
-[0 1 2]
+\[0 1 2]
 
 ```
 ## np.arange allows for non integer step sizes
 x = np.arange(start=0, stop=1, step=.1)
 print(x)
 ```
-[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+\[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
 
 ```
 ## Many functions to create quick arrays exist
 x = np.zeros(shape=6)
 print(x)
 ```
-[0. 0. 0. 0. 0. 0.]
+\[0. 0. 0. 0. 0. 0.]
 
 ```
 ## Generating n dimensional is usually done by passing a tuple
@@ -64,16 +64,16 @@ print(x)
 x = np.zeros(shape=(3, 5))
 print(x)
 ```
-\[[0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]]
+\[[0. 0. 0. 0. 0.]\
+ \[0. 0. 0. 0. 0.]\
+ \[0. 0. 0. 0. 0.]]
 
 ```
 ## Numpy can generate large amounts of random numbers very quickly
 x = np.random.uniform(0, 1, size=10)
 print(x)
 ```
-[0.93155876 0.29574992 0.68585759 0.67382667 0.93817691 0.49314389
+\[0.93155876 0.29574992 0.68585759 0.67382667 0.93817691 0.49314389\
  0.72856054 0.08583324 0.21892651 0.85923479]
 
 
@@ -84,7 +84,7 @@ x = np.arange(1, 13)
 print(x)
 # array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
 ```
-[ 1  2  3  4  5  6  7  8  9 10 11 12]
+\[ 1  2  3  4  5  6  7  8  9 10 11 12]
 
 ```
 ## Reshape by passing tuple w/ (n_rows, n_cols)
@@ -94,19 +94,19 @@ print(y)
 #        [ 5,  6,  7,  8],
 #        [ 9, 10, 11, 12]])
 ```
-\[[ 1  2  3  4]
- [ 5  6  7  8]
- [ 9 10 11 12]]
+\[[ 1  2  3  4]\
+ \[ 5  6  7  8]\
+ \[ 9 10 11 12]]
 
 ```
 ## Transpose matrix
 z = y.T
 print(z)
 ```
-\[[ 1  5  9]
- [ 2  6 10]
- [ 3  7 11]
- [ 4  8 12]]
+\[\[ 1  5  9]\
+ \[ 2  6 10]\
+ \[ 3  7 11]\
+ \[ 4  8 12]]
 
 ```
 ## When reshaping can use -1 as parameter, the -1 is 
@@ -119,9 +119,9 @@ print(x.T)
 
 print(x.reshape((-1, 1)))
 ```
-[0.98993759 0.93097049 0.98429427 0.88478864]
-[0.98993759 0.93097049 0.98429427 0.88478864]
-\[[0.98993759]
- [0.93097049]
- [0.98429427]
- [0.88478864]]
+\[0.98993759 0.93097049 0.98429427 0.88478864]\
+\[0.98993759 0.93097049 0.98429427 0.88478864]\
+\[[0.98993759]\
+ \[0.93097049]\
+ \[0.98429427]\
+ \[0.88478864]]
