@@ -5,7 +5,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 ### Subteams
 
 - [Flight]()
-- [Vision]()
+- [Vision](https://missourimrr.github.io/docs/vision/)
 - [Simulation]()
 
 ### Tools and Technologies
