@@ -11,3 +11,8 @@ NumPy is a Python library that allows for "C-Style" arrays. These arrays are muc
 ## Tutorials
 
 - [Intro to NumPy](https://missourimrr.github.io/docs/vision/numpy/intro/)
+
+## Projects and Problems
+
+- [Monte Carlo Simulation](https://missourimrr.github.io/docs/vision/numpy/monte_carlo/)
+
