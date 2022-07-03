@@ -6,6 +6,10 @@ permalink: /vision/numpy/intro/
 
 [Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
 
+[Download Tutorial as IPython Notebook]()
+
+[More info on IPython Notebooks]()
+
 ## NumPy 101
 
 [NumPy Documentation](https://docs.scipy.org/doc/)
@@ -291,3 +295,326 @@ print(x[1:4, 1:4])
  \[3 4 5]\
  \[4 5 6]]
 
+
+## Broadcasting
+
+```
+### Broadcasting
+## Broadcasting is numpy's way of performing operations between
+#  arrays of different lengths
+
+## Quickly multiplying array by scalar
+x = np.ones(shape=3) * 6
+print(x)
+```
+\[6. 6. 6.]
+
+```
+## Adding vector a with shape (1, 3) and b with shape (3, 1) = 
+#  x with shape (3, 3)
+a = np.arange(3)
+b = np.arange(3).reshape((-1, 1))
+print(a)
+
+print(b)
+
+x = a + b
+print(x)
+```
+\[0 1 2]\
+\[\[0]\
+ \[1]\
+ \[2]]\
+\[\[0 1 2]\
+ \[1 2 3]\
+ \[2 3 4]]
+
+```
+## Longer demonstration
+x = np.array([-3, 0, 3]) + np.zeros(shape=(3, 1))
+print(x)
+print()
+# array([[-3.,  0.,  3.],
+#        [-3.,  0.,  3.],
+#        [-3.,  0.,  3.]])
+
+y = np.array([-10, 0, 10])
+print(y)
+print()
+
+print(x * y)
+print()
+
+y = y.reshape((-1, 1))
+print(y)
+print()
+
+print(x * y)
+```
+\[\[-3.  0.  3.]\
+ \[-3.  0.  3.]\
+ \[-3.  0.  3.]]\
+\
+\[-10   0  10]\
+\
+\[\[30.  0. 30.]\
+ \[30.  0. 30.]\
+ \[30.  0. 30.]]\
+\
+\[\[-10]\
+ \[  0]\
+ \[ 10]]\
+\
+\[\[ 30.  -0. -30.]\
+ \[ -0.   0.   0.]\
+ \[-30.   0.  30.]]
+
+```
+## Arithmetic, Comparisons and set = are broadcastable operations
+# generating a crosshatch pattern
+x = np.arange(5) + np.zeros(shape=(3, 1))
+print(x)
+# array([[0., 1., 2., 3., 4.],
+#        [0., 1., 2., 3., 4.],
+#        [0., 1., 2., 3., 4.]])
+
+y = np.array([[1], [2], [3]])
+print(y)
+# array([[1],
+#        [2],
+#        [3]])
+```
+\[\[0. 1. 2. 3. 4.]\
+ \[0. 1. 2. 3. 4.]\
+ \[0. 1. 2. 3. 4.]]\
+\[\[1]\
+ \[2]\
+ \[3]]
+
+```
+z = x + y
+print(z)
+# array([[1., 2., 3., 4., 5.],
+#        [2., 3., 4., 5., 6.],
+#        [3., 4., 5., 6., 7.]])
+```
+\[\[1. 2. 3. 4. 5.]\
+ \[2. 3. 4. 5. 6.]\
+ \[3. 4. 5. 6. 7.]]
+
+```
+# ~ inverts boolean values
+idx = ~np.bool_(z % 2)
+print(idx)
+```
+\[\[False  True False  True False]\
+ \[ True False  True False  True]\
+ \[False  True False  True False]]
+
+```
+z[idx] = 0
+print(z)
+```
+\[\[1. 0. 3. 0. 5.]\
+ \[0. 3. 0. 5. 0.]\
+ \[3. 0. 5. 0. 7.]]
+
+```
+crosshatch = z / z
+print(crosshatch)
+# Note: nan means "not a number" and results from a divide by zero error
+```
+\[\[ 1. nan  1. nan  1.]\
+ \[nan  1. nan  1. nan]\
+ \[ 1. nan  1. nan  1.]]\
+/opt/conda/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide\
+  \"\"\"Entry point for launching an IPython kernel.
+
+```
+# We can use np.isnan to create a mask for nan values
+crosshatch[np.isnan(crosshatch)] = 0
+print(crosshatch)
+```
+\[\[1. 0. 1. 0. 1.]\
+ \[0. 1. 0. 1. 0.]\
+ \[1. 0. 1. 0. 1.]]
+
+
+## Memory Nuances
+
+```
+### Memory Nuances
+## Slicing and indexing values of ndarray return actual
+## memory locations that can be used to modify original
+a = np.arange(10).reshape((2, 5))
+print(a)
+
+b = a[::-1, ::-1]
+print(b)
+
+a[0] += 1
+print(a)
+
+print(b)
+```
+\[\[0 1 2 3 4]\
+ \[5 6 7 8 9]]\
+\[\[9 8 7 6 5]\
+ \[4 3 2 1 0]]\
+\[\[1 2 3 4 5]\
+ \[5 6 7 8 9]]\
+\[\[9 8 7 6 5]\
+ \[5 4 3 2 1]]
+
+```
+## np.copy is a quick way to remove this issue
+a = np.arange(10).reshape((2, 5))
+print(a)
+
+b = np.copy(a)[::-1, ::-1]
+print(b)
+
+a[0] += 1
+print(a)
+
+print(b)
+```
+\[\[0 1 2 3 4]\
+ \[5 6 7 8 9]]\
+\[\[9 8 7 6 5]\
+ \[4 3 2 1 0]]\
+\[\[1 2 3 4 5]\
+ \[5 6 7 8 9]]\
+\[\[9 8 7 6 5]\
+ \[4 3 2 1 0]]
+
+
+## Statistics with Numpy
+
+```
+### Numpy Statistics
+x = np.random.normal(loc=12, size=10000)
+print(np.mean(x))
+
+x = np.random.randint(0, 100, size=100000)
+print(np.median(x))
+```
+11.974745668190877\
+50.0
+
+
+## Masked Arrays
+
+```
+### Masked Arrays
+# data[any], mask[bool], fill_value[any] <- value given w/ array-array comparison 
+# when location is masked
+x = np.ma.array(np.arange(10), mask=[False] * 10)
+print(x)
+# masked_array(data=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+#              mask=[False, False, False, False, False, False, False, False,
+#                    False, False],
+#        fill_value=999999)
+```
+\[0 1 2 3 4 5 6 7 8 9]
+
+```
+x.mask[np.where(x % 2)] = True
+print(x)
+# masked_array(data=[0, --, 2, --, 4, --, 6, --, 8, --],
+#              mask=[False,  True, False,  True, False,  True, False,  True,
+#                    False,  True],
+#        fill_value=999999)
+```
+\[0 -- 2 -- 4 -- 6 -- 8 --]
+
+```
+print(x >= 0)
+# masked_array(data=[True, --, True, --, True, --, True, --, True, --],
+#              mask=[False,  True, False,  True, False,  True, False,  True,
+#                    False,  True],
+#        fill_value=999999)
+```
+\[True -- True -- True -- True -- True --]
+
+```
+print(np.sum(x))
+# 20
+```
+20
+
+
+## General Functions
+
+```
+### General Functions
+# Using Pure Python
+a = list(range(5))
+print(a)
+
+b = a[::-1]
+print(b)
+
+for i, value in enumerate(b):
+    a[i] += value
+print(a)
+```
+\[0, 1, 2, 3, 4]\
+\[4, 3, 2, 1, 0]\
+\[4, 4, 4, 4, 4]
+
+```
+# Now using Numpy
+a = np.arange(10).reshape((2, 5))
+print(a)
+
+b = np.copy(a)[::-1, ::-1]
+print(b)
+
+for idx, value in np.ndenumerate(b):  # n dimensional enumerate, idx=tuple
+    a[idx] += value
+print(a)
+```
+\[\[0 1 2 3 4]\
+ \[5 6 7 8 9]]\
+\[\[9 8 7 6 5]\
+ \[4 3 2 1 0]]\
+\[\[9 9 9 9 9]\
+ \[9 9 9 9 9]]
+
+```
+x = np.arange(12).reshape((2, 2, 3))
+print(x)
+# array([[[ 0,  1,  2],
+#         [ 3,  4,  5]],
+
+#        [[ 6,  7,  8],
+#         [ 9, 10, 11]]])
+
+print(np.ravel(x))
+```
+\[\[\[ 0  1  2]\
+  \[ 3  4  5]]\
+\
+ \[\[ 6  7  8]\
+  \[ 9 10 11]]]\
+\[ 0  1  2  3  4  5  6  7  8  9 10 11]
+
+```
+x = np.arange(7)
+print(x)
+
+y = np.minimum(x, x[::-1])
+print(y)
+
+print(np.argmax(y))  # -> index of max value
+```
+\[0 1 2 3 4 5 6]\
+\[0 1 2 3 2 1 0]\
+3
+
+## Practice Problems and Projects
+
+Now that you have an idea of some of the things that NumPy can do, check out these practice problems and projects.
+
+- **Project: Monte Carlo Craps Simulation** [Check out the problem here](https://missourimrr.github.io/docs/vision/numpy/monte_carlo/)
