@@ -20,7 +20,7 @@ The main use of NumPy for Python developers is to get access to contiguous memor
 
 The NumPy interpreter is also significantly faster than the Python interpreter for many tasks. For example, if you had a python list with values 1 to 1 million, and you used a list comprehension to add 1 to each of the values, it takes .07 seconds on my PC. On the other hand, if you have a NumPy array with values 1 to 1 million, using broadcasting to add one to each value only takes .008 seconds. Nearly a 10x speed increase. This makes NumPy extremely useful for working with large amounts of data, including images.
 
-```
+```python
 ### Import Numpy
 # To install on your local machine, open a terminal and type:
 # Windows/Mac:
@@ -30,7 +30,7 @@ The NumPy interpreter is also significantly faster than the Python interpreter f
 import numpy as np
 ```
 
-```
+```python
 ### Creating an ndarray
 ## Can pass any iterable (array-like) into np.array() to transform it to an ndarray
 ## Numpy arrays are statically typed, unlike python lists!
@@ -40,7 +40,7 @@ print(x)
 ```
 \['a' 'b' 'c']
 
-```
+```python
 ## Numpy version of range, generates an ndarray instead
 x = np.arange(start=0, stop=3, step=1)
 print(x)
@@ -48,21 +48,21 @@ print(x)
 ```
 \[0 1 2]
 
-```
+```python
 ## np.arange allows for non integer step sizes
 x = np.arange(start=0, stop=1, step=.1)
 print(x)
 ```
 \[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
 
-```
+```python
 ## Many functions to create quick arrays exist
 x = np.zeros(shape=6)
 print(x)
 ```
 \[0. 0. 0. 0. 0. 0.]
 
-```
+```python
 ## Generating n dimensional is usually done by passing a tuple
 #  into an array generation function.
 x = np.zeros(shape=(3, 5))
@@ -72,7 +72,7 @@ print(x)
  \[0. 0. 0. 0. 0.]\
  \[0. 0. 0. 0. 0.]]
 
-```
+```python
 ## Numpy can generate large amounts of random numbers very quickly
 x = np.random.uniform(0, 1, size=10)
 print(x)
@@ -82,7 +82,8 @@ print(x)
 
 
 ## Reshaping ndarrays
-```
+
+```python
 ### Reshaping ndarrays
 x = np.arange(1, 13)
 print(x)
@@ -90,7 +91,7 @@ print(x)
 ```
 \[ 1  2  3  4  5  6  7  8  9 10 11 12]
 
-```
+```python
 ## Reshape by passing tuple w/ (n_rows, n_cols)
 y = x.reshape((3, 4))
 print(y)
@@ -102,7 +103,7 @@ print(y)
  \[ 5  6  7  8]\
  \[ 9 10 11 12]]
 
-```
+```python
 ## Transpose matrix
 z = y.T
 print(z)
@@ -112,7 +113,7 @@ print(z)
  \[ 3  7 11]\
  \[ 4  8 12]]
 
-```
+```python
 ## When reshaping can use -1 as parameter, the -1 is 
 # switched to the maximum value it can be to generate 
 # a valid array
@@ -132,7 +133,8 @@ print(x.reshape((-1, 1)))
 
 
 ## Combining ndarrays
-```
+
+```python
 ### Combining ndarrays
 a = np.arange(6)
 b = a.reshape((2, -1))
@@ -144,7 +146,7 @@ print(b)
 \[\[0 1 2]\
  \[3 4 5]]
 
-```
+```python
 ## Concatenate essentially glues arrays together along axis
 x = np.concatenate((b, b), axis=0)
 print(x)
@@ -154,14 +156,14 @@ print(x)
  \[0 1 2]\
  \[3 4 5]]
 
-```
+```python
 x = np.concatenate((b, b), axis=1)
 print(x)
 ```
 \[\[0 1 2 0 1 2]\
  \[3 4 5 3 4 5]]
 
-```
+```python
 ## vstack is an alias to concatenate: axis=0
 x = np.vstack((b, b))
 print(x)
@@ -171,7 +173,7 @@ print(x)
  \[0 1 2]\
  \[3 4 5]]
 
-```
+```python
 ## hstack is an alias to concatenate: axis=1
 x = np.hstack((b, b))
 print(x)
@@ -181,7 +183,8 @@ print(x)
 
 
 ## Indexing and Slicing ndarrays
-```
+
+```python
 ### Indexing & Slicing ndarrays
 x = np.arange(12).reshape((3, 4))
 print(x)
@@ -189,12 +192,12 @@ print(x)
 # [row, column, channel]
 print(x[1, 2])
 ```
-[[ 0  1  2  3]
- [ 4  5  6  7]
- [ 8  9 10 11]]
+\[\[ 0  1  2  3]\
+ \[ 4  5  6  7]\
+ \[ 8  9 10 11]]\
 6
 
-```
+```python
 x = np.arange(12).reshape((2, 2, 3))
 print(x)
 # array([[[ 0,  1,  2],
@@ -213,7 +216,7 @@ print(x[0, 1, 2])
   \[ 9 10 11]]]\
 5
 
-```
+```python
 ## Multiple indexing, passing a list instead of an int
 # Note: values are returned as ndarray
 x = np.arange(0, 18, 3)
@@ -224,7 +227,7 @@ print(x[[1, 3, 5]])
 \[ 0  3  6  9 12 15]\
 \[ 3  9 15]
 
-```
+```python
 ## np.where generates indexing matrix based on what values are true
 #  in given matrix
 x = np.arange(10).reshape((2, -1))
@@ -245,7 +248,7 @@ print(x[locs])
 (array(\[0, 0, 1, 1, 1]), array(\[1, 3, 0, 2, 4]))\
 \[1 3 5 7 9]
 
-```
+```python
 ## Slicing, the same as pure python with multiple dimensions.
 x = np.arange(5)
 
@@ -262,7 +265,7 @@ print(x[::-1])
 \[0 2 4]\
 \[4 3 2 1 0]
 
-```
+```python
 x = np.arange(5) + np.arange(5).reshape((-1, 1))
 print(x)
 print()
@@ -298,7 +301,7 @@ print(x[1:4, 1:4])
 
 ## Broadcasting
 
-```
+```python
 ### Broadcasting
 ## Broadcasting is numpy's way of performing operations between
 #  arrays of different lengths
@@ -309,7 +312,7 @@ print(x)
 ```
 \[6. 6. 6.]
 
-```
+```python
 ## Adding vector a with shape (1, 3) and b with shape (3, 1) = 
 #  x with shape (3, 3)
 a = np.arange(3)
@@ -329,7 +332,7 @@ print(x)
  \[1 2 3]\
  \[2 3 4]]
 
-```
+```python
 ## Longer demonstration
 x = np.array([-3, 0, 3]) + np.zeros(shape=(3, 1))
 print(x)
@@ -369,7 +372,7 @@ print(x * y)
  \[ -0.   0.   0.]\
  \[-30.   0.  30.]]
 
-```
+```python
 ## Arithmetic, Comparisons and set = are broadcastable operations
 # generating a crosshatch pattern
 x = np.arange(5) + np.zeros(shape=(3, 1))
@@ -391,7 +394,7 @@ print(y)
  \[2]\
  \[3]]
 
-```
+```python
 z = x + y
 print(z)
 # array([[1., 2., 3., 4., 5.],
@@ -402,7 +405,7 @@ print(z)
  \[2. 3. 4. 5. 6.]\
  \[3. 4. 5. 6. 7.]]
 
-```
+```python
 # ~ inverts boolean values
 idx = ~np.bool_(z % 2)
 print(idx)
@@ -411,7 +414,7 @@ print(idx)
  \[ True False  True False  True]\
  \[False  True False  True False]]
 
-```
+```python
 z[idx] = 0
 print(z)
 ```
@@ -419,7 +422,7 @@ print(z)
  \[0. 3. 0. 5. 0.]\
  \[3. 0. 5. 0. 7.]]
 
-```
+```python
 crosshatch = z / z
 print(crosshatch)
 # Note: nan means "not a number" and results from a divide by zero error
@@ -430,7 +433,7 @@ print(crosshatch)
 /opt/conda/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide\
   \"\"\"Entry point for launching an IPython kernel.
 
-```
+```python
 # We can use np.isnan to create a mask for nan values
 crosshatch[np.isnan(crosshatch)] = 0
 print(crosshatch)
@@ -442,7 +445,7 @@ print(crosshatch)
 
 ## Memory Nuances
 
-```
+```python
 ### Memory Nuances
 ## Slicing and indexing values of ndarray return actual
 ## memory locations that can be used to modify original
@@ -466,7 +469,7 @@ print(b)
 \[\[9 8 7 6 5]\
  \[5 4 3 2 1]]
 
-```
+```python
 ## np.copy is a quick way to remove this issue
 a = np.arange(10).reshape((2, 5))
 print(a)
@@ -491,7 +494,7 @@ print(b)
 
 ## Statistics with Numpy
 
-```
+```python
 ### Numpy Statistics
 x = np.random.normal(loc=12, size=10000)
 print(np.mean(x))
@@ -505,7 +508,7 @@ print(np.median(x))
 
 ## Masked Arrays
 
-```
+```python
 ### Masked Arrays
 # data[any], mask[bool], fill_value[any] <- value given w/ array-array comparison 
 # when location is masked
@@ -518,7 +521,7 @@ print(x)
 ```
 \[0 1 2 3 4 5 6 7 8 9]
 
-```
+```python
 x.mask[np.where(x % 2)] = True
 print(x)
 # masked_array(data=[0, --, 2, --, 4, --, 6, --, 8, --],
@@ -528,7 +531,7 @@ print(x)
 ```
 \[0 -- 2 -- 4 -- 6 -- 8 --]
 
-```
+```python
 print(x >= 0)
 # masked_array(data=[True, --, True, --, True, --, True, --, True, --],
 #              mask=[False,  True, False,  True, False,  True, False,  True,
@@ -537,7 +540,7 @@ print(x >= 0)
 ```
 \[True -- True -- True -- True -- True --]
 
-```
+```python
 print(np.sum(x))
 # 20
 ```
@@ -546,7 +549,7 @@ print(np.sum(x))
 
 ## General Functions
 
-```
+```python
 ### General Functions
 # Using Pure Python
 a = list(range(5))
@@ -563,7 +566,7 @@ print(a)
 \[4, 3, 2, 1, 0]\
 \[4, 4, 4, 4, 4]
 
-```
+```python
 # Now using Numpy
 a = np.arange(10).reshape((2, 5))
 print(a)
@@ -582,7 +585,7 @@ print(a)
 \[\[9 9 9 9 9]\
  \[9 9 9 9 9]]
 
-```
+```python
 x = np.arange(12).reshape((2, 2, 3))
 print(x)
 # array([[[ 0,  1,  2],
@@ -600,7 +603,7 @@ print(np.ravel(x))
   \[ 9 10 11]]]\
 \[ 0  1  2  3  4  5  6  7  8  9 10 11]
 
-```
+```python
 x = np.arange(7)
 print(x)
 
