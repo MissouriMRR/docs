@@ -2,7 +2,7 @@
 permalink: /vision/opencv/
 ---
 
-# NumPy
+# OpenCV
 
 [Back to Vision Docs](https://missourimrr.github.io/docs/vision/)
 
