@@ -6,15 +6,15 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 ## Subteams
 
-- [Flight]()
+- [Flight](https://missourimrr.github.io/docs/flight/)
 - [Vision](https://missourimrr.github.io/docs/vision/)
-- [Simulation]()
+- [Simulation](https://missourimrr.github.io/docs/simulation/)
 
 ## Tools and Technologies
 
-- [Python]()
-- [Git]()
+- [Python](https://missourimrr.github.io/docs/python/)
+- [Git](https://missourimrr.github.io/docs/git/)
 
 ## Archived
 
-- [Apps]()
+- [Apps](https://missourimrr.github.io/docs/apps/)
