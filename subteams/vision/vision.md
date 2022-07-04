@@ -11,4 +11,4 @@ Here you will find documentation and tutorials relating to the vision subteam, w
 ## Categories
 
 - [NumPy](https://missourimrr.github.io/docs/vision/numpy/)
-- [OpenCV]()
+- [OpenCV](https://missourimrr.github.io/docs/vision/opencv/)
