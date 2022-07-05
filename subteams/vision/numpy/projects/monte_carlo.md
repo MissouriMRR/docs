@@ -4,9 +4,9 @@ permalink: /vision/numpy/monte_carlo/
 
 # Monte Carlo Craps Simulation
 
-[Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
+[Back to NumPy](/docs/vision/numpy/)
 
-Need a refresher? [Check out the Intro to Numpy tutorial.](https://missourimrr.github.io/docs/vision/numpy/intro/)
+Need a refresher? [Check out the Intro to Numpy tutorial.](/docs/vision/numpy/intro/)
 
 ## Monte Carlo Problem
 
