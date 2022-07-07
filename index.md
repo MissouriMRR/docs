@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /docs/
 ---
 
 
@@ -11,15 +12,15 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 ## Subteams
 
-- [Flight](/flight/)
-- [Vision](/vision/)
-- [Simulation](/simulation/)
+- [Flight](/docs/flight/)
+- [Vision](/docs/vision/)
+- [Simulation](/docs/simulation/)
 
 ## Tools and Technologies
 
-- [Python](/python/)
-- [Git](/git/)
+- [Python](/docs/python/)
+- [Git](/docs/git/)
 
 ## Archived
 
-- [Apps](/apps/)
+- [Apps](/docs/apps/)
