@@ -4,7 +4,7 @@ permalink: /git/
 
 # Git
 
-[Back to Software Docs](https://missourimrr.github.io/docs/)
+[Back to Software Docs](/docs/)
 
 Git is a version management tool used by our team to keep track of code changes. Specifically, our repos are hosted on [GitHub](https://github.com/MissouriMRR). On our GitHub, you will find code for various projects and competitions.
 

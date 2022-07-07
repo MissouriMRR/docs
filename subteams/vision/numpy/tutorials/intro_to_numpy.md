@@ -4,7 +4,7 @@ permalink: /vision/numpy/intro/
 
 # Intro to NumPy
 
-[Back to NumPy](https://missourimrr.github.io/docs/vision/numpy/)
+[Back to NumPy](/docs/vision/numpy/)
 
 [Download Tutorial as IPython Notebook]()
 
@@ -620,4 +620,4 @@ print(np.argmax(y))  # -> index of max value
 
 Now that you have an idea of some of the things that NumPy can do, check out these practice problems and projects.
 
-- **Project: Monte Carlo Craps Simulation** [Check out the problem here](https://missourimrr.github.io/docs/vision/numpy/monte_carlo/)
+- **Project: Monte Carlo Craps Simulation** [Check out the problem here](/docs/vision/numpy/monte_carlo/)

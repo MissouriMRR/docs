@@ -4,7 +4,7 @@ permalink: /apps/
 
 # Apps Docs
 
-[Back to Software Docs](https://missourimrr.github.io/docs/)
+[Back to Software Docs](/docs/)
 
 Here, you will find documentation about the software team's app development initiatives. Although the apps subteam was disbanded, it may be revived in the future if interest exists.
 
