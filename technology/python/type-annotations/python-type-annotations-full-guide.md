@@ -19,12 +19,11 @@ Note: Unless otherwise specified, any code written in this notebook is written i
   - [Dynamically (Union) Typed Variables](#dynamically-union-typed-variables)
     - [How To Use Union-typed Variables](#how-to-use-union-typed-variables)
   - [Optional Variables](#optional-variables)
-- [Collections and Structural Sub-typing](#collections-and-structural-sub-typing)
+- [Collections](#collections)
   - [Nested Collections](#nested-collections)
   - [Tuple Unpacking](#tuple-unpacking)
-- [Function Definitions and Callables](#function-definitions-and-callables)
+- [Function Signatures and Callables](#function-signatures-and-callables)
   - [Callables](#callables)
-  - [Larger Function Declaration Example](#larger-function-declaration-example)
 - [Class Type Annotations](#class-type-annotations)
   - [Inheritance](#inheritance)
 - [Iterators and Generators](#iterators-and-generators)
@@ -42,7 +41,7 @@ Note: Unless otherwise specified, any code written in this notebook is written i
   - [Type Aliases](#type-aliases)
   - [New Types](#new-types)
   - [Type Variables](#type-variables)
-  - [Generic Collections (ABC)](#generic-collections-abc)
+  - [Structural Subtyping and Generic Collections (ABC)](#structural-subtyping-and-generic-collections-abc)
   - [User-Defined Generics](#user-defined-generics)
 
 ---
@@ -82,7 +81,7 @@ manager_name: str = "Bob"
 If the dynamic typing is needed, use `Union` (pre-Python 3.10, imported from `typing`) or the pipe operator, `|` (Python 3.10+):
 ```py
 ## Dynamic (Union) types
-from typing import Union # not required Python 3.10+
+from typing import Union  # not required Python 3.10+
 
 dynamic: Union[int, str] = "I can be either int or str"  # pre-Python 3.10
 dynamic_new: int | str = 100  # new alt. syntax in Python 3.10+
@@ -104,10 +103,10 @@ def add_five(val: int | str) -> int | str:
     return result
 
 def add_five_get_first_dig(val: int) -> int:
-    val_res: int | str = add_five(val)
-    # even though we passed add_five an int, we can't guarantee it returned an int
-    assert isinstance(val_res, int) # assert this value should only ever be an int
-    return val_res // 10**(round(math.log10(val_res))-1)
+    result: int | str = add_five(val)
+    # even though we passed add_five an int, we can't guarantee it returned an int due to its type
+    assert isinstance(result, int)  # assert this value should only ever be an int
+    return result // 10 ** (math.ceil(math.log10(result)) - 1)
 ```
 
 <br>
@@ -115,7 +114,7 @@ def add_five_get_first_dig(val: int) -> int:
 ## Optional Variables
 Oftentimes, values need the option to end up in a "null" or empty state. These are known as **optional** values, which use the type format `Optional[T]` where `T` is the possible non-None type. Alternatively, new to Python 3.10, the new `T | None` syntax may be used, as seen below.
 ```py
-from typing import Optional # not required Python 3.10+
+from typing import Optional  # not required Python 3.10+
 
 floaty_or_not: Optional[float] = None  # pre-Python 3.10
 floaty_or_not_new: float | None = None  # new alt. syntax in Python 3.10+
@@ -124,21 +123,21 @@ For the same reason as union types, optional types should be only used after its
 
 <br>
 
-*More info on basic variable type annotations: [PEP 526](https://peps.python.org/pep-0526/)*
+*See [PEP 526 - Syntax for Variable Type Annotations](https://peps.python.org/pep-0526/) for more info.*
 
 ---
 
 <br>
 
 
-# Collections and Structural Sub-typing
+# Collections
 When making type annotations for a collection, it is important to also annotate the type of data that is stored within that collection. While collections should almost always be typed to their "deepest" known sub-type, there's a point where type annotations lose their elegance and instead may transform into monstrous nested strings of death. In such cases, Type Aliases may be used to reduce clutter (more on that later).
 
 
 ![red_bullet](https://via.placeholder.com/12/df0000/df0000.png) With your collections, don't do this:
 
 ```py
-poorly_typed_list: list = ["the", "WRONG", "way", "to", "type"] # BAD
+poorly_typed_list: list = ["the", "WRONG", "way", "to", "type"]  # BAD
 ```
 
 ![green_bullet](https://via.placeholder.com/12/00df00/00df00.png) Instead, do this:
@@ -150,7 +149,7 @@ triple: tuple[int, int, str] = (1, 2, "skip-a-few")  # (int, int, str) triple
 
 # undefined/varying length tuples
 # may be later re-assigned to a different-sized tuple of the same type
-amounts: tuple[int, ...] = (70, 80, 96, 110, 250) 
+amounts: tuple[int, ...] = (70, 80, 96, 110, 250)
 stuff: tuple[float | str, ...] = ("one", 0.5, 0.25, 0.125, "one-sixteenth")
 
 data: set[int] = {1, 2, 10, 200, 1000}  # set of integers
@@ -165,6 +164,7 @@ In the case of JSON files and other cases where there are unknown types from a f
 ```py
 from typing import Any
 import json
+
 ...
 config: dict[str, Any] = json.load(file)
 # or alternatively,
@@ -188,7 +188,7 @@ restaurants: dict[str, tuple[int, int]] = {
 ```
 ```py
 # if it gets crazy, create a TypeAlias or a NewType (more on that later):
-from typing import TypeAlias # Available Python 3.10+
+from typing import TypeAlias  # Available Python 3.10+
 
 RestaurantsType: TypeAlias = dict[str, tuple[int, int]]  # Note: no "TypeAlias" annotation pre-Py3.10
 
@@ -196,6 +196,8 @@ restaurants: RestaurantsType = {
     ...  # etc. etc. etc.
 }
 ```
+- See [TypeAliases](#type-aliases) for more info on TypeAliases.
+- See [NewTypes](#new-types) for more info on NewTypes.
 
 <br>
 
@@ -208,54 +210,78 @@ mcds_x, mcds_y = restaurants["McDonalds"]
 ```
 *Note: This is the only real way to do tuple unpacking right now (see [PEP 526](https://peps.python.org/pep-0526/#global-and-local-variable-annotations)). Hopefully in a future release they devise a more elegant method.*
 
+<br>
+
+*See [PEP 526 - Syntax for Variable Type Annotations](https://peps.python.org/pep-0526/) for more info on variable type annotations.*
+
 ---
 
 <br>
 
+# Function Signatures and Callables
+Functions' arguments are all typed normally, and the return type is typed with an arrow (`->`) followed by the return type followed by the colon terminating the function signature. Here are some examples.
 
-# Function Definitions and Callables
-Function definition type annotations are as follows. In this example, val3 has a default value of `"nice"`, and the return type of this function is `float`. As shown, return values from function calls are also annotated.
+Simple function:
+```py
+def count_to(highest_num: int) -> None: # doesn't return anything, so return is None
+    for i in range(1, highest_num+1):
+        print(i) # prints 1, 2, 3, ..., highest_num
+```
+
+Function with default values:
+```py
+def greeting(name: str, *, excited: bool = False) -> str:  # * means following args are keyword-only
+    message = f"Hello, {name}"
+    if excited:
+        message += "!!!"
+    return message
+
+# function usage:
+bobs_greeting: str = greeting("Bob")  # Bob is the name, and he's not excited
+jacks_greeting: str = greeting("Jack", excited=True)  # Jack, however, is excited
+```
+Slightly more complex function:
 ```py
 def my_func(val1: int, val2: float, val3: str = "nice") -> float:
     return (val1 + val2) / 69 if val3 == "nice" else (val1 + val2)
 
 result: float = my_func(1, 2.0)
 ```
+
+Functions with `*args` (variable-length positional arguments) or `**kwargs` (variable-length keyword arguments) are typed a little differently than usual in that the collection that stores them does not need annotation. Here's a simple example from the mypy docs:
+```py
+def stars(*args: int, **kwargs: float) -> None:
+    # 'args' has type 'tuple[int, ...]' (a tuple of ints)
+    # 'kwargs' has type 'dict[str, float]' (a dict of strs to floats)
+    for arg in args:
+        print(arg)
+    for key, value in kwargs.items():
+        print(key, value)
+```
+
 Functions designed to never return look like this:
 ```py
 from typing import NoReturn
+
 def just_raise() -> NoReturn:
     raise RuntimeError("This function should never return")
 ```
+
+*See [Function Signatures](https://mypy.readthedocs.io/en/stable/getting_started.html#function-signatures-and-dynamic-vs-static-typing) from mypy docs for more info.*
+
+<br>
+
 ## Callables
-Callables are special types of objects that can be called. This object can be a function or an instance of a class that implements the `__call__` method. The type annotation is written as `Callable[[P], R]` where `P` is a comma-separated list of types corresponding to the types of the input parameters of the callable, in order, and `R` is the return type. Here are some examples of callables in practice:
+[Callables](https://docs.python.org/3/library/typing.html#typing.Callable) are special types of objects that can be called. The type annotation is written as `Callable[[P], R]` where `P` is a comma-separated list of types corresponding to the types of the input parameters of the callable, in order, and `R` is the return type. \
+Here are some examples of callables in practice:
 ```py
 from typing import Callable
 
-this_func: Callable[[int, float, str], float] = my_func # silly use-case, but gets the point across
+this_func: Callable[[int, float, str], float] = my_func  # silly use-case, but gets the point across
 
-cube_root: Callable[[int], float] = lambda x: x**(1/3) # lambda functions are callables
-
-my_obj: Callable[[str], bool] = MyObject() # MyObject is a class that implements __call__
+cube_root: Callable[[int], float] = lambda x: x ** (1 / 3)  # lambda functions are callables
 ```
-*More info: [Python `typing` - Callable](https://docs.python.org/3/library/typing.html#callable)*
-
-## Larger Function Declaration Example
-This example shows how Type Aliases and stacked parameters are used to reduce clutter. \
-*Note: for pre-Python 3.10, remove the "TypeAlias" annotation, and use `Union`/`Optional` where relevant*
-```py
-from typing import TypeAlias
-
-MyType: TypeAlias = int | str | float
-
-def other_func(
-    arg1: int,
-    arg2: MyType,
-    arg3: str | None = None,
-    arg4: MyType | None = None,
-) -> set[MyType | None]:
-    return {arg1, arg2, arg3, arg4}
-```
+*Note: Callables, when used for **Decorators**, need a way to specify generic parameters, so use [`ParamSpec`](https://docs.python.org/3/library/typing.html#typing.ParamSpec) from the `typing` module in the event that's necessary.*
 
 ---
 
@@ -268,21 +294,24 @@ Classes are typed as you would expect although there are some nuances that are h
 from typing import ClassVar
 
 class ThisObj:
-    class_var: ClassVar[str] = "This is a class variable" # class variables are typed with ClassVar
+    class_var: ClassVar[str] = "This is a class variable"  # class variables typed with ClassVar
 
     def __init__(self, var1: str) -> None:  # __init__ returns None
         self.instance_var1: str = var1  # instance variables (attributes) are typed as expected
 
-    def __len__(self) -> int: # never type annotate self
+    def __len__(self) -> int:  # never type annotate self
         return len(self.instance_var1)
-    
-    def copy(self) -> ThisObj: # return type is a class
+
+    def copy(self) -> ThisObj:  # return type is a class
         return ThisObj(self.instance_var1)
 
 # User-defined types are still typed as usual
 my_this_obj: ThisObj = ThisObj("This is my type of type")
 ```
 *Note: the method return-typed with the class name is a feature added in Python 3.10. Pre-Python 3.10 code can use this feature as well if the line `from __future__ import annotations` is written at the top of the file to enable it.*
+
+<br>
+
 ## Inheritance
 In cases where subtypes of a class are used, the subtype must be annotated with the supertype if the intention is to re-assign the variable between the subtypes of the supertype.
 ```py
@@ -291,23 +320,33 @@ class NewObj2(ThisObj): ...
 ```
 ![red_bullet](https://via.placeholder.com/12/df0000/df0000.png) Don't do this:
 ```py
-obj1: NewObj1 = NewObj1("This is a type of object") # OK on its own
-obj2: NewObj2 = NewObj2("This is another type of object") # OK on its own
-obj2 = obj1 # BAD: this will fail the type checker :(
+obj1: NewObj1 = NewObj1("This is a type of object")  # OK on its own
+obj2: NewObj2 = NewObj2("This is another type of object")  # OK on its own
+obj2 = obj1  # BAD: this will fail the type checker :(
 ```
 ![green_bullet](https://via.placeholder.com/12/00df00/00df00.png) Instead, do this:
 ```py
-new_obj1: ThisObj = NewObj1("This is a new type of object") # typed with supertype
+new_obj1: ThisObj = NewObj1("This is a new type of object")  # typed with supertype
 new_obj2: ThisObj = NewObj2("This is another new type of object")  # typed with supertype
-new_obj1 = new_obj2 # OK: satisfies "is a" relationship, passes type checker :)
+new_obj1 = new_obj2  # OK: satisfies "is a" relationship (inheritance), passes type checker :)
 ```
+
+<br>
+
+See also:
+- [Python `typing` - ClassVars](https://docs.python.org/3/library/typing.html#typing.ClassVar)
+- [Structural Subtyping and Generic Collections](#structural-subtyping-and-generic-collections-abc)
+- [User-defined Generics](#user-defined-generics)
 
 ---
 
 <br>
 
 # Iterators and Generators
- and generators are objects that implement `__next__` or are functions that include the keyword `yield` in the body.
+Iterators and generators are objects that implement `__next__` or are functions that include the keyword `yield` in the body.
+
+<br>
+
 ## Iterators
 Iterators are classes in python that implement `__iter__` and `__next__`. These are usually iterated over with for loops, but you can use them in other ways such as casting them directly to a sequence or even using the built-in `next` function to iterate manually. Iterator types are annotated as `Iterator[T]` where `T` is the type(s) of the items yielded.
 
@@ -320,18 +359,19 @@ class Tripler:
         self.curr = 0
         self.max = max_val
 
-    def __iter__(self) -> Iterator[int]: # this is the iterator of integers
+    def __iter__(self) -> Iterator[int]:  # this is the iterator of integers
         return self
 
     def __next__(self) -> int:
         self.curr += 3
-        if self.curr >= self.max:
+        if self.curr > self.max:
             raise StopIteration
         return self.curr
 
 tripling: Iterator[int] = Tripler(30)
 
-for i in tripling: ... # etc.
+for i in tripling:
+    print(i) # prints 3, 6, 9, 12, 15, 18, 21, 24, 27, 30
 ```
 
 <br>
@@ -342,7 +382,8 @@ Generators are like iterators in that they continuously "return" a next value, b
 In the case below, the generator function only returns integers, so we can type it as an iterator of integers for simplicity's sake. However, if desired, it can also use the traditional method of generator typing.
 ```py
 from typing import Iterator
-def squares(max_val: int) -> Iterator[int]: # alt. Generator[int, None, None]
+
+def squares(max_val: int) -> Iterator[int]:  # alt. Generator[int, None, None]
     i = 0
     while i < max_val:
         yield i**2
@@ -350,6 +391,7 @@ def squares(max_val: int) -> Iterator[int]: # alt. Generator[int, None, None]
 ```
 This next example cannot be typed as an iterator because it returns objects, so it's a generator.
 ```py
+import string
 from typing import Generator
 
 # Generator type format: Generator[YieldType, SendType, ReturnType]
@@ -365,11 +407,11 @@ from typing import Generator
 def n_divs(max_num: int | float = float("inf")) -> Generator[float, int, str]:
     i: int = 0
     while i <= max_num:
-        reset_val = yield 1 / i # can be sent an int mid-iteration, yields floats
+        reset_val = yield 1 / i  # can be sent an int mid-iteration, yields floats
         if reset_val:
             i = reset_val
         elif reset_val == 0:
-            return "FAIL" # returns strings
+            return "FAIL"  # returns strings
         else:
             i += 1
     return "SUCCESS"
@@ -447,24 +489,25 @@ import numpy as np
 from nptyping import NDArray, Shape, Int, UInt8, Int16, Int32, String, Float32
 from typing import Any
 
-literally_anything: NDArray[Any, Any] = ... # any shape, any type
+literally_anything: NDArray[Any, Any] = ...  # any shape, any type
 
-image: NDArray[Shape["1080, 1920, 3"], UInt8] = ... # 3-channel 8-bit image of 1920x1080 pixels
+image: NDArray[Shape["1080, 1920, 3"], UInt8] = ...  # 3-channel 8-bit image of 1920x1080 pixels
 
-two_dimensional_arr: NDArray[Shape["*, *"], Int] = ... # any length but only 2 dimensions, Int32
-square_arr: NDArray[Shape["T, T"], Int] = ... # repeated dimension sizes (T can anything)
-n_dimensions_of_4: NDArray[Shape["4, ..."], Int] = ... # any n number of 4-long dimensions, Int32
+two_dimensional_arr: NDArray[Shape["*, *"], Int] = ...  # any length but only 2 dimensions, Int32
+square_arr: NDArray[Shape["T, T"], Int] = ...  # repeated dimension sizes (T can anything)
+n_dimensions_of_4: NDArray[Shape["4, ..."], Int] = ...  # any n number of 4-long dimensions, Int32
 
-nums: NDArray[Shape["5"], Int32] = np.arange(5) # shape=(5,) (Note: Int <=> Int32)
+nums: NDArray[Shape["5"], Int32] = np.arange(5)  # shape=(5,) (Note: Int <=> Int32)
 
-phrases: NDArray[Shape["*"], String] = np.array(["hello, world", "goodbye, world"]) # any 1D shape
-phrases = np.append(phrases, "there is no world") # OK
+# any length 1D arr of strings
+phrases: NDArray[Shape["*"], String] = np.array(["hello, world", "goodbye, world"])
+phrases = np.append(phrases, "there is no world")  # OK
 
-points: NDArray[Shape["*, 2"], Int] = np.array([[1, 2], [3, 4]]) # 2 rows, any number of columns
+points: NDArray[Shape["*, 2"], Int] = np.array([[1, 2], [3, 4]])  # 2 rows, any number of columns
 better_pts: NDArray[Shape["*, [x, y]"], Int] = ... # type same as above, but w/ dimension breakdown
 
-unlabeled_coords: NDArray[Shape["5, 2"], Float32] # 5x2 array of coordinates
-labeled_coords: NDArray[Shape["5 coordinates, [x, y] wgs84"], Float32] = ... # 5 wgs84 coordinates
+unlabeled_coords: NDArray[Shape["5, 2"], Float32]  # 5x2 array of coordinates
+labeled_coords: NDArray[Shape["5 coordinates, [x, y] wgs84"], Float32] = ...  # 5 wgs84 coordinates
 ```
 *See [Nptyping Documentation](https://github.com/ramonhagenaars/nptyping/blob/master/USERDOCS.md#user-documentation) for more info on how to use nptyping.*
 
@@ -474,12 +517,13 @@ labeled_coords: NDArray[Shape["5 coordinates, [x, y] wgs84"], Float32] = ... # 5
 
 ## Other Advanced Types
 Here are a list of other advanced types that are not covered in the above sections with links to their type annotation documentation:
-* [attrs](https://mypy.readthedocs.io/en/stable/additional_features.html#the-attrs-package)
-* [TypedDicts](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict)
-* [Awaitables & Asynchronous Iterators/Generators](https://mypy.readthedocs.io/en/stable/more_types.html#typing-async-await)
-* [Final (Uninheritable) Attributes](https://mypy.readthedocs.io/en/stable/final_attrs.html)
-* [metaclasses](https://mypy.readthedocs.io/en/stable/metaclasses.html)
-* [Literals](https://mypy.readthedocs.io/en/stable/literal_types.html)
+- [attrs](https://mypy.readthedocs.io/en/stable/additional_features.html#the-attrs-package)
+- [TypedDicts](https://mypy.readthedocs.io/en/stable/more_types.html#typeddict)
+- [Awaitables & Asynchronous Iterators/Generators](https://mypy.readthedocs.io/en/stable/more_types.html#typing-async-await)
+- [Protocols](https://mypy.readthedocs.io/en/stable/protocols.html)
+- [Final (Uninheritable) Attributes](https://mypy.readthedocs.io/en/stable/final_attrs.html)
+- [metaclasses](https://mypy.readthedocs.io/en/stable/metaclasses.html)
+- [Literals](https://mypy.readthedocs.io/en/stable/literal_types.html)
 
 ---
 
@@ -491,11 +535,12 @@ A Type Alias is simply a synonym for a type, and is used to make the code more r
 ```py
 from typing import TypeAlias
 
-ChestOfThings: TypeAlias = dict[str, tuple[list[int], str, float]] # Py3.10+ syntax
-ChestOfThingsOld = dict[str, tuple[list[int], str, float]] # pre-Py3.10 syntax w/o annotation
-# ChestOfThings = Dict[str, Tuple[List[int], str, float]] # pre-Py3.9 (types imported from typing)
+ChestOfThings: TypeAlias = dict[str, tuple[list[int], str, float]]  # Py3.10+ syntax
 
-my_chest: ChestOfThings = {}
+ChestOfThingsOld = dict[str, tuple[list[int], str, float]]  # pre-Py3.10, (no TypeAlias annotation)
+# ChestOfThings = Dict[str, Tuple[List[int], str, float]] # pre-Py3.9, types imported from typing
+
+my_chest: ChestOfThings = {"key": ([1, 2, 3], "value", 1.0)}
 ```
 
 <br>
@@ -512,6 +557,8 @@ Email = NewType("Email", str)
 my_email = Email("multirotor@mst.edu")
 ```
 
+*See [Python `typing` - NewType](https://docs.python.org/3/library/typing.html#newtype) for more info.*
+
 <br>
 
 ## Type Variables
@@ -519,34 +566,39 @@ Type Variables are a way to define a type that can be used in place of a type (w
 Let's take a look at what the class signature for `typing.TypeVar`.
 ```py
 TypeVar(
-    name, # The name of the type variable
-    *constraints, # optional specific constraints, type has to be one of these
-    bound: __class__ = None, # upper bound (only this and subclasses of this)
-    covariant: bool = False, # allow usage of more derived subtypes?
-    contravariant: bool = False, # allow usage of less derived supertypes?
+    name,  # The name of the type variable
+    *constraints,  # optional specific constraints, type has to be one of these
+    bound: __class__ = None,  # upper bound (only this and subclasses of this)
+    covariant: bool = False,  # allow usage of more derived subtypes?
+    contravariant: bool = False,  # allow usage of less derived supertypes?
 )
 # By convention, append a _co to covariant and a _contra to contravariant type variable names
 ```
+
 Here's an example of `TypeVar` in practice:
 ```py
-from typing import TypeVar
+from typing import TypeVar, Sequence
 
-T = TypeVar('T')  # Can be anything
-A = TypeVar('A', str, bytes)  # Must be str or bytes
+T = TypeVar("T")  # Can be anything
+A = TypeVar("A", str, bytes)  # Must be str or bytes
 
 # here we can refer to the same arbitrary type 'T' throughout the function
 def repeat(x: T, n: int) -> Sequence[T]:
     """Return a list containing n references to x."""
-    return [x]*n
+    return [x] * n
 
 def longest(x: A, y: A) -> A:
     """Return the longest of two strings or bytes."""
     return x if len(x) >= len(y) else y
 ```
 
+See also:
+- [Python `typing` - TypeVars](https://docs.python.org/3/library/typing.html#typing.TypeVar)
+- [Generics](#structural-subtyping-and-generic-collections-abc)
+
 <br>
 
-## Generic Collections (ABC)
+## Structural Subtyping and Generic Collections (ABC)
 Also known as "duck types", generic collections are a way of defining a type of collection that fits a certain set of operations. These types are all the **Abstract Base Classes** (ABCs) of common Python collections. \
 For example, a `list` is an generic `Sequence`, and a `dict` is a generic `Mapping` \
 Here are some examples of some common generic collections:
@@ -572,14 +624,18 @@ def dictify(my_mapping: Mapping[str, bool]) -> dict[str, bool]:
         result[key] = val
     return result
 
-# Mutable Mappings are the same as Mappings except they also support subscripting with assignment 
+# Mutable Mappings are the same as Mappings except they also support subscripting with assignment
 # (__setitem__) and del  on an item(__delitem__)
 def double_values(my_mut: MutableMapping[int, float]) -> MutableMapping[int, float]:
     for key, val in my_mut.items():
-        my_mut[key] = 2*val
+        my_mut[key] = 2 * val
     return my_mut
 ```
 *More information and other abstract base classes can be found [here](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes).*
+
+See also:
+- [Python `typing` - Generics](https://docs.python.org/3/library/typing.html#generics)
+- [mypy - Protocols and Structural Subtyping](https://mypy.readthedocs.io/en/stable/protocols.html)
 
 <br>
 
@@ -589,7 +645,8 @@ Here are some simple examples:
 ```py
 from typing import TypeVar, Generic
 
-T = TypeVar('T')
+T = TypeVar("T")
+
 class Jar(Generic[T]):
     def __init__(self, content: T) -> None:
         self.content: T = content
@@ -597,7 +654,8 @@ class Jar(Generic[T]):
 ```py
 from typing import TypeVar, Generic
 
-T = TypeVar('T')
+T = TypeVar("T")
+
 class Stack(Generic[T]):
     def __init__(self) -> None:
         self.items: list[T] = []
@@ -610,6 +668,12 @@ class Stack(Generic[T]):
 ```
 *Note: the usage of `T` as a type variable is a convention and can be substituted with any name. Similarly, the convention for user-defined generic mappings or other paired values is `K`, `V` (usually used as Key, Value)*
 
+See also:
+- [Python `typing` - TypeVars](https://docs.python.org/3/library/typing.html#typing.TypeVar)
+- [Python `typing` - Generics](https://docs.python.org/3/library/typing.html#generics)
+
 ---
 
+<br>
+<br>
 <br>
