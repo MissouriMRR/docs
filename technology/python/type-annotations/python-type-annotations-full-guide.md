@@ -382,7 +382,7 @@ def n_divs(max_num: int | float = float("inf")) -> Generator[float, int, str]:
 
 # Advanced Python Data Types
 ## Enums
-Enums don't need to be typed in their construction, but they do need to be annotated when used.
+Enums don't need to be typed in their construction since their type is inherently being defined. As such, they do need to be annotated when referenced (see example below).
 ```py
 from enum import Enum
 
@@ -409,7 +409,7 @@ class Color(NamedTuple):
 
 purple: Color = Color(red=255, green=0, blue=255)
 ```
-*Note: while there is an alternative way of creating namedtuples using the `collections` module, it is **not recommended** as it requires you to enter the type name as an argument string and does not support type annotation.*
+*Note: while there is an alternative (legacy) method of creating namedtuples using `collections.namedtuple`, it is not recommended to use this method and is recommended to **use the `typing.NamedTuple` instead** as the former requires you to enter the type name as an argument string and does not support type annotation.*
 
 <br>
 
@@ -418,6 +418,7 @@ Dataclasses are also typed as expected.
 ```py
 from dataclasses import dataclass, field
 
+@dataclass
 class Employee:
     name: str
     age: int
