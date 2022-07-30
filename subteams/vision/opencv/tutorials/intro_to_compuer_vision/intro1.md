@@ -38,5 +38,5 @@ plt.imshow(img, cmap='gray')
 plt.show()
 ```
 
-![image](/assets/__results___2_0.png)
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/tutorials/intro_to_compuer_vision/intro_1_images/__results___2_0.png)
 
