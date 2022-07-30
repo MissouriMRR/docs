@@ -6,7 +6,7 @@ permalink: /vision/numpy/monte_carlo/
 
 [Back to NumPy](/docs/vision/numpy/)
 
-Need a refresher? [Check out the Intro to Numpy tutorial.](/docs/vision/numpy/intro/)
+Need a refresher? [Check out the Intro to NumPy tutorial.](/docs/vision/numpy/intro/)
 
 ## Monte Carlo Problem
 

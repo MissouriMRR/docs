@@ -38,6 +38,5 @@ In the categories below, you will find documentation, tutorials, and practice pr
 ## Past Competition Vision Code
 
 - [SUAS 2022](https://github.com/MissouriMRR/SUAS-2022/tree/develop/vision)
-
 - [IARC Mission 9](https://github.com/MissouriMRR/IARC-2020/tree/develop/vision)
 

@@ -17,7 +17,6 @@ To learn more, check out the tutorials and projects below.
 ## Tutorials
 
 - [Intro to Computer Vision Part 1](/docs/vision/opencv/intro1/)
-
 - [Intro to Computer Vision Part 2](/docs/vision/opencv/intro2/)
 
 ## Projects and Problems
