@@ -38,5 +38,5 @@ plt.imshow(img, cmap='gray')
 plt.show()
 ```
 
-![image](/docs/assets/__results___2_0.png)
+![image](/assets/__results___2_0.png)
 
