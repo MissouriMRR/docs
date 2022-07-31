@@ -8,7 +8,7 @@ permalink: /vision/opencv/intro2/
 
 [Download Tutorial as IPython Notebook]()
 
-[More info on IPython Notebooks]()
+[More info on IPython Notebooks](/docs/technologies/python/ipython_notebooks/)
 
 Need a refresher on NumPy? [Check out the Intro to NumPy tutorial.](/docs/vision/numpy/intro/)
 
