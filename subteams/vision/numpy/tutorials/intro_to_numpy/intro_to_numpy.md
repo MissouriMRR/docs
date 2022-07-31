@@ -8,7 +8,7 @@ permalink: /vision/numpy/intro/
 
 [Download Tutorial as IPython Notebook]()
 
-[More info on IPython Notebooks]()
+[More info on IPython Notebooks](/docs/technologies/python/ipython_notebooks/)
 
 
 ## Table of Contents
