@@ -6,7 +6,7 @@ permalink: /vision/numpy/intro/
 
 [Back to NumPy](/docs/vision/numpy/)
 
-[Download Tutorial as IPython Notebook]()
+[Download Tutorial as IPython Notebook](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/numpy/tutorials/intro_to_numpy/intro-to-numpy.ipynb)
 
 [More info on IPython Notebooks](/docs/technologies/python/ipython_notebooks/)
 

@@ -6,7 +6,7 @@ permalink: /vision/opencv/intro1/
 
 [Back to OpenCV](/docs/vision/opencv)
 
-[Download Tutorial as IPython Notebook]()
+[Download Tutorial as IPython Notebook](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/tutorials/intro_to_compuer_vision/intro-to-computer-vision.ipynb)
 
 [More info on IPython Notebooks](/docs/technologies/python/ipython_notebooks/)
 
