@@ -13,6 +13,14 @@ permalink: /vision/opencv/intro1/
 Need a refresher on NumPy? [Check out the Intro to NumPy tutorial.](/docs/vision/numpy/intro/)
 
 
+## Table of Contents
+
+- [Computer Vision 101 with NumPy](#computer-vision-101-with-numpy)
+- [Manipulating Images](#manipulating-images)
+- [Goal is to Make the Planet Blue](#goal-is-to-make-the-planet-blue)
+- [Changing Size](#changing-size)
+
+
 ## Computer Vision 101 with NumPy
 
 In Python, all of the popular image libraries use Numpy arrays to store images. This is because arrays in Numpy has an array structure that allows for contiguous memory in Python. Numpy has optimized various matrix and other general mathematical operations. This makes Numpy arrays much faster than built-in Python Lists.

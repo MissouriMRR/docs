@@ -14,6 +14,16 @@ Need a refresher on NumPy? [Check out the Intro to NumPy tutorial.](/docs/vision
 
 [Check out Part 1 of this Tutorial.](/docs/vision/opencv/intro1)
 
+
+## Table of Contents
+
+- [Computer Vision Part 2](#computer-vision-part-2)
+- [Scikit-Image](#scikit-image)
+- [Convolutions w/ Scipy](#convolutions-w-scipy)
+- [Generic Filter / Kernel w/ Scipy](#generic-filter--kernel-w-scipy)
+- [K Means Clustering](#k-means-clustering)
+
+
 ## Computer Vision Part 2
 
 Convolutions, Filters, and Clustering

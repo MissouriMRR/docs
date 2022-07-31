@@ -10,6 +10,21 @@ permalink: /vision/numpy/intro/
 
 [More info on IPython Notebooks]()
 
+
+## Table of Contents
+
+- [NumPy 101](#numpy-101)
+- [Reshaping ndarrays](#reshaping-ndarrays)
+- [Combining ndarrays](#combining-ndarrays)
+- [Indexing and Slicing ndarrays](#indexing-and-slicing-ndarrays)
+- [Broadcasting](#broadcasting)
+- [Memory Nuances](#memory-nuances)
+- [Statistics with Numpy](#statistics-with-numpy)
+- [Masked Arrays](#masked-arrays)
+- [General Functions](#general-functions)
+- [Practice Problems and Projects](#practice-problems-and-projects)
+
+
 ## NumPy 101
 
 [NumPy Documentation](https://docs.scipy.org/doc/)
