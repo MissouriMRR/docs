@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/blue_tomatoes
+permalink: /vision/opencv/blue_tomatoes/
 ---
 
 # Make Tomatoes Blue

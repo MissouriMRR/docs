@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/planet_edges
+permalink: /vision/opencv/planet_edges/
 ---
 
 # Detect Edges of Planet

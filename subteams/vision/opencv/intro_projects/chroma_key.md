@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/chroma_key
+permalink: /vision/opencv/chroma_key/
 ---
 
 # Chroma Key (Greenscreen)

@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/mario
+permalink: /vision/opencv/mario/
 ---
 
 # Mario Bros

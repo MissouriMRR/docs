@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/skeletonization
+permalink: /vision/opencv/skeletonization/
 ---
 
 # Image Skeletonization

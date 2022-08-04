@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/image_size
+permalink: /vision/opencv/image_size/
 ---
 
 # Change Image Size
