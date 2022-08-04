@@ -40,7 +40,7 @@ from scipy.ndimage import convolve
 ### Load an Images
 
 ```python
-img_name = mpimg.imread(“filename”)
+img_name = mpimg.imread("filename")
 ```
 
 ### Show an Image
@@ -59,7 +59,7 @@ cv2.destroyAllWindows()
 ### Save an Image
 
 ```python
-plt.imsave(img_name, “filename”)
+plt.imsave(img_name, "filename")
 ```
 
 ## Exercises
@@ -70,7 +70,9 @@ Create and show/save a 10x10 spiral 1-bit image by modifying np.zeros() using on
 
 The completed image, when shown, should look like this:
 
-![image]()
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
+
+[Download](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
 
 ### Exercise 2
 
