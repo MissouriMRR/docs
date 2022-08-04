@@ -19,7 +19,20 @@ To learn more, check out the tutorials and projects below.
 - [Intro to Computer Vision Part 1](/docs/vision/opencv/intro1/)
 - [Intro to Computer Vision Part 2](/docs/vision/opencv/intro2/)
 
-## Projects and Problems
+## Practice Problems
 
+- [Numpy and OpenCV Exercises (Try these before moving on to projects)](/docs/vision/opencv/exercises/)
 
+## Intro Projects
+
+- [Detect Edges of Planet](/docs/vision/opencv/planet_edges/)
+- [Change Image Size](/docs/vision/opencv/image_size/)
+- [Chroma Key (Greenscreen)](/docs/vision/opencv/chroma_key/)
+- [Mario Bros](/docs/vision/opencv/mario/)
+- [Turn Tomatoes Blue](/docs/vision/opencv/blue_tomatoes/)
+
+## Advanced Projects
+
+- [Image Skeletonization](/docs/vision/opencv/skeletonization/)
+- [Cleaning up Images](/docs/vision/opencv/image_cleanup/)
 
