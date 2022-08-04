@@ -4,6 +4,8 @@ permalink: /vision/opencv/image_cleanup
 
 # Cleaning Up Images
 
+[Back to OpenCV](/docs/vision/opencv)
+
 *Note: This is an advanced project with no example solution.*
 
 [https://en.wikipedia.org/wiki/Erosion_(morphology)](https://en.wikipedia.org/wiki/Erosion_(morphology))

@@ -4,6 +4,8 @@ permalink: /vision/opencv/chroma_key/
 
 # Chroma Key (Greenscreen)
 
+[Back to OpenCV](/docs/vision/opencv)
+
 [https://en.wikipedia.org/wiki/Chroma_key](https://en.wikipedia.org/wiki/Chroma_key)
 
 Write a function that applies a background to an image with a green screen.

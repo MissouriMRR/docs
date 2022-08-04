@@ -4,6 +4,8 @@ permalink: /vision/opencv/skeletonization/
 
 # Image Skeletonization
 
+[Back to OpenCV](/docs/vision/opencv)
+
 *Note: This is an advanced project with no example solution.*
 
 [https://en.wikipedia.org/wiki/Morphological_skeleton](https://en.wikipedia.org/wiki/Morphological_skeleton)

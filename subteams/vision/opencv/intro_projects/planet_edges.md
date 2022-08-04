@@ -4,6 +4,8 @@ permalink: /vision/opencv/planet_edges/
 
 # Detect Edges of Planet
 
+[Back to OpenCV](/docs/vision/opencv)
+
 Find the outline of a planet using an edge detection kernel and convolution. You may need to apply another algorithm first, like kmeans, to reduce noise.
 
 As an additional challenge, overlay the outline on the original image.

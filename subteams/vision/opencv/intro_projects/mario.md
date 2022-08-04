@@ -4,6 +4,8 @@ permalink: /vision/opencv/mario/
 
 # Mario Bros
 
+[Back to OpenCV](/docs/vision/opencv)
+
 Change a Mario image into the different Mario characters (Luigi, Wario, Waluigi). With Wario, stretch the image horizontally. With Waluigi, stretch the image vertically.
 
 ## Starting Image

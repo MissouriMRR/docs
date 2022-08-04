@@ -4,6 +4,8 @@ permalink: /vision/opencv/blue_tomatoes/
 
 # Make Tomatoes Blue
 
+[Back to OpenCV](/docs/vision/opencv)
+
 Change the color of tomatoes in a salad from red to blue. Try to only change the tomatoes and to make the tomatoes look as good as possible.
 
 [View My Solution](https://github.com/fallscameron01/Blue_Tomatoes/blob/master/make_tomato_blue.py)

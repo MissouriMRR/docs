@@ -4,6 +4,8 @@ permalink: /vision/opencv/image_size/
 
 # Change Image Size
 
+[Back to OpenCV](/docs/vision/opencv)
+
 [https://en.wikipedia.org/wiki/Interpolation](https://en.wikipedia.org/wiki/Interpolation)
 
 Write a function that when passed a scaling factor, the function will resize the image accordingly. For example, if passed 2, the function would resize the image to 2x the original dimensions. When passed 0.5, the function would resize the image to 0.5x the original dimensions.

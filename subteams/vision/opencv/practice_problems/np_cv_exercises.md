@@ -4,6 +4,8 @@ permalink: /vision/opencv/exercises/
 
 # NumPy and OpenCV Exercises
 
+[Back to OpenCV](/docs/vision/opencv)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
