@@ -8,8 +8,13 @@ Change a Mario image into the different Mario characters (Luigi, Wario, Waluigi)
 
 ## Starting Image
 
-![image]()
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/mario/mario.jpg)
 
-## Example Solution (Wario)
+[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/mario/mario.jpg)
 
-![image]()
+## Example Solution
+
+**Wario Example:**
+
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/mario/wario.png)
+

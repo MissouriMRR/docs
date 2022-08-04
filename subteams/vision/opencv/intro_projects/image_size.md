@@ -14,11 +14,16 @@ You can shrink an image through selective column dropping. You can grow an image
 
 ## Starting Image
 
-![image]()
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/image_size/cat.jpg)
+
+[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/image_size/cat.jpg)
 
 ## Example Solutions
 
-![image]()
+Generated Images of Various Sizes
 
-![image]()
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/image_size/big_cat.jpg)
+
+
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/image_size/small_cat.jpg)
 

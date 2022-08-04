@@ -72,7 +72,7 @@ The completed image, when shown, should look like this:
 
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
 
-[Download](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
+[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
 
 ### Exercise 2
 
