@@ -12,5 +12,5 @@ Perform skeletonization on an image.
 
 ## Example
 
-![image]()
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/advanced_projects/images/skeletonization/skeletonization.png)
 
