@@ -4,18 +4,4 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 *Note: This site is under construction and as such there are a lot of dead links.*
 
-## Subteams
-
-- [Flight](/docs/flight/)
-- [Vision](/docs/vision/)
-- [Simulation](/docs/simulation/)
-
-## Tools and Technologies
-
-- [Python](/docs/python/)
-- [Git](/docs/git/)
-- [Virtual Machines](/docs/virtual_machines)
-
-## Archived
-
-- [Apps](/docs/apps/)
+The site can be accessed here: [https://missourimrr.github.io/docs/](https://missourimrr.github.io/docs/)
