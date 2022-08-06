@@ -28,6 +28,19 @@ To start, check out the documentation and tutorials on NumPy. Then, move on to O
 
 In the categories below, you will find documentation, tutorials, and practice projects to help you learn computer vision.
 
+**You should also make sure you have the following packages installed: `numpy`, `opencv-python`, `scipy`, `matplotlib`, `pytesseract`.**
+
+Reminder that packages can be installed with the following command:
+
+Linux:
+```
+pip3 install <package_name>
+```
+
+Windows:
+```
+pip install <package_name>
+```
 
 ## Categories
 

@@ -14,6 +14,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 - [Python](/docs/python/)
 - [Git](/docs/git/)
+- [Virtual Machines](/docs/virtual_machines)
 
 ## Archived
 
