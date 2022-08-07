@@ -16,6 +16,8 @@ As an additional challenge, overlay the outline on the original image.
 
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/planet_edges/mars.jpg)
 
+[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/intro_projects/images/planet_edges/mars.jpg)
+
 ## Example Solution
 
 **Outline:**
