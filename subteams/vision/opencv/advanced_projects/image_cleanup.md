@@ -1,5 +1,5 @@
 ---
-permalink: /vision/opencv/image_cleanup
+permalink: /vision/opencv/image_cleanup/
 ---
 
 # Cleaning Up Images
