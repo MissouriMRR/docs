@@ -10,6 +10,7 @@ permalink: /python/set_up/
 
 - [Getting Started with Python](#getting-started-with-python)
 - [Installing an IDE](#installing-an-ide)
+- [Running a Program](#running-a-program)
 - [Installing Packages](#installing-packages)
 
 ## Getting Started with Python
