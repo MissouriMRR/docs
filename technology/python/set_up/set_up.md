@@ -9,8 +9,8 @@ permalink: /python/set_up/
 ## Table of Contents
 
 - [Getting Started with Python](#getting-started-with-python)
-- [Installing an IDE](#installing-an-ide)
 - [Running a Program](#running-a-program)
+- [Installing an IDE](#installing-an-ide)
 - [Installing Packages](#installing-packages)
 
 ## Getting Started with Python
@@ -61,7 +61,7 @@ python <file>
 
 ## Installing an IDE
 
-An IDE (Integrated Development Environment) makes it easy to edit and run you code from one convinient program.
+An IDE (Integrated Development Environment) makes it easy to edit and run your code from one convenient program.
 
 The most popular IDE for Python is [Visual Studio Code](https://code.visualstudio.com/download), which has packages that make working with Python simple. Install VS Code and run it. Navigate to the extension tab and install the Python package. It should automatically find your Python installation and use it for running your programs directly from VS Code.
 
