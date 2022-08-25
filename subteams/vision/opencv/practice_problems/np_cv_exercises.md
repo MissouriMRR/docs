@@ -221,4 +221,9 @@ Apply k-means clustering to the "lake.jpg" image with varying kernel (K) sizes o
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex6c-solved.jpg)
 
 [Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex6c-solved.jpg)
-
+\
+\
+\
+\
+\
+[Completed the exercises and want something more challenging? Check out the intro projects here.](/docs/vision/opencv)
