@@ -50,7 +50,7 @@ from matplotlib import image as mpimg
 from scipy.ndimage import convolve
 ```
 
-### Load an Images
+### Load an Image
 
 ```python
 img_name = mpimg.imread("filename")
@@ -83,9 +83,9 @@ Create and show/save a 10x10 spiral 1-bit image by modifying np.zeros() using on
 
 The completed image, when shown, should look like this:
 
-![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1-solved.png)
 
-[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1_solution.png)
+[Download Image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/practice_problems/images/ex1-solved.png)
 
 ### Exercise 2
 
