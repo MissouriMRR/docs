@@ -71,6 +71,9 @@ Now that all of the settings are taken care of, you can start your machine for t
 8. Choose your time zone.
 9. Fill out your information. Make sure to choose a password that you will remember. We will be needing it a lot.
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/who_you.png)
-
-It will now begin installing the operating system. Sit back and wait for it to finish.
+10. It will now begin installing the operating system. Sit back and wait for it to finish. Once the installation is complete, select "restart now".
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/wait_for_install.png)
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/restart_now.png)
+11. The installation medium should have been automatically ejected, so press enter once the machine prompts you. You should now be booting into your newly create Ubuntu VM.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/installation_medium.png)
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/login_screen.png)
