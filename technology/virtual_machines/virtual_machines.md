@@ -26,5 +26,17 @@ Once the installer for VirtualBox is downloaded, launch it and follow the prompt
 ## Creating the Virtual Machine
 
 1. Open VirtualBox
-2. Click the "Add" button at the top
-[image]()
+2. Click the "New" button at the top
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/add_button.png)
+3. Give the machine a name and select the folder and OS.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/vm_name.png)
+4. Allocate system memory (RAM).
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/ram.png)
+5. Select "Create Virtual Hard Disk Now".
+6. For Hard Disk Type, select VDI.
+7. Select either "Dynamically allocated" or "Fixed size". A fixed size virtual disk will use all space that you allocate to it on disk. A dynamically allocated disk will fluctuate in size and will use *up to* the amount that you allocate. Dynamically allocated will use less space, but typically comes at a performance hit.
+8. Select the amount of storage you want your virtual hard disk to have.
+9. You should now have a new virtual machine in your list.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/new_vm.png)
+
+## Allocating VM Resources
