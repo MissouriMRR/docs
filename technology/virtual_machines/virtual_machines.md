@@ -53,3 +53,24 @@ Once the installer for VirtualBox is downloaded, launch it and follow the prompt
 
 ## Starting Your VM
 
+Now that all of the settings are taken care of, you can start your machine for the first time. We will now have to take that Ubuntu ISO that you downloaded and use it to install an OS on the VM.
+
+1. On your VM, click start.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/settings_button.png)
+2. VirtualBox will prompt you to select a start-up disk. Think of it like inserting a CD to install your OS, where the ISO file we downloaded is the CD. Choose the folder icon and navigate to where you downloaded the Ubuntu ISO file to. Once you have it selected, press start.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/start_up_disk.png)
+3. Select Try or Install Ubuntu with the arrow keys and press enter. You will now boot into the Ubuntu installer.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/try_install.png)
+4. Select Install Ubuntu. As far as Ubuntu is aware, it is running on a bare-metal computer. It doesn't know that it's in a VM.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/install_ubuntu.png)
+5. Select your keyboard layout.
+6. Select your software options.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/software.png)
+7. Select "Erase disk and install Ubuntu". That may sound scary, but don't worry. The disk that it is referring to is the virtual hard disk that you created earlier. The machine is incapable of touching anything outside of the virtual hard disk, so your files are safe. Click "Install Now". On the prompt about disk changes, select "Continue".
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/erase_disk.png)
+8. Choose your time zone.
+9. Fill out your information. Make sure to choose a password that you will remember. We will be needing it a lot.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/who_you.png)
+
+It will now begin installing the operating system. Sit back and wait for it to finish.
+![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/technology/virtual_machines/images/wait_for_install.png)
