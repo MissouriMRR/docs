@@ -12,6 +12,16 @@ It is recommended that you create, run, and test your code on Linux (usually Ubu
 
 Below is a guide on creating an Ubuntu Linux virtual machine using VirtualBox on a Windows host machine. Ubuntu is a popular distribution (distro) of Linux and is very user-friendly. VirtualBox is a popular hypervisor (essentially a program that can create/run virtual machines).
 
+## Table of Contents
+
+- [Downloads](#downloads)
+- [Installing VirtualBox](#installing-virtualbox)
+- [Creating the Virtual Machine](#creating-the-virtual-machine)
+- [Allocating VM Resources](#allocating-vm-resources)
+- [Starting Your VM](#starting-your-vm)
+- [Installing VBox Guest Additions](#installing-vbox-guest-additions)
+- [Taking a Snapshot of Your VM](#taking-a-snapshot-of-your-vm)
+
 ## Downloads
 
 To begin, you will need to download a couple of things:
