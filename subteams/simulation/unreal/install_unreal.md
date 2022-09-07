@@ -1,4 +1,6 @@
+---
 permalink: /simulation/install/
+---
 
 # Installing Unreal Engine
 
@@ -23,7 +25,7 @@ To get started, you will need an Epic Games Account and a GitHub account. These 
 3. Once it is downloaded, move it to your desired location (recommendation is to move it to somewhere in the Documents folder). Right click and select "Open with Archive Manager". Extract the zip file. (Archive Manager may freeze up for a bit before it shows a progress bar).\
 ![image](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/simulation/unreal/images/archive_manager.jpg)
 4. Once it is extracted, open the extracted folder `UnrealEngine-release` in a terminal.
-5. In your terminal, run the command `./Setup.sh`. This will set up dependences needed for Unreal Engine. It will take some time.
+5. In your terminal, run the command `./Setup.sh`. This will set up dependences needed for Unreal Engine. It will take some time. At some point, you will get a pop up about file types. Press yes. You will also need to enter your password in the terminal when prompted.
 6. Once the previous command is finished, run the command `./GenerateProjectFiles.sh`
 7. Once the previous command is finished, run the command `make`. This will compile Unreal Engine, which may take an hour or more.
 
