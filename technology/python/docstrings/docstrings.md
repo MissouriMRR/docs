@@ -12,6 +12,26 @@ You should never write code that is impossible to read. Python makes it easy to 
 
 - [The Zen of Python](#the-zen-of-python)
 - [Docstrings](#docstrings)
+    - [General Description Section](#general-description-section)
+    - [Docstrings for Functions](#docstrings-for-functions)
+        - [Parameters Section](#parameters-section)
+        - [Returns Section](#returns-section)
+        - [Yields Section](#yields-section)
+        - [Receives Section](#receives-section)
+        - [Other Parameters Section](#other-parameters-section)
+        - [Raises Section](#raises-section)
+        - [Warns Section](#warns-section)
+        - [Warnings Section](#warnings-section)
+        - [See Also Section](#see-also-section)
+        - [Notes Section](#notes-section)
+        - [References Section](#references-section)
+        - [Examples Section](#examples-section)
+    - [Docstrings for Classes](#docstrings-for-classes)
+    - [Docstrings for Methods](#docstrings-for-methods)
+    - [Docstrings for Modules](#docstrings-for-modules)
+    - [Additional Docstring Resources](#additional-docstring-resources)
+        - [autoDocstring VSCode Extension](#autodocstring-vscode-extension)
+        - [A Note on NumPyDoc](#a-note-on-numpydoc)
 
 ## The Zen of Python
 
