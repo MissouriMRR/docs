@@ -425,3 +425,68 @@ other_func1, other_func2, other_func3
 - A place to put example usages of your function and the result
 - See [numpydoc Examples reference](https://numpydoc.readthedocs.io/en/latest/format.html#References) for more advanced things like doctest
 
+
+### Docstrings for Classes
+
+Class docstrings must include a description, an attributes section, and optionally, a methods section.
+
+- The methods section is only really necessary if there are a ton of public class methods and you want to distinctively reference major ones.
+- Class variable attributes should be typed as ClassVar[Type] as usual, so you don’t need to mention class-variable-ness or instance-variable-ness
+
+**Example:**
+
+```python
+class Photo(ndarray):
+    """
+    Array with associated photographic information.
+
+    Attributes
+    ----------
+    exposure : float
+        Exposure in seconds.
+
+    Methods
+    -------
+    colorspace(c='rgb')
+        Represent the photo in the given colorspace.
+    gamma(n=1.0)
+        Change the photo's gamma exposure.
+    """
+```
+
+### Docstrings for Methods
+
+- Never include self in the list of Parameters
+- If the method executes a simple task such as a getter/setter decorator, then it may only include a description. Additional optional parameters, returns, or yields sections may be added if more detail is required. Otherwise, it follows the same convention as functions
+
+### Docstrings for Modules
+
+Modules should at the very least include a summary in the docstring at the very top of the file
+
+**Sections:**
+
+1. Summary (required, no section heading)
+2. Extended Summary (optional, no section heading)
+4. Constants (required for public constants, with heading)
+3. Routine Listings (optional, no section heading)
+4. See Also (optional, with heading)
+5. Notes (optional, with heading)
+6. References (optional, with heading)
+7. Examples (optional, with heading)
+
+### Additional Docstring Resources
+
+#### autoDocstring VSCode Extension
+
+For those of you who using VSCode for programming, there is an extension called autoDocstring, which can auto-format a templated layout of a docstring and auto-fill components based on type annotations. For this you have to set in the extension settings to use numpydoc.
+
+Also, autoDocstring obviously won’t get everything, but very helpful and convenient to get a templated layout of the start to your docstring.
+
+autoDocstring works by you typing triple quotes then pressing enter when you see the prompt.
+
+#### A Note on NumPyDoc
+
+For more information on numpydoc, reST (reStructuredText) markup, or some other examples of numpydoc, see the [numpydoc docs](https://numpydoc.readthedocs.io/en/latest/format.html#other-points-to-keep-in-mind)
+
+Do keep in mind that the documentation we’re using is slightly different than numpydoc in cases like constants don’t have their own docstrings, types are referenced with structural subtyping, and other smaller nuances.
+
