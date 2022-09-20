@@ -18,7 +18,7 @@ The primary programming language used by the software team is Python. Here you w
 ## Writing Good Code
 * [Python PEP 8 Style Guide (by Python)](https://pep8.org/)
 * [Python Type Annotations - Full Guide](/docs/python/type-annotations/full-guide.html)
-* [Documenting Your Code with NumpyDoc (WIP)](/docs/python/documenting-code/numpydoc.html)
+* [Documentation and Docstrings](/docs/python/documenting-code/docstrings/)
 
 
 ## Tools
