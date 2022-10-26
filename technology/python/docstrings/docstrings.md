@@ -4,7 +4,7 @@ permalink: /python/documenting-code/docstrings/
 
 # Documentation and Docstrings
 
-[Back to Python](/python/)
+[Back to Python](/docs/python/)
 
 You should never write code that is impossible to read. Python makes it easy to NOT do that, but sometimes, stuff gets complex. Documentation is there to make your code more **readable and understandable**.
 
