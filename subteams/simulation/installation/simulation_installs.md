@@ -20,7 +20,7 @@ After following the guide, you should have Unreal Engine and AirSim set up on yo
 
 ### Installing Unreal Engine and Airsim for Windows
 
-__**Download the following files:**__
+__Download the following files:__
 
 **Epic Games Launcher (~1 GB):** [https://www.unrealengine.com/download](https://www.unrealengine.com/download) (You will need to make/link an account)
 
