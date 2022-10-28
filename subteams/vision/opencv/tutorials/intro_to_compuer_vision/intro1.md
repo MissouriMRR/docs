@@ -8,6 +8,8 @@ permalink: /vision/opencv/intro1/
 
 [Download Tutorial as IPython Notebook](https://raw.githubusercontent.com/MissouriMRR/docs/main/subteams/vision/opencv/tutorials/intro_to_compuer_vision/intro-to-computer-vision.ipynb)
 
+[Download Images](https://www.kaggle.com/code/cameronfalls/intro-to-computer-vision/data)
+
 [More info on IPython Notebooks](/docs/technologies/python/ipython_notebooks/)
 
 Need a refresher on NumPy? [Check out the Intro to NumPy tutorial.](/docs/vision/numpy/intro/)
