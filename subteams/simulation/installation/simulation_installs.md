@@ -14,11 +14,11 @@ Below is a guide for getting AirSim and Unreal Engine set up on your machine.
 
 **MacOS**: [https://microsoft.github.io/AirSim/build_macos/](https://microsoft.github.io/AirSim/build_macos/)
 
-**Linux**: [https://microsoft.github.io/AirSim/build_linux/](https://microsoft.github.io/AirSim/build_linux/)
+**Linux**: Follow the [guide below](#installing-unreal-engine-and-airsim-for-ubuntu) or follow the guide here: [https://microsoft.github.io/AirSim/build_linux/](https://microsoft.github.io/AirSim/build_linux/)
 
 After following the guide, you should have Unreal Engine and AirSim set up on your machine.
 
-### Installing Unreal Engine for Windows
+### Installing Unreal Engine and Airsim for Windows
 
 __**Download the following files:**__
 
@@ -47,6 +47,45 @@ __Once everything above is finished:__
 4. Press the Play button in Unreal Editor to launch the world (the 3D world should open upon doing this - note: world assets will begin to download, so you may not be able to see everything right away).
 
 You now have everything you need to start exploring the AirSim APIs [https://microsoft.github.io/AirSim/docs/apis/](https://microsoft.github.io/AirSim/docs/apis/). If you are on the Vision Team, this will probably be enough. But if you are on the Flight Team or want to be able to run the flight code produced by the team, you will also need to download and build PX4 (which is the flight controller software we will be using in competition). (Simulation team will obviously need to do further steps.)
+
+### Installing Unreal Engine and Airsim for Ubuntu 18.04
+
+**Prerequisites:**
+
+1. Make an account with Epic Games (https://www.unrealengine.com/id/login).
+2. Once logged in to Epic Games, go to the “Connected Accounts” tab.
+3. Connect your Epic Games account with your GitHub account.
+4. Log into GitHub. You should see an invitation from Epic Games for the Unreal Engine repository. Accept the invitation. You now have access to the private UnrealEngine repository.
+
+**Download and install Unreal Engine:**
+
+1. Open a terminal and navigate to where you want to install Unreal Engine.
+2. Run the commands (make will take ~50 minutes):
+`git clone -b 4.24 https://github.com/EpicGames/UnrealEngine.git`
+`cd UnrealEngine`
+`./Setup.sh`
+`./GenerateProjectFiles.sh`
+`make`
+
+**Download and install AirSim:**
+
+1. Navigate to where you want to install AirSim.
+2. Run the commands:
+`git clone https://github.com/Microsoft/AirSim.git`
+`cd AirSim`
+`./setup.sh`
+`./build.sh`
+3. Navigate to where you install Unreal Engine and run Engine/Binaries/Linux/UE4Editor which will start Unreal Editor.
+4. On first start you might not see any projects in UE4 editor. Click on Projects tab, Browse button and then navigate to AirSim/Unreal/Environments/Blocks/Blocks.uproject. 
+5. (If you get prompted for incompatible version and conversion, select In-place conversion which is usually under "More" options. If you get prompted for missing modules, make sure to select No so you don't exit.)
+6. You can now press the Play button in Unreal Editor to run AirSim. Any time you want to run AirSim you must navigate to the Unreal Engine repository and run Engine/Binaries/Linux/UE4Editor (consider making a shortcut for this).
+
+If you make any changes to AirLib code or Unreal/Plugins folder, then you must run `./build.sh` (located in the AirSim repository) and repeat all of the previous steps.
+
+Troubleshooting tip: if your mouse disappears upon pressing play in the Unreal Engine Editor, press shift + f1 to get it back.
+
+You now have everything you need to start exploring the AirSim APIs [https://microsoft.github.io/AirSim/docs/apis/](https://microsoft.github.io/AirSim/docs/apis/). If you are on the Vision Team, this will probably be enough. But if you are on the Flight Team or want to be able to run the flight code produced by the team, you will also need to download and build PX4 (which is the flight controller software we will be using in competition).
+
 
 ## Installing PX4
 
