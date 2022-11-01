@@ -60,20 +60,20 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
 **Download and install Unreal Engine:**
 
 1. Open a terminal and navigate to where you want to install Unreal Engine.
-2. Run the commands (make will take ~50 minutes):
-`git clone -b 4.24 https://github.com/EpicGames/UnrealEngine.git`
-`cd UnrealEngine`
-`./Setup.sh`
-`./GenerateProjectFiles.sh`
+2. Run the commands (make will take ~50 minutes):\
+`git clone -b 4.24 https://github.com/EpicGames/UnrealEngine.git`\
+`cd UnrealEngine`\
+`./Setup.sh`\
+`./GenerateProjectFiles.sh`\
 `make`
 
 **Download and install AirSim:**
 
 1. Navigate to where you want to install AirSim.
-2. Run the commands:
-`git clone https://github.com/Microsoft/AirSim.git`
-`cd AirSim`
-`./setup.sh`
+2. Run the commands:\
+`git clone https://github.com/Microsoft/AirSim.git`\
+`cd AirSim`\
+`./setup.sh`\
 `./build.sh`
 3. Navigate to where you install Unreal Engine and run Engine/Binaries/Linux/UE4Editor which will start Unreal Editor.
 4. On first start you might not see any projects in UE4 editor. Click on Projects tab, Browse button and then navigate to AirSim/Unreal/Environments/Blocks/Blocks.uproject. 
