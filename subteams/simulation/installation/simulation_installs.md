@@ -101,7 +101,7 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
 
 ### Getting PX4 SITL for Windows 10
 
-1. Download the MST install for the PX4 Cygwin Toolchain from https://github.com/PX4/windows-toolchain/releases (~2.5 GB) (Your system may try to prevent you from downloading the MSI installer as a security precaution: click on “more info”, then click “Run anyway”). *Take note of where you install the toolchain (default location is C:\PX4\\).* **Do NOT check the box at the end that says “Clone PX4 Repository and Start Simulation**
+1. Download the MST install for the PX4 Cygwin Toolchain from [https://github.com/PX4/windows-toolchain/releases](https://github.com/PX4/windows-toolchain/releases) (~2.5 GB) (Your system may try to prevent you from downloading the MSI installer as a security precaution: click on “more info”, then click “Run anyway”). *Take note of where you install the toolchain (default location is C:\PX4\\).* **Do NOT check the box at the end that says “Clone PX4 Repository and Start Simulation**
     1. The MSI installer is listed under the v0.9 release, not the 1.0 release (or click here to download it)
 2. Open a command-line prompt/file explorer and browse to where you installed the toolchain.
 3. Run/click on **run-console.bat** to start the Cygwin bash console.
@@ -145,8 +145,8 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
     ```
 
 
-Now you are ready to begin experimenting with your flight code in the simulator! Check out https://github.com/mavlink/MAVSDK-Python (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to pip3 install mavsdk before trying to run any of the examples.
-https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip mavsdk install link.
+Now you are ready to begin experimenting with your flight code in the simulator! Check out [https://github.com/mavlink/MAVSDK-Python](https://github.com/mavlink/MAVSDK-Python) (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to pip3 install mavsdk before trying to run any of the examples.
+[https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip](https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip) mavsdk install link.
 
 **Connect using 14550 in file udp address**
 
@@ -156,12 +156,12 @@ https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-re
 (This is based on what has been discovered.)
 
 To fly the drone with code in Unreal:
-Start the Unreal simulation
-Start PX4 via the instructions above.
-Connect a MavSDK server to the PX4 SITL
-E.g., run .\mavsdk_server_bin.exe udp://:{UDP_PORT}
-Replace {UDP_PORT} with the onboard remote port PX4 highlighted in red 
-If you get a bind failed error when starting PX4 regarding the onboard port, use the new remote port
-Run your code, connecting the System as follows:
-drone: System = System(mavsdk_server_address="localhost")
-await drone.connect()
+1. Start the Unreal simulation
+2. Start PX4 via the instructions above.
+3. Connect a MavSDK server to the PX4 SITL
+    1. E.g., run `.\mavsdk_server_bin.exe udp://:{UDP_PORT}`
+        Replace {UDP_PORT} with the onboard remote port PX4 highlighted
+    2. If you get a bind failed error when starting PX4 regarding the onboard port, use the new remote port
+4. Run your code, connecting the System as follows:
+    `drone: System = System(mavsdk_server_address="localhost")`
+    `await drone.connect()`
