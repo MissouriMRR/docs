@@ -11,6 +11,7 @@ permalink: /simulation/install/
     - [Installing Unreal Engine and Airsim for Ubuntu 18.04](#installing-unreal-engine-and-airsim-for-ubuntu-1804)
 - [Installing PX4](#installing-px4)
     - [Getting PX4 SITL for Windows 10](#getting-px4-sitl-for-windows-10)
+    - [Getting PX4 SITL for Ubuntu 18.04](#getting-px)
 - [Flying the Drone with Code](#flying-the-drone-with-code)
 
 
@@ -145,11 +146,59 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
     ```
 
 
-Now you are ready to begin experimenting with your flight code in the simulator! Check out [https://github.com/mavlink/MAVSDK-Python](https://github.com/mavlink/MAVSDK-Python) (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to pip3 install mavsdk before trying to run any of the examples.
+Now you are ready to begin experimenting with your flight code in the simulator! Check out [https://github.com/mavlink/MAVSDK-Python](https://github.com/mavlink/MAVSDK-Python) (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to `pip3 install mavsdk` before trying to run any of the examples.
 [https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip](https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip) mavsdk install link.
 
 **Connect using 14550 in file udp address**
 
+## Getting PX4 SITL for Ubuntu 18.04 
+
+1. Open a terminal and make yourself a member of the group “dialout” with the command `sudo usermod -a -G dialout $USER`
+2. Logout and login again (or just restart your computer) to allow this group change to take effect.
+3. Download the development toolchain installation script with:
+`wget https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts/ubuntu_sim_nuttx.sh`
+4. Run the script with the command  `source ubuntu_sim_nuttx.sh`
+5. Restart your computer on completion.
+6. Open a terminal and go to where you want to install the PX4 Firmware repository.
+7. Run git `clone --recursive -j8 https://github.com/PX4/Firmware.git`
+8. Go to the newly-cloned Firmware directory and checkout this “known good” branch: `git checkout v1.9.2`
+    \
+    **All of the previous steps you should only ever do once, but this next step you will do every time you want to start the PX4 SITL (which is every time you want to run flight code)**
+9. `make px4_sitl_default none_iris` **(the first time you do this step, you will encounter several red-texted messages: in response to each one type ‘u’ and hit enter)**
+After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**
+    PX4 SITL Console:
+    ```
+    INFO  [simulator] Waiting for simulator to connect on TCP port 4560
+    INFO  [init] Mixer: etc/mixers/quad_w.main.mix on /dev/pwm_output0
+    INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 14570 remote port 14550
+    INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+    ```
+    \
+    AirSim Settings file:
+    ```
+    {
+        "SettingsVersion": 1.2,
+        "SimMode": "Multirotor",
+        "Vehicles": {
+            "PX4": {
+                "VehicleType": "PX4Multirotor",
+                "UseSerial": false,
+                "UseTcp": true,
+                "TcpPort": 4560,
+                "ControlPort": 14580,
+                "params": {
+                    "NAV_RCL_ACT": 0,
+                    "NAV_DLL_ACT": 0,
+                    "LPE_LAT": 47.641468,
+                    "LPE_LON": -122.140165,
+                    "COM_OBL_ACT": 1
+                }
+            }
+        }
+    }
+    ```
+
+Now you are ready to begin experimenting with your flight code in the simulator! Check out [https://github.com/mavlink/MAVSDK-Python](https://github.com/mavlink/MAVSDK-Python) (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to `pip3 install mavsdk` before trying to run any of the examples.
 
 ## Flying the Drone with Code:
 
