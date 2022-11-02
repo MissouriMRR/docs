@@ -113,9 +113,9 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
 
 6. `make px4_sitl_default none_iris` (**the first time you do this step, you will encounter several red-texted messages: in response to each one type ‘u’ and hit enter**)
     \
-    After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**
-    ```
+    After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**\
     PX4 SITL Console:
+    ```
     INFO  [simulator] Waiting for simulator to connect on TCP port 4560
     INFO  [init] Mixer: etc/mixers/quad_w.main.mix on /dev/pwm_output0
     INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 14570 remote port 14550
@@ -165,7 +165,7 @@ Now you are ready to begin experimenting with your flight code in the simulator!
     \
     **All of the previous steps you should only ever do once, but this next step you will do every time you want to start the PX4 SITL (which is every time you want to run flight code)**
 9. `make px4_sitl_default none_iris` **(the first time you do this step, you will encounter several red-texted messages: in response to each one type ‘u’ and hit enter)**
-After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**
+After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**\
     PX4 SITL Console:
     ```
     INFO  [simulator] Waiting for simulator to connect on TCP port 4560
