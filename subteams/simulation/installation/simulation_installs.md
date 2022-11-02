@@ -10,6 +10,8 @@ permalink: /simulation/install/
     - [Installing Unreal Engine and Airsim for Windows](#installing-unreal-engine-and-airsim-for-windows)
     - [Installing Unreal Engine and Airsim for Ubuntu 18.04](#installing-unreal-engine-and-airsim-for-ubuntu-1804)
 - [Installing PX4](#installing-px4)
+    - [Getting PX4 SITL for Windows 10](#getting-px4-sitl-for-windows-10)
+- [Flying the Drone with Code](#flying-the-drone-with-code)
 
 
 ## Installing Unreal Engine and AirSim
@@ -97,3 +99,69 @@ You now have everything you need to start exploring the AirSim APIs [https://mic
 
 ## Installing PX4
 
+### Getting PX4 SITL for Windows 10
+
+1. Download the MST install for the PX4 Cygwin Toolchain from https://github.com/PX4/windows-toolchain/releases (~2.5 GB) (Your system may try to prevent you from downloading the MSI installer as a security precaution: click on “more info”, then click “Run anyway”). *Take note of where you install the toolchain (default location is C:\PX4\\).* **Do NOT check the box at the end that says “Clone PX4 Repository and Start Simulation**
+    1. The MSI installer is listed under the v0.9 release, not the 1.0 release (or click here to download it)
+2. Open a command-line prompt/file explorer and browse to where you installed the toolchain.
+3. Run/click on **run-console.bat** to start the Cygwin bash console.
+4. Clone the PX4 Firmware repository from within the console with the command: `git clone --recursive -j8 https://github.com/PX4/Firmware.git`
+5. Go to the newly-cloned Firmware directory and checkout this “known good” branch: `git checkout v1.11.3`
+    \
+    **All of the previous steps you should only ever do once, but this next step you will do every time you want to start the PX4 SITL (which is every time you want to run flight code)**
+
+6. `make px4_sitl_default none_iris` (**the first time you do this step, you will encounter several red-texted messages: in response to each one type ‘u’ and hit enter**)
+    \
+    After you have completed step 6 an interactive command prompt will begin. The information on this screen is important to successfully connecting the PX4 SITL with AirSim. **Make sure that your AirSim settings file matches with the highlighted portions below:**
+    ```
+    PX4 SITL Console:
+    INFO  [simulator] Waiting for simulator to connect on TCP port 4560
+    INFO  [init] Mixer: etc/mixers/quad_w.main.mix on /dev/pwm_output0
+    INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 14570 remote port 14550
+    INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540 
+    ```
+    AirSim Settings file (Located in Documents\AirSim on your Windows 10 Machine):
+    ```
+    {
+        "SettingsVersion": 1.2,
+        "SimMode": "Multirotor",
+        "Vehicles": {
+            "PX4": {
+                "VehicleType": "PX4Multirotor",
+                "UseSerial": false,
+                "UseTcp": true,
+                "TcpPort": 4560,
+                "ControlPort": 14580,
+                "params": {
+                    "NAV_RCL_ACT": 0,
+                    "NAV_DLL_ACT": 0,
+                    "LPE_LAT": 47.641468,
+                    "LPE_LON": -122.140165,
+                    "COM_OBL_ACT": 1
+                }
+            }
+        }
+    }
+    ```
+
+
+Now you are ready to begin experimenting with your flight code in the simulator! Check out https://github.com/mavlink/MAVSDK-Python (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to pip3 install mavsdk before trying to run any of the examples.
+https://github.com/mavlink/MAVSDK/releases/download/v1.4.7/mavsdk-windows-x64-release.zip mavsdk install link.
+
+**Connect using 14550 in file udp address**
+
+
+## Flying the Drone with Code:
+
+(This is based on what has been discovered.)
+
+To fly the drone with code in Unreal:
+Start the Unreal simulation
+Start PX4 via the instructions above.
+Connect a MavSDK server to the PX4 SITL
+E.g., run .\mavsdk_server_bin.exe udp://:{UDP_PORT}
+Replace {UDP_PORT} with the onboard remote port PX4 highlighted in red 
+If you get a bind failed error when starting PX4 regarding the onboard port, use the new remote port
+Run your code, connecting the System as follows:
+drone: System = System(mavsdk_server_address="localhost")
+await drone.connect()
