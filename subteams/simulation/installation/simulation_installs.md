@@ -6,6 +6,10 @@ permalink: /simulation/install/
 
 [Back to Simulation Docs](/docs/simulation/)
 
+There are several pieces of software needed to get up and running with the simulator. The first step is to install Unreal Engine and Airsim. Next, you will need to install PX4. Instructions are provided below for both Windows and Ubuntu Linux.
+
+After you have completed the installations, you can proceed to [Flying the Drone with Code](/docs/simulation/flying/).
+
 ## Table of Contents
 
 - [Installing Unreal Engine and Airsim](#installing-unreal-engine-and-airsim)
@@ -14,7 +18,6 @@ permalink: /simulation/install/
 - [Installing PX4](#installing-px4)
     - [Getting PX4 SITL for Windows 10](#getting-px4-sitl-for-windows-10)
     - [Getting PX4 SITL for Ubuntu 18.04](#getting-px)
-- [Flying the Drone with Code](#flying-the-drone-with-code)
 
 
 ## Installing Unreal Engine and AirSim
@@ -200,17 +203,3 @@ After you have completed step 6 an interactive command prompt will begin. The in
 
 Now you are ready to begin experimenting with your flight code in the simulator! Check out [https://github.com/mavlink/MAVSDK-Python](https://github.com/mavlink/MAVSDK-Python) (specifically the examples folder) for some inspiration). Once you clone the repo, make sure to `pip3 install mavsdk` before trying to run any of the examples.
 
-## Flying the Drone with Code:
-
-(This is based on what has been discovered.)
-
-To fly the drone with code in Unreal:
-1. Start the Unreal simulation
-2. Start PX4 via the instructions above.
-3. Connect a MavSDK server to the PX4 SITL
-    1. E.g., run `.\mavsdk_server_bin.exe udp://:{UDP_PORT}`
-        Replace {UDP_PORT} with the onboard remote port PX4 highlighted
-    2. If you get a bind failed error when starting PX4 regarding the onboard port, use the new remote port
-4. Run your code, connecting the System as follows:
-    `drone: System = System(mavsdk_server_address="localhost")`
-    `await drone.connect()`

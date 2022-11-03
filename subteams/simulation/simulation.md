@@ -10,3 +10,4 @@ Here you will find documentation and tutorials relating to the simulation subtea
 
 To get started with installation of the simulator, follow the guide here: [Simulation Installations](/docs/simulation/install/)
 
+After you have installed the simulator, proceed to [Flying the Drone with Code](/docs/simulation/flying/).
