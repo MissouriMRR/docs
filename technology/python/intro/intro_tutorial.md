@@ -225,3 +225,18 @@ comment
     - Defined literally with a comma-separated key-value pair list surrounded by curly braces where each element in a pair is separated by a colon
         - eg. `fruit_count = {"apples": 5, "oranges": 7, "grapes": 30}`
     - The empty dictionary is initialized with an empty pair of curly braces as {}
+
+## If-Else
+
+## Loops
+
+### For Loops
+
+### While Loops
+
+## Functions
+
+### Lambda
+
+## Classes
+
