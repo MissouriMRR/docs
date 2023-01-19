@@ -228,15 +228,106 @@ comment
 
 ## If-Else
 
+If-Else statements in Python are formatted as follows:
+
+```python
+if condition1:
+    <block1>
+elif condition2:
+    <block2>
+else:
+    <block3>
+```
+
+The `elif` condition is only checked if the `if` condition is `False`. The `else` block is only executed if the `if` and `elif` are both `False`. The `elif` and `else` are optional.
+
 ## Loops
+
+There are 2 kinds of loops in Python, for loops and while loops.
 
 ### For Loops
 
+For loops interate over the elements of an iterator. The `range` function can be used to iterate over a range of numbers.
+
+```python
+for i in range(10):
+    print(i) # will print the numbers 0 through 9
+```
+
+You can also iterate over the elements of a set, such as a `list`.
+
+```python
+l = ['a', 'b', 'c']
+for character in l:
+    print(character) # will print the elements of l
+```
+
 ### While Loops
+
+While loops will continue while a condition is `True`.
+
+```python
+number = 10
+while number > 5:
+    print(number) # will print out 10 through 6
+    number -= 1
+```
 
 ## Functions
 
+Functions in Python are defined using the `def` keyword and can be defined with any number of parameters. However, since Python has dynamic typing, the type of the parameter cannot be enforced without adding additional statements to check. You can, though, use [type hints](/docs/python/type-annotations/full-guide.html) to specify what kind of input a function expects.
+
+```python
+def func1():
+    print("This function has no parameters!")
+
+def func2(var1):
+    print("This function has a parameter with a value of", var1, ".")
+
+def func3(var1: str):
+    print("This function has a string parameter with a value of", var1, ".")
+
+# Calling the functions
+func1()
+
+func2(5)
+
+func3("my value")
+func3(7) # NOTE: even though func3's var1 has a type hint of string,
+         # it isn't enforced by the interpretor
+```
+
 ### Lambda
+
+Lambda functions are a type of function in Python that is anonymous. A `lambda` function is defined with a number of arguments and can have one expression.
+
+```python
+my_func = lambda x : x + 1
+
+print(my_func(1)) # prints out 2
+```
 
 ## Classes
 
+Users can define types in Python with classes. A `class` can have any number of data elements and methods associated with it. The `__init__` function is called when an instance of that class is created. The `self` keyword refers to a specific instance of that class.
+
+```python
+class my_custom_class:
+    def __init__(self, y):
+        self.var1 = 5
+        self.y = y # self.y refers to the instance, y refers to the parameter
+    
+    def mult_var1(self, x):
+        self.var1 = self.var1 * x
+    
+    def get_y(self):
+        return self.y
+
+y = 7
+my_obj = my_custom_class(y)
+
+my_obj.mult_var1(8) # multiply var1 by 8
+print(my_obj.var1) # print its new value
+
+print(my_obj.get_y()) # get the value of y
+```
