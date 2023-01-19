@@ -16,5 +16,6 @@ For information on getting Python installed and setting up to work on Python cod
 
 **Tutorials:**
 
+- [Intro Tutorial](/docs/python/intro/tutorial/)
 - [W3Schools Tutorial](https://www.w3schools.com/python/default.asp)
 - [TutorialsTeacher](https://www.tutorialsteacher.com/python)
