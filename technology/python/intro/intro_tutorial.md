@@ -89,3 +89,58 @@ comment
 - However, in Python, the equivalent looks like this: `count = 5`, making the interpreter infer the type based on the value assigned.
 - Later on in the code, you are then free to re-assign count freely with something like `count = "hello"`, although this is usually not a good practice
 
+## Python Data Model
+
+- Since python is object-oriented, __everything__ in python is an object and stems from the ultimate base python class `object`.
+- This includes modules, classes, functions, methods, variables, constants.
+- Since everything is an object, everything has attributes and methods
+- All attributes of an object can be viewed with `dir(obj)`, which returns a list of attributes associated with obj (useful in REPL)
+- Note: `dir()` can also be used with no arguments to get a list of all names in the current local scope
+
+## Basic Python Data Types
+
+- [Numbers](#numbers)
+- [Sequences](#sequences)
+- [Set types]()
+- [Mappings]()
+- [Callables]()
+- [Modules]()
+- [Custom classes]()
+- [Class instances]()
+- [Internal types]()
+- [Special types]()
+
+### Numbers
+
+- Numbers are immutable, once created their value cannot change
+- Integral Numbers
+    - Integers (int) - unlimited size, defined literally with nothing or + or - then only digits 
+        - eg. 105, -6, +29934893274827348982374, 0)
+    - Booleans (bool) - can only have a value of True or False
+- Real Numbers (float) 
+    - Double-precision floating-point numbers (w/ max value of 1.7976931348623157e+308)
+    - Defined literally with decimal (integer then . then integer) or decimal then E then integer. Also defined as float("inf"), float("-inf"), or float("nan") for special values
+        - eg. 0.5, 800.45, 45, 2.5E-100, 2584375.58324E25, 20., 0.0
+- Complex Numbers (complex)
+    - A pair of double-precision floats with complex.real and complex.imag component attributes
+    - Defined literally with float then a + then a float with a j appended (ex. 2.5 + 10j, 0j, 5+4j, 500.0j)
+        - ex. For a complex number z, the z.real and z.imag attributes can be used to access components
+
+#### More on Integers
+
+- Integers can be represented in various ways
+- If you have a long integer, you can section it up for readability w/ underscores
+    - eg. 1_000_000 or 299_792_458 or even technically 1_24_673_23 (don’t do this tho pls)
+- The underscores are completely ignored at runtime and are for readability only
+- Integers can also be represented in binary, octal, and hexadecimal with prefixes 0b, 0o, and 0x accordingly:
+    - eg. Binary: 0b0010001, Octal: 0o7214, Hexadecimal: 0xFF0FF
+
+### Sequences
+
+- Sequences represent a finite ordered set indexed by non-negative integers
+- These are zero-indexed, so the first element is at index 0
+- A sequence seq can be indexed with value i using the bracket notation: seq[i] which will return the (i+1)th value in the sequence
+- The built-in function len(), when passed a sequence, returns the number of elements in that sequence
+- A sequence seq can be sliced using the notation seq[start:stop:step] where start, stop, and step are indices in seq corresponding to a slice of the sequence starting at start, up to (not including) stop, with a step of step
+    - eg. if a sequence seq contains the elements "a", "b", "c", "d", "e", "f", "g", "h", then seq[2:6:2] returns the elements "c", "e" in a sequence of same type as seq
+- Sequences are distinguished based on their mutability
