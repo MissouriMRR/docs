@@ -124,13 +124,6 @@ Again, still in the home repository, copy the following into the terminal:
 ```
 git clone https://github.com/MissouriMRR/SUAS-2023.git --recursive 
 ```
- 
-
-Copy the following command while in the home repo, as before: 
-
-```
-git clone https://github.com/auvsi-suas/interop.git 
-```
 
 
 \
