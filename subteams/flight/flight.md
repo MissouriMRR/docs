@@ -16,13 +16,13 @@ Here you will find documentation and tutorials relating to the flight subteam, w
 In order to run Multirotor code and program effectively with MAVSDK & PX4, a Linux virtual machine with Ubuntu 20.04 is recommended. Use the following link to download the Ubuntu OS: 
 
 ### Ubuntu Link:
--  https://ubuntu.com/download/desktop  
+-  [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) 
 
 And choose among the following links for your preferred virtual machine: 
 
 ### Virtual Machine Links:
-- https://www.vmware.com/products/workstation-player.html  
-- https://www.virtualbox.org/wiki/Downloads  
+- [https://www.vmware.com/products/workstation-player.html](https://www.vmware.com/products/workstation-player.html)  
+- [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 A Linux virtual machine is not required; it is entirely possible to run Multirotor code using Mac OS. However, ***please*** do not use Windows. The following instructions are based on Ubuntu 20.04. 
 
@@ -38,7 +38,7 @@ sudo apt install git
 
 Next is Python, the language we will be programming in for the majority of the semester. We will be using Python 3.10 which can be installed through the terminal, or, alternatively, through the following link:
 
-- https://www.python.org/downloads/  
+- [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 The first command to copy is: 
 
@@ -147,7 +147,7 @@ Before you push any code to a branch in a Multirotor repo, run Pre-commit by typ
 
 For the next piece of software, open a web browser and use the following link: 
 
-- https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html  
+- [https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) 
 
 This page redirects you to the instructions for downloading QGroundControl, a supplementary software that allows you to get an overhead map of the drone during flight. Follow the instructions for Linux download, or if you’re the brave soul using Mac OS, use the instructions for that operating system. 
 
