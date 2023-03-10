@@ -4,7 +4,7 @@ permalink: /flight/
 
 # Flight Docs
 
-[Back to Software Docs](/docs/)
+[Back to Flight Docs](/docs/flight/)
 
 
 ### **What is jMAVSim?**
