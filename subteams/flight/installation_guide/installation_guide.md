@@ -6,8 +6,7 @@ permalink: /flight/installation_guide/
 
 [Back to Flight Docs](/docs/flight/)
 
-\
-*Virtual Machine Installation Process*
+# Virtual Machine Installation Process ###
 
 **Step 1: Install a Linux Virtual Machine**
 
