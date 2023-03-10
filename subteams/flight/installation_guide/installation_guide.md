@@ -1,5 +1,5 @@
 ---
-permalink: /flight/
+permalink: /flight/installation_guide/
 ---
 
 # Flight Docs

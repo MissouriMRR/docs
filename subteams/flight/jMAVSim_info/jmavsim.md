@@ -1,5 +1,5 @@
 ---
-permalink: /flight/
+permalink: /flight/jmavsim/
 ---
 
 # Flight Docs
