@@ -17,6 +17,7 @@ The flight subteam utilizes the following:
 - QGroundControl
 - MAVSDK
 
+\
 PX4 is the flight control software used for sending commands to the drone.
 
 jMAVSim is a simulator that allows you to fly drones around in a simulated world while running PX4.
