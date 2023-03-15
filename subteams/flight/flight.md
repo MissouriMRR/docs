@@ -42,8 +42,14 @@ MAVSDK is the python package we use to code.
 
 Find the installation guide at the bottom of this page and follow the instructions to get your coding environment set up.
  
-### Links ###
+### Information and Setup ###
 
 - [Installation Guide](/docs/flight/installation_guide/)
 - [jMAVSim Information Page](/docs/flight/jmavsim/)
 - [Asynchronous Information Page](/docs/flight/asynchronous/)
+- [QGroundControl Official Page](https://docs.qgroundcontrol.com/master/en/index.html)
+
+### Previous Competition Code ###
+
+- [SUAS-2023](https://github.com/MissouriMRR/SUAS-2023)
+- [SUAS-2022](https://github.com/MissouriMRR/SUAS-2022)
