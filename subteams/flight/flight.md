@@ -51,5 +51,5 @@ Find the installation guide at the bottom of this page and follow the instructio
 
 ### Previous Competition Code ###
 
-- [SUAS-2023](https://github.com/MissouriMRR/SUAS-2023)
-- [SUAS-2022](https://github.com/MissouriMRR/SUAS-2022)
+- [SUAS-2023](https://github.com/MissouriMRR/SUAS-2023/tree/develop/flight)
+- [SUAS-2022](https://github.com/MissouriMRR/SUAS-2022/tree/develop/flight)
