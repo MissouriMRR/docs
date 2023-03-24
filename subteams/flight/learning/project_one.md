@@ -24,6 +24,7 @@ familiar with some basic MAVSDK functions.
 
 \
 **Process**
+
 1.) Create a new file and name it takeoff_and_land.py (Don't forget the .py)
 
 2.) At the top of the file, type ```import asyncio``` and below it ```from mavsdk import System```
