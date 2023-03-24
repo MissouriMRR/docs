@@ -49,7 +49,7 @@ Find the installation guide at the bottom of this page and follow the instructio
 - [Asynchronous Information Page](/docs/flight/asynchronous/)
 - [QGroundControl Official Page](https://docs.qgroundcontrol.com/master/en/index.html)
 - [MAVSDK Example Code](https://github.com/mavlink/MAVSDK-Python/tree/main/examples)
-* The most important files to start with are: 
+  The most important files to start with are: 
   - [Takeoff-and-Land](https://github.com/mavlink/MAVSDK-Python/blob/main/examples/takeoff_and_land.py)
   - [Go-to](https://github.com/mavlink/MAVSDK-Python/blob/main/examples/goto.py)
   - [Mission](https://github.com/mavlink/MAVSDK-Python/blob/main/examples/mission.py)
@@ -58,3 +58,7 @@ Find the installation guide at the bottom of this page and follow the instructio
 
 - [SUAS-2023](https://github.com/MissouriMRR/SUAS-2023/tree/develop/flight)
 - [SUAS-2022](https://github.com/MissouriMRR/SUAS-2022/tree/develop/flight)
+
+### Learning ###
+
+- [Project One](/docs/flight/project_one/)
