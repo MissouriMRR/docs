@@ -22,7 +22,13 @@ more commonly used MAVSDK functions.
 \
 **Process**
 
-1. Create and connect to a drone object
+1.) Create a new file and name it go_to_waypoint.py (Don't forget the .py)
+
+2.) At the top of the file, type ```import asyncio``` and below it ```from mavsdk import System```
+
+3.) Make an asynchronous function called "run()"
+
+4.) To connect to the simulator drone, paste in this code
 
 ```
     drone = System()                                    ## Creates a new system object named drone that can be used later when  
@@ -39,13 +45,17 @@ more commonly used MAVSDK functions.
             break
 ```
 
-2.) Set the takeoff altitude to 25ft
+5.) Arm the drone with the command drone.action.arm() *(Be sure to do it asynchronously!)*
+
+6.) Set the takeoff altitude for the drone with the following line ```await drone.param.set_param_float("MIS_TAKEOFF_ALT", 25)``` (The number you use for the altitude is arbitrary for now.)
+
+7.) Call the takeoff function
  
-3.) Use a tool like Google Earth / Google Maps to find a GPS coordinate in the Missouri S&T golf course
+8.) Use a tool like Google Earth / Google Maps to find a GPS coordinate in the Missouri S&T golf course
 
-4.) Use the MAVSDK commands to travel to the desired waypoint ```go_to_location```
+9.) Use the MAVSDK commands to travel to the desired waypoint ```go_to_location```
 
-5.) Return to home using the built-in ```return_to_launch()``` function
+10.) Return to home using the built-in ```return_to_launch()``` function
 
 
 
