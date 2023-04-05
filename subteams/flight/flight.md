@@ -61,4 +61,6 @@ Find the installation guide at the bottom of this page and follow the instructio
 
 ### Learning ###
 
-- [Project One](/docs/flight/project_one/)
+- [Project 1](/docs/flight/project_one/)
+- [Project 2](/docs/flight/project_two/)
+- [Project 3](/docs/flight/project_three/)
