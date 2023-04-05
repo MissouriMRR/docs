@@ -5,7 +5,7 @@ permalink: /flight/project_two/
 
 # Flight Docs
 
-[Back to Flight Home](/docs/)
+[Back to Flight Home](/docs/flight/)
 
 ### Second Project: Go to Waypoint
 
@@ -46,6 +46,8 @@ more commonly used MAVSDK functions.
 4.) Use the MAVSDK commands to travel to the desired waypoint ```go_to_location```
 
 5.) Return to home using the built-in ```return_to_launch()``` function
+
+
 
 \
 **QGroundControl and JMAVSIM**

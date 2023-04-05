@@ -5,7 +5,7 @@ permalink: /flight/project_three/
 
 # Flight Docs
 
-[Back to Flight Home](/docs/)
+[Back to Flight Home](/docs/flight/)
 
 
 ### Third Project: Mission Mode

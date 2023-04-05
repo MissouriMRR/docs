@@ -5,7 +5,7 @@ permalink: /flight/project_one/
 
 # Flight Docs
 
-[Back to Flight Home](/docs/)
+[Back to Flight Home](/docs/flight/)
 
 
 ### First Project: Takeoff and Land
