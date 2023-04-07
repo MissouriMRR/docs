@@ -55,7 +55,7 @@ mission_items = []
     mission_items.append(MissionItem(47.398039859999997, 8.5455725400000002, 25, 10, True, float('nan'), float('nan'), MissionItem.CameraAction.NONE, float('nan'), float('nan'),  float('nan'), float('nan'), float('nan')))
 ``` 
 
-Utilizing the format above, create two more MissionItem objects using the below coordinates, 
+Utilizing the format above, create two more MissionItem objects using the below coordinates 
 and compile them into a ```MissionPlan object:  mission_plan = MissionPlan(mission_items)```
 
 ```
