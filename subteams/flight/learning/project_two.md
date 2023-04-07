@@ -52,10 +52,13 @@ more commonly used MAVSDK functions.
 7.) Call the takeoff function
  
 8.) Use a tool like Google Earth / Google Maps to find a GPS coordinate in the Missouri S&T golf course
-    ```Example Coordinates (37.94852048112047, -91.78427643078165)
+
+```
+    Example Coordinates 
+    (37.94852048112047, -91.78427643078165)
     (37.94852048108085, -91.78427643078165)
     (37.94852048104123, -91.78427643078165)
-    ```
+```
 
 9.) Use the MAVSDK commands to travel to the desired waypoint ```go_to_location```
 
