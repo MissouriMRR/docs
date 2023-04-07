@@ -56,7 +56,7 @@ mission_items = []
 ``` 
 
 Utilizing the format above, create two more MissionItem objects using the below coordinates 
-and compile them into a ```MissionPlan object:  mission_plan = MissionPlan(mission_items)```
+and compile them into a MissionPlan object:  ```mission_plan = MissionPlan(mission_items)```
 
 ```
    (37.94852048112047, -91.78427643078165)
