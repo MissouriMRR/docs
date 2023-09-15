@@ -15,7 +15,7 @@ This page assumes you've followed the steps in [Environment Setup (Windows)](/do
     - This will activate a virtual environment outfitted with the necessary dependencies need to interact with the simulation with Python.
 3. Start the Unreal Engine simulation using the editor's `Play` button
 4. Start the PX4 and MavSDK servers by running `\scripts\servers.ps1`
-    - if you encounter any issues with PX4 and MavSDK connecting, check out the [environment debugging page](/docs/simulation/environment-debug)
+    - if you encounter any issues with PX4 and MavSDK connecting, check out the [environment debugging page](/docs/simulation/environment-debug/windows)
 5. Run your code!
 
 Whenever you want to rerun code, you must

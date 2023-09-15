@@ -18,3 +18,10 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 
 - [Simulation 2020-2022](https://github.com/MissouriMRR/Simulation)
 
+## Docs Directory
+
+- [Simulation Installations](/docs/simulation/install)
+    - [Installing on Windows](/docs/simulation/install/windows)
+    - [Installing on Linux](/docs/simulation/install/linux)
+- [Flying the Drone with Code](/docs/simulation/flying/)
+- [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
