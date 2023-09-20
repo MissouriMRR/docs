@@ -92,7 +92,7 @@ Immediately, you should run `poetry install` to configure a Python environment f
 
 ### Configuration File Setup
 
-After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.bat`. This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
+After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
 1. replace `mav_sdk_server_path` with the absolute path to the `\bin` directory located in you MavSDK server install (the zip you downloaded previously)
 2. replace `px4_path` with the absolute path of your PX4 directory (default is `C:\PX4\`)
 3. `drone_port` should ideally be correct already; if you encounter any issues with connecting to the virtual drone, check the [debugging page](/docs/simulation/environment-debug/windows)
