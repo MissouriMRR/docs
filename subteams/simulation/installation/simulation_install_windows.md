@@ -6,9 +6,22 @@ permalink: /simulation/install/windows/
 
 [Back to Simulation Docs](/docs/simulation/)
 
-There are several pieces of software needed to get up and running with the simulator, namely PX4, Unreal Engine, and MavSDK. You will also need the software ubiquitous to the software team ([git](https://git-scm.com), [poetry](https://python-poetry.org)).
+There are several pieces of software needed to get up and running with the simulator, namely PX4, Unreal Engine, and MavSDK. You will also need the software ubiquitous to the software team:
+- [git](https://git-scm.com)
+- [poetry](https://python-poetry.org/docs/)
+    - *if you are on **Windows 11***, Poetry will not automatically be added to your path
+    - find the folder where poetry was installed (likely `C:\Users\<your user>\AppData\Roaming\pypoetry`) in a file explorer or terminal
+        - copy the *full path* of the `\venv\Scripts` subdirectory
+        - type "environment variables" into the Windows search bar and selected the "Edit system environment variables" option 
+            - if this doesn't work, go to your Windows Settings > About > Advanced System Properties > Environment variables...
+        - in the top list of variables (the User variables), click the `PATH` option, then click "Edit..."
+        - click the "New" button on the right; paste the full path of the Poetry scripts directory into the next PATH entry
+            - this path will probably look something like `C:\Users\<your username>\AppData\Roaming\pypoetry\venv\Scripts`
+        - click "Ok" on all the Windows you've pull up to the point
+        - restart any terminals you have open
+        - now you should have access to the `poetry` command!
 
-This page applies only to Windows users.
+**Note:** This page applies only to Windows users.
 
 ## Table of Contents
 
@@ -72,7 +85,7 @@ These two softwares act as the bridge between your code and the virtual drone.
 3. Run/click on `run-console.bat` to start the Cygwin bash console
 4. Clone the PX4 Firmware repository from within the opened bash console: `git clone --recursive -j8 https://github.com/PX4/Firmware.git`
 5. go to the newly-cloned Firmware repository and checkout this "known good" branch: `git checkout v1.11.3`
-6. run `make px4_sitl_default none_iri`. You will encounter serveral red text messages: in response to each, type 'u' and press enter.
+6. run `make px4_sitl_default none_iris`. You will encounter serveral red text messages: in response to each, type 'u' and press enter.
 
 ### MavSDK
 
@@ -86,16 +99,16 @@ The MavSDK server is what your Python code will directly interface with; then, t
 
 ### Simulation Git Repository
 
-The simulation git repository contains many useful files that streamline running code. Clone it to your desired location using `git clone https://github.com/MissouriMRR/Simulation-2023.git`
+The simulation git repository contains many useful files that streamline running code. Open a terminal instance and clone it to your desired location using `git clone https://github.com/MissouriMRR/Simulation-2023.git`. This creates a new directory called `\Simulation-2023\` in the current working directory of your terminal.
 
-Immediately, you should run `poetry install` to configure a Python environment for testing/running code.
+Next, you should navigate to your local copy of the repository (just run `cd .\Simulation-2023\` immediately after running `git clone`) and run `poetry install`. This should create a virtual environment for you to run code.
 
 ### Configuration File Setup
 
 After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
-1. replace `mav_sdk_server_path` with the absolute path to the `\bin` directory located in you MavSDK server install (the zip you downloaded previously)
+1. replace `mav_sdk_server_path` with the absolute path to the `\bin` directory located in your MavSDK server install (the zip you downloaded previously)
 2. replace `px4_path` with the absolute path of your PX4 directory (default is `C:\PX4\`)
-3. `drone_port` should ideally be correct already; if you encounter any issues with connecting to the virtual drone, check the [debugging page](/docs/simulation/environment-debug/windows)
+3. `drone_port` should ideally be correct already; if you encounter any issues with connecting to the virtual drone at later steps, check the [debugging page](/docs/simulation/environment-debug/windows)
 
 Your final `server-config.json` should look similar to this:
 
@@ -103,11 +116,15 @@ Your final `server-config.json` should look similar to this:
 {
     "drone_port": 14030,
     "mavsdk_server_path": "C:\\Dev\\school\\multirotor\\MavSDK\\bin",
-    "px4_path": "C:\\PX4\\"
+    "px4_path": "C:\\PX4"
 }
 ```
 
 ## Next Steps
 
-If you've run all the above steps, you're environment should be set up! Next, you should go the the [flying page](/docs/simulation/flying) to see how to fly the virtual drone with Python code. Also, if you run into problems while attempting to fly the drone, check out the [environment debugging](/docs/simulation/environment-debug/windows) page.
+If you've run all the above steps, you're environment should be set up! 
+
+Next, you should go the the [flying page](/docs/simulation/flying) to see how to fly the virtual drone with Python code.
+
+Also, if you run into problems while attempting to fly the drone, check out the [environment debugging](/docs/simulation/environment-debug/windows) page.
 
