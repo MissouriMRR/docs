@@ -105,7 +105,7 @@ Next, you should navigate to your local copy of the repository (just run `cd .\S
 
 ### Configuration File Setup
 
-After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
+After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. (If this command results in an error that mentions Execution Policy, follow [these steps](#incompatible-execution-policy).) This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
 1. replace `mav_sdk_server_path` with the absolute path to the `\bin` directory located in your MavSDK server install (the zip you downloaded previously)
 2. replace `px4_path` with the absolute path of your PX4 directory (default is `C:\PX4\`)
 3. `drone_port` should ideally be correct already; if you encounter any issues with connecting to the virtual drone at later steps, check the [debugging page](/docs/simulation/environment-debug/windows)
@@ -120,6 +120,15 @@ Your final `server-config.json` should look similar to this:
 }
 ```
 
+#### Incompatible Execution Policy
+
+If you encountered no errors completing the above, you may skip this.
+
+Sometimes, Windows may not allow you to run PowerShell scripts due to your Execution Policy. To fix this, start a PowerShell/Terminal as Administrator (right-click the application as click "Run as Administrator"). Then, run the following command:
+```ps1
+Set-ExecutionPolicy RemoteSigned
+```
+Afterward, restart all Terminal/PowerShell instances to apply the change.
 ## Next Steps
 
 If you've run all the above steps, you're environment should be set up! 
