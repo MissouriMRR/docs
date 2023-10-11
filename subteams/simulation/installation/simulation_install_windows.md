@@ -6,22 +6,23 @@ permalink: /simulation/install/windows/
 
 [Back to Simulation Docs](/docs/simulation/)
 
+**Note:** This page applies only to Windows users.
+
 There are several pieces of software needed to get up and running with the simulator, namely PX4, Unreal Engine, and MavSDK. You will also need the software ubiquitous to the software team:
 - [git](https://git-scm.com)
 - [poetry](https://python-poetry.org/docs/)
-    - *if you are on **Windows 11***, Poetry will not automatically be added to your path
+    - *if you are on **Windows 11***, Poetry will not automatically be added to your PATH variable (which is important for ease-of-use)
     - find the folder where poetry was installed (likely `C:\Users\<your user>\AppData\Roaming\pypoetry`) in a file explorer or terminal
         - copy the *full path* of the `\venv\Scripts` subdirectory
+            - this path will probably look something like `C:\Users\<your username>\AppData\Roaming\pypoetry\venv\Scripts`
         - type "environment variables" into the Windows search bar and selected the "Edit system environment variables" option 
             - if this doesn't work, go to your Windows Settings > About > Advanced System Properties > Environment variables...
         - in the top list of variables (the User variables), click the `PATH` option, then click "Edit..."
         - click the "New" button on the right; paste the full path of the Poetry scripts directory into the next PATH entry
-            - this path will probably look something like `C:\Users\<your username>\AppData\Roaming\pypoetry\venv\Scripts`
+            
         - click "Ok" on all the Windows you've pull up to the point
         - restart any terminals you have open
         - now you should have access to the `poetry` command!
-
-**Note:** This page applies only to Windows users.
 
 ## Table of Contents
 
@@ -41,7 +42,7 @@ It is recommended you follow this tutorial in the order listed.
 
 ## Installing Unreal Engine
 
-We will be using Unreal Engine for simulating virtual drones. If you have the Epic Games Launcher, you can download Unreal Engine from the "Unreal Engine" tab. If you don't have the Epic Games Launcher, then you will have to [download](https://store.epicgames.com/en-US/download) it to install Unreal Engine.
+We will be using Unreal Engine for simulating virtual drones. If you have the Epic Games Launcher installed already (e.g., if you own *Fortnite*), you can download Unreal Engine from the "Unreal Engine" tab. If you don't have the Epic Games Launcher, then you will have to [download](https://store.epicgames.com/en-US/download) it to install Unreal Engine.
 
 The Unreal Engine version you will download is **4.27.2**. AirSim, which allows us to simulate multirotors in Unreal, does *not* work with Unreal Engine 5 or greater.
 
@@ -79,7 +80,7 @@ These two softwares act as the bridge between your code and the virtual drone.
 
 1. download the [PX4 0.9 installer](https://github.com/PX4/PX4-windows-toolchain/releases/download/v0.9/PX4.Windows.Cygwin.Toolchain.0.9.msi) and run the `.msi` file that is downloaded.
     - if Windows attempts to prevent you from running the installer, click on "more info" and click "run anyway"
-    - you may install PX4 wherever you please (default location is `C:\PX4\`)
+    - the installer will ask you where to install PX4; you may install it wherever you please (default location is `C:\PX4\`)
     - **Do NOT check the box at the end that says “Clone PX4 Repository and Start Simulation"**
 2. Open a command line prompt/open file explorer and navigate to where you installed PX4
 3. Run/click on `run-console.bat` to start the Cygwin bash console
@@ -105,7 +106,7 @@ Next, you should navigate to your local copy of the repository (just run `cd .\S
 
 ### Configuration File Setup
 
-After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. (If this command results in an error that mentions Execution Policy, follow [these steps](#incompatible-execution-policy).) This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
+After cloning our repository, navigate to the `\scripts\` directory within it. In that directory, run `.\setup.ps1`. (If this command results in an error that mentions Execution Policy, follow [these steps](#incompatible-execution-policy), then try again). This command will create two files: `\scripts\server-config.json` and `\scripts\airsim-settings.json`. Open `server-config.json` in a text editor of your choice and do the following:
 1. replace `mav_sdk_server_path` with the absolute path to the `\bin` directory located in your MavSDK server install (the zip you downloaded previously)
 2. replace `px4_path` with the absolute path of your PX4 directory (default is `C:\PX4\`)
 3. `drone_port` should ideally be correct already; if you encounter any issues with connecting to the virtual drone at later steps, check the [debugging page](/docs/simulation/environment-debug/windows)
