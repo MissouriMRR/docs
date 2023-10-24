@@ -81,21 +81,26 @@ Each different type of object that the model needs to identify needs to be repre
 - One line in the file per object in the corresponding image
 
 File format:
-
-	<object-class> <x-center> <y-center> <width> <height>
-	<object-class> <x-center> <y-center> <width> <height>
-	                   .
-					   .
-					   .
+```
+<object-class> <x-center> <y-center> <width> <height>
+<object-class> <x-center> <y-center> <width> <height>
+						  .
+						  .
+						  .
+```
 
  - `object-class`
    - The index (0 - n) of the class in `dataset_name.yaml` (see below)
- - `x-center` `y-center`
-   - x and y coordinates of the center of a minimum bounding box around the object in the image
+ - `x-center` , `y-center`
+   - x and y coordinates of the center of a minimum upright bounding box around the object in the image
    - Normalized to [0, 1]
- - `width` `height`
+ - `width` , `height`
    - width and height of the minimum bounding box around the object in the image
    - Normalized to [0, 1]
+
+#### YAML file (`dataset_name.yaml`)
+
+
 
 ## References
 
