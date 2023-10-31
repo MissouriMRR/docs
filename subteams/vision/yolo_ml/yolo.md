@@ -6,7 +6,9 @@ permalink: /vision/yolo_ml/
 
 [Back to Vision Docs](/docs/vision/)
 
-YOLO (You Only Look Once) is a deep learning object detection algorithm made by the Ultralytics company. It uses a convolutional neural network ([CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)) to effectively identify objects based on their features.
+YOLO (You Only Look Once) is a deep learning object detection algorithm family made by the Ultralytics company. It uses a convolutional neural network ([CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)) to effectively identify objects based on their features.
+
+There are different versions of YOLO. This documentation is for YOLOv8. Additionally, YOLOv8 has multiple available sizes: yolov8n (Nano), yolov8s (Small), yolov8m (Medium), yolov8l (Large), and yolov8x (Extra Large). The smallest size is the least accurate but is the fastest to train and run. As size increases the models get more accurate, but they also get slower.
 
 ## Dependencies
 
@@ -100,10 +102,75 @@ File format:
 
 #### YAML file (`dataset_name.yaml`)
 
+This is the file that specifies the location of the dataset, training data, validation data, and the classes of objects to will identify (with an index of the class)
 
+```yaml
+# the dataset YAML file
+path: dataset_name/
+train: 'train/images'
+val: 'valid/images'
+
+# class names
+names:
+	0: 'obj_class_0'
+	1: 'obj_class_1'
+	2: 'obj_class_2'
+	.: 'obj_class_...'
+	.: 'foo'
+	.: 'obj_class_...'
+	.: 'bar'
+	.: 'obj_class_...'
+	n: 'obj_class_n'
+```
+
+### Actually Training
+
+With a dataset created, the next step is to train a model on the dataset
+
+```python
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO('yolov8n.pt')
+
+# Train the model
+results = model.train(data='dataset_name.yaml', epochs=100, imgsz=640)
+```
+
+**Breakdown:**
+ - `yolov8n.pt`
+   - This specifies the model to use, YOLOv8n is the nano model, other sizes may be used and may be more accurate but will be slower
+ - `dataset_name.yaml`
+   - This is the previously created YAML file that specifies information about the training dataset
+ - epochs
+   - This is the number of times the model will train on the input data
+   - More epochs will take longer but (probably) result in a more accurate model
+ - imgsz
+   - The size of the input images
+   - If images are not this size, then they will automatically be resized, preserving the aspect ratio of objects in the image
+     - the picture will not be stretched, ie. circles will stay circles
+ - **Other parameters**
+   - There are other optional parameters that can be passed to this function to control aspects of the training
+   - These parameters can be seen on Ultralytics's [Docs](https://docs.ultralytics.com/#arguments)
+
+### Using the Trained Model
+
+The new model can be loaded, once it has been saved as a `.pt` file. Then the model can be passed an image (can be passed as a numpy array or image path). The `save=True` and `save_txt=True` kwargs can be passed to the `predict()` function to have more verbose output saved to files in the project directory.
+
+```python
+from ultralytics import YOLO
+
+# load your trained model
+model = YOLO("path/to/your/trained/model.pt")
+
+# generate the results
+results = model.predict(img)
+```
 
 ## References
 
-- **<https://learnopencv.com/train-yolov8-on-custom-dataset/>**
-- **<https://docs.ultralytics.com/>**
+- **[YOLO Tutorial](https://learnopencv.com/train-yolov8-on-custom-dataset/)**
+- **[Ultralytics YOLO Docs](https://docs.ultralytics.com/)**
+- **[Data Augmentation Whitepaper](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-019-0197-0)**
+- **[Wikipedia CNN Page](https://en.wikipedia.org/wiki/Convolutional_neural_network)**
 
