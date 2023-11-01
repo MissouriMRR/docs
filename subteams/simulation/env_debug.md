@@ -19,7 +19,7 @@ There are many points of failure when attempting to run your Python code unrelat
 Most often, this means you forgot to start the Unreal Engine simluation. However, if this is not the case, it's possible that PX4 is looking at the wrong TCP port.
 
 To fix this:
-1. find the TCP port PX4 is looking at
+1. find the correct TCP port 
     - if you haven't already, run `\scripts\run-servers.ps1`
     - in PX4's console, locate the line `Waiting for simulator to accept connection on TCP port XXXX`
         - the port listed is what you need
