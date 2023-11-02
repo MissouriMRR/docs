@@ -100,6 +100,14 @@ File format:
    - width and height of the minimum bounding box around the object in the image
    - Normalized to [0, 1]
 
+Normalization is the process of taking any range of data and turning it into a range of [0-1]. When normalizing coordinates on images, the minimum value (min_val) will be 0 (because the indicies of the pixels starts at 0), the maximum value (max_val) will be the width (or length) of the image, and the current value (val) is the value to be normalized. The result will be a number between 0 and 1.
+
+Normalization formula:
+
+	    val - min_val
+	--------------------- = val_normalized
+	  max_val - min_val  
+
 #### YAML file (`dataset_name.yaml`)
 
 This is the file that specifies the location of the dataset, training data, validation data, and the classes of objects to will identify (with an index of the class)
@@ -171,6 +179,6 @@ results = model.predict(img)
 
 - **[YOLO Tutorial](https://learnopencv.com/train-yolov8-on-custom-dataset/)**
 - **[Ultralytics YOLO Docs](https://docs.ultralytics.com/)**
-- **[Data Augmentation Whitepaper](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-019-0197-0)**
+- **[Data Augmentation Whitepaper](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-019-0197-0)** *For future reference*
 - **[Wikipedia CNN Page](https://en.wikipedia.org/wiki/Convolutional_neural_network)**
 
