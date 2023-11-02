@@ -151,7 +151,7 @@ results = model.train(data='dataset_name.yaml', epochs=100, imgsz=640)
      - the picture will not be stretched, ie. circles will stay circles
  - **Other parameters**
    - There are other optional parameters that can be passed to this function to control aspects of the training
-   - These parameters can be seen on Ultralytics's [Docs](https://docs.ultralytics.com/#arguments)
+   - These parameters can be seen on Ultralytics's [Docs](https://docs.ultralytics.com/models/train/#arguments)
 
 ### Using the Trained Model
 
