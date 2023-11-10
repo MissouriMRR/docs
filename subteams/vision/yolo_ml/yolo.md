@@ -100,13 +100,13 @@ File format:
    - width and height of the minimum bounding box around the object in the image
    - Normalized to [0, 1]
 
-Normalization is the process of taking any range of data and turning it into a range of [0-1]. When normalizing coordinates on images, the minimum value (min_val) will be 0 (because the indicies of the pixels starts at 0), the maximum value (max_val) will be the width (or length) of the image, and the current value (val) is the value to be normalized. The result will be a number between 0 and 1.
-
 Normalization formula:
 
 	    val - min_val
 	--------------------- = val_normalized
-	  max_val - min_val  
+	  max_val - min_val
+
+Normalization is the process of taking any range of data (range of [min_val-max_val] for any min_val \< max_val) and turning it into a range of [0-1]. When normalizing coordinates on images, min_val will be 0 (because the indicies of the pixels starts at 0), max_val will be the width-1 or length-1 of the image, for x and y pixel coordinates respectively, and val is the value to be normalized. The result will be a number between 0 and 1.
 
 #### YAML file (`dataset_name.yaml`)
 
@@ -120,15 +120,15 @@ val: 'valid/images'
 
 # class names
 names:
-	0: 'obj_class_0'
-	1: 'obj_class_1'
-	2: 'obj_class_2'
-	.: 'obj_class_...'
-	.: 'foo'
-	.: 'obj_class_...'
-	.: 'bar'
-	.: 'obj_class_...'
-	n: 'obj_class_n'
+  0: 'obj_class_0'
+  1: 'obj_class_1'
+  2: 'obj_class_2'
+  .: 'obj_class_...'
+  .: 'foo'
+  .: 'obj_class_...'
+  .: 'bar'
+  .: 'obj_class_...'
+  n: 'obj_class_n'
 ```
 
 ### Training
@@ -154,7 +154,7 @@ results = model.train(data='dataset_name.yaml', epochs=100, imgsz=640)
    - This is the number of times the model will train on the input data
    - More epochs will take longer but should hopefully result in a more accurate model
  - imgsz
-   - The size of the input images
+   - The max of the length and width of the input images
    - If images are not this size, then they will automatically be resized, preserving the aspect ratio of objects in the image
      - the picture will not be stretched, ie. circles will stay circles
  - **Other parameters**
