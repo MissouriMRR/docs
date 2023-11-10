@@ -38,7 +38,7 @@ To train a YOLO model, you need images to feed it.
 
 A **LOT** of images.
 
-Additionally, these images need to be *annotated*, annotations are additional files that correspond to images. These files contain data about relevant objects in the image.
+Additionally, these images need to be *annotated*. Annotations are additional files that correspond to images. These files contain data about relevant objects in the image.
 
 Each different type of object that the model needs to identify needs to be represented as a class. The dataset to be used for training needs to include: the definition of all the classes, the images, and a description of which objects are in each image and where they are.
 
@@ -75,7 +75,7 @@ Each different type of object that the model needs to identify needs to be repre
 ##### Images
 
 - Sets of pictures that contain some/all of the objects to identify
-- Need to have varied pictures for best results
+- Use varied pictures for best results
 
 ##### Labels (annotations)
 
@@ -131,9 +131,9 @@ names:
 	n: 'obj_class_n'
 ```
 
-### Actually Training
+### Training
 
-With a dataset created, the next step is to train a model on the dataset
+With a dataset created, the next step is to train a model.
 
 ```python
 from ultralytics import YOLO
@@ -147,12 +147,12 @@ results = model.train(data='dataset_name.yaml', epochs=100, imgsz=640)
 
 **Breakdown:**
  - `yolov8n.pt`
-   - This specifies the model to use, YOLOv8n is the nano model, other sizes may be used and may be more accurate but will be slower
+   - This specifies the model to use. YOLOv8n is the nano model - other sizes can be used and may be slower but more accurate
  - `dataset_name.yaml`
    - This is the previously created YAML file that specifies information about the training dataset
  - epochs
    - This is the number of times the model will train on the input data
-   - More epochs will take longer but (probably) result in a more accurate model
+   - More epochs will take longer but should hopefully result in a more accurate model
  - imgsz
    - The size of the input images
    - If images are not this size, then they will automatically be resized, preserving the aspect ratio of objects in the image
@@ -163,7 +163,7 @@ results = model.train(data='dataset_name.yaml', epochs=100, imgsz=640)
 
 ### Using the Trained Model
 
-The new model can be loaded, once it has been saved as a `.pt` file. Then the model can be passed an image (can be passed as a numpy array or image path). The `save=True` and `save_txt=True` kwargs can be passed to the `predict()` function to have more verbose output saved to files in the project directory.
+The new model can be loaded, once it has been saved as a `.pt` file. Then the model can be passed an image; either as a numpy array or image path. The `save=True` and `save_txt=True` kwargs can be passed to the `predict()` function to have more verbose output saved to files in the project directory.
 
 ```python
 from ultralytics import YOLO
