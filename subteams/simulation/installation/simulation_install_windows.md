@@ -66,7 +66,7 @@ To install AirSim, follow these steps:
 
 1. clone the AirSim GitHub repository: `git clone https://github.com/Microsoft/AirSim`
     - the location of your local copy does not matter
-2. Launch `x64 Native Tools Command Prompt for VS 2022`
+2. Launch `x64 Native Tools Command Prompt for VS 2022` (using Windows search)
     - navigate to where you cloned AirSim with the `cd` command
     - run the command `.\build.cmd`
     - wait for AirSim to build
