@@ -39,8 +39,6 @@ familiar with some basic MAVSDK functions.
     await drone.connect(system_address="udp://:14540")  ## The connect function is used to connect the physical drone and the simulated drone. 
                                                         ## The system address parameter can be changed to connect to either the real drone, or the simulator drone.
 
-    status_text_task = asyncio.ensure_future(print_status_text(drone))
-
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():   ## Loops over the connection state function to check if drone is properly connected to the given system address
         if state.is_connected:                          ## Prints the following statement if properly connected
