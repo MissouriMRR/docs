@@ -47,6 +47,7 @@ pip install <package_name>
 - [NumPy](/docs/vision/numpy/)
 - [OpenCV](/docs/vision/opencv/)
 - [Pytesseract](/docs/vision/pytesseract/)
+- [YOLO ML](/docs/vision/yolo_ml/)
 
 ## Past Competition Vision Code
 
