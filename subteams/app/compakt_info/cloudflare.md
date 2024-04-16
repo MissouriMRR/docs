@@ -48,17 +48,17 @@ See all of the tables in the database
 PRAGMA table_list
 ```
 \
-See information about the logs columns
+See information about the testlogs columns
 ```sql
-PRAGMA table_info(test_logs)
+PRAGMA table_info(testlogs)
 ```
 \
-See everything in the logs table
+See everything in the testlogs table
 ```sql
-SELECT * FROM test_logs
+SELECT * FROM testlogs
 ```
 \
-Preview some of the logs table data
+Preview some of the testlogs table data
 ```sql
-SELECT id, start_time, stop_time, location FROM test_logs ORDER BY start_time LIMIT 50 OFFSET 0
+SELECT id, start_time, stop_time, location FROM testlogs ORDER BY start_time LIMIT 50 OFFSET 0
 ```
