@@ -2,7 +2,7 @@
 permalink: /app/
 ---
 
-# Apps Docs
+# App Docs
 
 [Back to Software Docs](/docs/)
 
