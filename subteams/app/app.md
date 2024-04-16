@@ -1,5 +1,5 @@
 ---
-permalink: /apps/
+permalink: /app/
 ---
 
 # Apps Docs

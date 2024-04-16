@@ -1,8 +1,8 @@
 ---
-permalink: /apps/compakt_cloudflare/
+permalink: /app/compakt_cloudflare/
 ---
 
-[Back to Apps Home](/apps/)
+[Back to App Home](/app/)
 
 # Cloudflare
 
