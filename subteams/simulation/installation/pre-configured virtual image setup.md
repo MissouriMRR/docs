@@ -2,7 +2,7 @@
 permalink: /simulation/install/pre-configured/
 ---
 
-# Pre-Configured Environment Setup
+# Pre-Configured Virtual Image Setup
 
 In an effort to simplifiy setup and improve compatiability, we run our PX4 flight controller and flight code in a Linux virtual machine. 
 
