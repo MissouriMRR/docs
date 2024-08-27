@@ -21,8 +21,9 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 ## Docs Directory
 
 - [Simulation Installations](/docs/simulation/install)
-    - [Installing on Windows](/docs/simulation/install/windows)
-    - [Installing on Linux](/docs/simulation/install/linux)
+    - [Intalling Pre-Configured Enviroment](docs/simulation/install/easy)
+    - [Installing on Windows (Advanced)](/docs/simulation/install/windows)
+    - [Installing on Linux (Advanced)](/docs/simulation/install/linux)
 - [Flying the Drone with Code](/docs/simulation/flying/)
 - [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
 - [Using Satellite Data in Unreal Engine](/docs/simulation/importing_satellite_data)
