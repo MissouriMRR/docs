@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/install/pre-configed/easy_1/
+permalink: /simulation/install/pre-configured/easy_1/
 ---
 
 # Pre-Configured Virtual Image Setup
