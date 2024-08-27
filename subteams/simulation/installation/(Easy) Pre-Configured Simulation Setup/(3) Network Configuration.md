@@ -1,3 +1,7 @@
+---
+permalink: /simulation/install/easy_3/
+---
+
 # Network Configuration
 In this step, we configure the networks of both the virtual image and your computer so they can communicate.These steps are the easiest to mess up so read carefully
 
@@ -34,3 +38,4 @@ Here we will configure the Sample Drone Virtual Image to direct flight controlle
 4. Save and exit by pressing ctrl-x, pressing y, and pressing enter.
 5. Finally enter `source ~/.bashrc` and you're done!
 
+### [Now to fly the drone](/docs/simulation/flying/)
