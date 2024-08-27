@@ -21,7 +21,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 ## Docs Directory
 
 - [Simulation Installations](/docs/simulation/install)
-    - [Intalling Pre-Configured Enviroment](/docs/simulation/install/pre-configed/easy)
+    - [Intalling Pre-Configured Enviroment](/docs/simulation/install/pre-configured/easy)
     - [Installing on Windows (Advanced)](/docs/simulation/install/windows)
     - [Installing on Linux (Advanced)](/docs/simulation/install/linux)
 - [Flying the Drone with Code](/docs/simulation/flying/)
