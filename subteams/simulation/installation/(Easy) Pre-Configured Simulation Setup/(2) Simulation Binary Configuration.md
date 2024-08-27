@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/install/pre-configed/easy_2/
+permalink: /simulation/install/pre-configured/easy_2/
 ---
 
 # Simulation Binary Setup
