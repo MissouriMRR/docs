@@ -1,3 +1,7 @@
+---
+permalink: /simulation/install/easy_2/
+---
+
 # Simulation Binary Setup
 
 These steps will explain how to configure the simulation executable.
@@ -59,4 +63,4 @@ Open the JSON and paste the following code into it:
 # *AND BE SURE TO SAVE IT*
 
 ### Now to Configure Your Network
-[Next Step]()
+### [Next Step](docs/simulation/install/easy_3/)
