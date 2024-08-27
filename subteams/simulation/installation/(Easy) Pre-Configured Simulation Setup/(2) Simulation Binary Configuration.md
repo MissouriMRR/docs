@@ -63,4 +63,4 @@ Open the JSON and paste the following code into it:
 # *AND BE SURE TO SAVE IT*
 
 ### Now to Configure Your Network
-### [Next Step](docs/simulation/install/pre-configed/easy_3/)
+### [Next Step](/docs/simulation/install/pre-configured/easy_3/)
