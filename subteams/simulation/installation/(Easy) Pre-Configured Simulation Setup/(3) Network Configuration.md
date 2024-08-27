@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/install/easy_3/
+permalink: /simulation/install/pre-configed/easy_3/
 ---
 
 # Network Configuration
