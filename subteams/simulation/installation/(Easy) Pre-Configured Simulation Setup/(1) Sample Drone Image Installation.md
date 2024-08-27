@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/install/easy_1/
+permalink: /simulation/install/pre-configed/easy_1/
 ---
 
 # Pre-Configured Virtual Image Setup
@@ -20,4 +20,4 @@ In an effort to simplifiy setup and improve compatiability, we run our PX4 fligh
 3. Next, import the downloaded .ova file into virtualbox. When configuring RAM and CPU usage keep in mind that the virtual machine will be sharing power with computationally intensive simulations. 
 4. Login to the Linux virtual machine using the password "multirotor"
 
-    ### Now onto the next [next steps](docs/simulation/install/easy_2/)
+    ### Now onto the next [next steps](docs/simulation/install/pre-configed/easy_2/)
