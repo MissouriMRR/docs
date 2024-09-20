@@ -144,18 +144,11 @@ Before you push any code to a branch in a Multirotor repo, run Pre-commit by typ
 
 For the next piece of software, open a web browser and use the following link: 
 
-- [https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) 
+- [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html) 
 
 This page redirects you to the instructions for downloading QGroundControl, a supplementary software that allows you to get an overhead map of the drone during flight. Follow the instructions for Linux download, or if you’re the brave soul using Mac OS, use the instructions for that operating system. 
+be sure to follow the instructions for downloading the installer file as well as any extra packages required (like libfuse2)
 
-When attempting to run QGroundControl from the terminal, and you get an error of 
-
-“AppImages require FUSE to run” 
-
-this can be resolved using the command 
-
-```
-sudo apt install libfuse2 
 ```
 
 
