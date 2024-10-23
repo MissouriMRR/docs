@@ -6,8 +6,6 @@ permalink: /simulation/realityscan/
 
 [Back to Simulation Docs](/docs/simulation/)
 
-You will need to have the RealityScan app downloaded on your mobile device.
-
 # Table of Contents
 - [Installing RealityScan and Blender](#Installing-RealityScan-and-Blender)    
 - [Creating Your Model](##Creating-your-Model)
@@ -15,33 +13,34 @@ You will need to have the RealityScan app downloaded on your mobile device.
 - [Converting your Model](##Converting-your-Model)
 - [Importing your Model](##Importing-your-Model)
 
-# Installing RealityScan and Blender
+## Installing RealityScan and Blender
 
 **Prerequisites:**
 
 1. Make an account with Epic Games (https://www.unrealengine.com/id/login).
-2. Download Blender on your computer (https://www.blender.org/download/).
+2. Download RealityScan on your mobile device.
+3. Download Blender on your computer (https://www.blender.org/download/).
 
 ## Creating your Model
 1. Once you are in the RealityScan app, you will need to sign into Epic Games.
 2. Press the blue + button.
 3. Press auto capture and walk around your object.
-   a. RealityScan recommends to avoid clear, shiny, and plain object such as glass, metal, and featureless plastics.
-   b. Take at least 20 pictures.
-   c. It'll process the pictures as you take them.
-   d. Press the blue → when you're done.
+    a. RealityScan recommends to avoid clear, shiny, and plain object such as glass, metal, and featureless plastics.
+    b. Take at least 20 pictures.
+    c. It'll process the pictures as you take them.
+    d. Press the blue → when you're done.
 5. Crop your imagine down to size, you'll want to have the lowest amount of polygons as possible.
 6. Name your model and press "Process Now"
 7. It'll usually take awhile for the model to process (More pictures → more time).
 
 ## Getting Access to your Model
 1. You can either share on sketchfab(requires a sketchfab account) or export it as a 3D model.
-   a. Sketchfab (You only have ~30 uploads per month)
-      i. Press "Share on Sketchfab" and give it a title.
-      ii. You can choose to add more attributes to it but they're not necessary.
-      iii. Press "Share on Sketchfab".
-   b. Export 3D Model
-      i. Find a way to access your .obj file (Ex: Google Drive).
+    a. Sketchfab (You only have ~30 uploads per month)
+        i. Press "Share on Sketchfab" and give it a title.
+        ii. You can choose to add more attributes to it but they're not necessary.
+        iii. Press "Share on Sketchfab".
+     b. Export 3D Model
+          i. Find a way to access your .obj file (Ex: Google Drive).
 2. Download your zip from either Google Drive or, for Sketchfab,
    a. Go to your Sketchfab account picture in the top right of the website and go to "Models".
    b. Select your model.
