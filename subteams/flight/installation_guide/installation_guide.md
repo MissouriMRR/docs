@@ -105,10 +105,12 @@ cd ..
 ```
 
 After ArduPilot is completely installed, you will need to add the DroneKit functionality
-to Python’s package manager. Run the following command:
+to Python’s package manager. The version of DroneKit we use is newer than the version
+available on PyPI. Run the following commands to install DroneKit:
 
 ```
-pip3 install dronekit
+wget https://github.com/MissouriMRR/docs/raw/refs/heads/main/subteams/flight/installation_guide/dronekit-2.9.2-py310-none-any.whl
+pip3 install dronekit-2.9.2-py310-none-any.whl
 ```
 
 \
