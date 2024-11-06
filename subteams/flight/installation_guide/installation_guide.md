@@ -93,6 +93,31 @@ python3.10 -V
 If everything was installed correctly, you should see Python 3.10.4 or above.
 
 \
+**Step 2.5: Installing Visual Studio Code (Optional)**
+
+Visual Studio Code (VS Code) is a popular code editor with many free extensions you can
+download to add features and customizations. If you are using WSL, VS Code might already
+be installed. You can check if VS Code is installed by seeing if the following command has
+any output:
+
+```
+which code
+```
+
+If VS Code is not installed, you can run the following command to install VS Code:
+
+```
+sudo snap install --classic code
+```
+
+Then, to open VS Code, simply run the following command in the directory you want to edit
+code in:
+
+```
+code .
+```
+
+\
 **Step 3: Installing ArduPilot Firmware**
 
 Copy the following Git command into a terminal:
