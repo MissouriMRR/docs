@@ -29,6 +29,14 @@ A Linux virtual machine is not required; it is entirely possible to run Multirot
 using macOS. However, **_please_** do not use Windows. The following instructions are
 based on Ubuntu 22.04.
 
+### Using Windows Subsystem for Linux (WSL):
+
+Alternatively, on Windows, you can instead install a more lightweight Linux VM using
+Windows Subsystem for Linux (WSL). Simple install
+[Ubuntu 22.04 from the Microsoft Store](https://www.microsoft.com/store/productId/9PN20MSR04DW).
+Then, in the Windows Terminal app, click the + button in the title bar and choose Ubuntu
+to open a new terminal in your Ubuntu VM.
+
 \
 **Step 2: Installing Basic Software**
 
