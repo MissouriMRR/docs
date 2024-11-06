@@ -11,8 +11,8 @@ permalink: /flight/installation_guide/
 **Step 1: Install a Linux Virtual Machine**
 
 In order to run Multirotor code and program effectively with DroneKit and ArduPilot, a
-Linux virtual machine with Ubuntu 22.04 is recommended. Use the following link to download
-the Ubuntu OS:
+Linux virtual machine (VM) with Ubuntu 22.04 is recommended. Use the following link to
+download the Ubuntu OS:
 
 ### Ubuntu Link:
 
@@ -25,17 +25,22 @@ And choose among the following links for your preferred virtual machine:
 -   [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 -   [https://www.vmware.com/products/workstation-player.html](https://www.vmware.com/products/workstation-player.html)
 
-A Linux virtual machine is not required; it is entirely possible to run Multirotor code
-using macOS. However, **_please_** do not use Windows. The following instructions are
-based on Ubuntu 22.04.
+A Linux VM is not required; it is entirely possible to run Multirotor code using macOS.
+However, **_please_** do not use Windows. The following instructions are based on Ubuntu
+22.04.
 
-### Using Windows Subsystem for Linux (WSL):
+### Alternative: Using Windows Subsystem for Linux (WSL):
 
 Alternatively, on Windows, you can install a more lightweight Linux VM using Windows
 Subsystem for Linux (WSL). Simply install
 [Ubuntu 22.04 from the Microsoft Store](https://www.microsoft.com/store/productId/9PN20MSR04DW).
 Then, in the Windows Terminal app, click the + button in the title bar and choose Ubuntu
 to open a new terminal in your Ubuntu VM.
+
+### More Information on Virtual Machines
+
+You can read more about virtual machines on
+[our page about virtual machines](/docs/virtual_machines/).
 
 \
 **Step 2: Installing Basic Software**
@@ -48,12 +53,8 @@ sudo apt install git
 ```
 
 Next is Python, the language we will be programming in for the majority of the semester.
-We will be using Python 3.10 which can be installed through the terminal, or,
-alternatively, through the following link:
-
--   [https://www.python.org/downloads/](https://www.python.org/downloads/)
-
-The first command to copy is:
+We will be using Python 3.10 which can be installed through the terminal. The first
+command to copy is:
 
 ```
 sudo apt install software-properties-common -y
@@ -146,16 +147,42 @@ wget https://github.com/MissouriMRR/docs/raw/refs/heads/main/subteams/flight/ins
 pip3 install dronekit-2.9.2-py310-none-any.whl
 ```
 
+_Note: pip installs Python packages, whereas apt installs system packages._
+
 \
 **Step 4: Cloning Important Repositories**
 
-Without entering any repos from the previous step, copy the following command into a
-terminal:
-
-Again, still in the home repository, copy the following into the terminal:
+First, you need to create an SSH key to be allowed to push to our repositories. Run the
+following command to create an SSH key:
 
 ```
-git clone https://github.com/MissouriMRR/SUAS-2025.git --recursive
+ssh-keygen -f ~/.ssh/my_github_key
+```
+
+**_Note: never share the contents of your SSH key._**
+
+To add the SSH key to your GitHub account, go to https://github.com/settings/keys, click
+the button labeled 'New SSH key', and then for the Key field paste the output of the
+following command:
+
+```
+cat ~/.ssh/my_github_key.pub
+```
+
+Then, whenever you open a new terminal, enter the following commands to activate your SSH
+key:
+
+```
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/my_github_key
+```
+
+This will allow you to push to our repositories on GitHub.
+
+To clone our main SUAS repository, run the following command:
+
+```
+git clone git@github.com:MissouriMRR/docs.git --recursive
 ```
 
 \
