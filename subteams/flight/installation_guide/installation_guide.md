@@ -32,7 +32,7 @@ based on Ubuntu 22.04.
 ### Using Windows Subsystem for Linux (WSL):
 
 Alternatively, on Windows, you can instead install a more lightweight Linux VM using
-Windows Subsystem for Linux (WSL). Simple install
+Windows Subsystem for Linux (WSL). Simply install
 [Ubuntu 22.04 from the Microsoft Store](https://www.microsoft.com/store/productId/9PN20MSR04DW).
 Then, in the Windows Terminal app, click the + button in the title bar and choose Ubuntu
 to open a new terminal in your Ubuntu VM.
@@ -95,10 +95,10 @@ If everything was installed correctly, you should see Python 3.10.4 or above.
 \
 **Step 2.5: Installing Visual Studio Code (Optional)**
 
-Visual Studio Code (VS Code) is a popular code editor with many free extensions you can
-download to add features and customizations. If you are using WSL, VS Code might already
-be installed. You can check if VS Code is installed by seeing if the following command has
-any output:
+Visual Studio Code (VS Code) is a popular code editor with numerous free extensions you
+can download to add features and customizations. If you are using WSL, VS Code might
+already be installed. You can check if VS Code is installed by seeing if the following
+command has any output:
 
 ```
 which code
