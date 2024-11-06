@@ -134,8 +134,8 @@ With the next command, install the Poetry software into the Virtual Machine:
 sudo pip3 install poetry
 ```
 
-Poetry is used to create a separate shell, or virtual terminal, through which you can run
-code as a safety precaution.
+Poetry is used to create a virtual environment that we use to safely and conveniently
+manage the libraries that our code depends on.
 
 Next, install pre-commit with the following command:
 
@@ -186,7 +186,7 @@ Now, each time you want to start the drone simulator, use the bash command
 ./opensitl.sh
 ```
 
-**If you attempt to run this new bash script and you receive the following error:**
+If you attempt to run this new bash script and you receive the following error:
 
 bash: ./opensitl.sh: Permission denied
 
@@ -194,4 +194,29 @@ You can easily resolve this by changing the file permissions using the following
 
 ```
 chmod u+x opensitl.sh
+```
+
+\
+**Step 7: Installing Dependencies in Poetry**
+
+Navigate to the SUAS repo in your terminal. Then, activate the Poetry virtual environment:
+
+```
+poetry shell
+```
+
+You will need to do this every time you work in the SUAS repo to be able to use the
+dependencies our code requires.
+
+Next, run the following command to install the dependencies (you need to do this only
+once):
+
+```
+poetry install
+```
+
+You can exit Poetry by running the following command while Poetry is active:
+
+```
+exit
 ```
