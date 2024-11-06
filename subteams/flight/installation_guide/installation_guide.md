@@ -207,6 +207,8 @@ Before you push any code to a branch in a Multirotor repo, run Pre-commit by typ
 pre-commit into the terminal before pushing code, and after adding files to a commit. This
 will auto-format your code and make it look somewhat nice.
 
+### QGroundControl (non-WSL users)
+
 For the next piece of software, open a web browser and use the following link:
 
 -   [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
@@ -216,6 +218,11 @@ supplementary software that allows you to get an overhead map of the drone durin
 Follow the instructions for Linux download, or if you’re the brave soul using macOS, use
 the instructions for that operating system. Be sure to follow the instructions for
 downloading the installer file as well as any extra packages required (like libfuse2).
+
+### Mission Planner (WSL users)
+
+If you're using WSL, you should install Mission Planner instead of QGroundControl:
+[https://ardupilot.org/planner/docs/mission-planner-installation.html](https://ardupilot.org/planner/docs/mission-planner-installation.html).
 
 \
 **Step 6: Creating a Convenience File (Optional)**
