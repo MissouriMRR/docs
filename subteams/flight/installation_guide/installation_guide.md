@@ -31,8 +31,8 @@ based on Ubuntu 22.04.
 
 ### Using Windows Subsystem for Linux (WSL):
 
-Alternatively, on Windows, you can instead install a more lightweight Linux VM using
-Windows Subsystem for Linux (WSL). Simply install
+Alternatively, on Windows, you can install a more lightweight Linux VM using Windows
+Subsystem for Linux (WSL). Simply install
 [Ubuntu 22.04 from the Microsoft Store](https://www.microsoft.com/store/productId/9PN20MSR04DW).
 Then, in the Windows Terminal app, click the + button in the title bar and choose Ubuntu
 to open a new terminal in your Ubuntu VM.
