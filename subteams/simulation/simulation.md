@@ -28,3 +28,4 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 - [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
 - [Using Satellite Data in Unreal Engine](/docs/simulation/importing_satellite_data)
 - [Using RealityScan to Create 3-D Models](/docs/simulation/realityscan)
+- [Loading Real World Data with Cesium for Unreal](docs/simulation/cesiumforunreal/)
