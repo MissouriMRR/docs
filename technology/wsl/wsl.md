@@ -12,7 +12,7 @@ Windows Subsystem for Linux is a Windows feature that allows for running a Linux
 
 ## Table of Contents
 
- - **!! TODO THIS ONCE ALL SECTIONS MADE !!**
+- **!! TODO THIS ONCE ALL SECTIONS MADE !!**
 
 ## Installing WSL
 
@@ -23,6 +23,7 @@ The below command must be run in a Powershell terminal with admin priviledges.
 To open an admin terminal: press the Windows key, search for powershell or terminal, and select the run as administrator option for it.
 
 Powershell command:
+
 ```powershell
 wsl --install
 ```
@@ -51,5 +52,5 @@ VSCode, a popular IDE that is recommended for programming on Multirotor, has an 
 
 ## References
 
- - [Microsoft WSL Documentation](https://learn.microsoft.com/en-us/windows/wsl/)
- - 
+- [Microsoft WSL Documentation](https://learn.microsoft.com/en-us/windows/wsl/)
+- [WSL VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
