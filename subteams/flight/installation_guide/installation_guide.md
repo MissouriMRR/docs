@@ -182,7 +182,7 @@ This will allow you to push to our repositories on GitHub.
 To clone our main SUAS repository, run the following command:
 
 ```
-git clone git@github.com:MissouriMRR/docs.git --recursive
+git clone git@github.com:MissouriMRR/SUAS-2025.git --recursive
 ```
 
 \
