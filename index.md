@@ -21,6 +21,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 - [Python](/docs/python/)
 - [Git](/docs/git/)
 - [Virtual Machines](/docs/virtual_machines)
+- [Flight Testing](/docs/flight_testing/)
 
 ## Archived
 
@@ -34,4 +35,3 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 - [IARC-2018 (2017-18)](https://github.com/MissouriMRR/IARC-2018)
 - [DroneKit (2016-17)](https://github.com/MissouriMRR/DroneKit)
 - [Panic (2016)](https://github.com/MissouriMRR/Panic)
-
