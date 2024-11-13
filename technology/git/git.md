@@ -43,8 +43,11 @@ Remote Repository:
 ### Installation - Command Line
 
 Linux (Debian/Ubuntu): `sudo apt install git`
+
 Linux (Fedora): `sudo dnf install git` or `sudo yum install git`
+
 Mac: [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
+
 Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
 ### Installation - GUIs
@@ -76,9 +79,10 @@ You will still need command line!
 
 Use `git help [COMMAND]`
 
+This lists out how to use the command and possible flags to use alongside the command for different functionality.
+
 Example Usage:
 - Wanna know how to use `git clone`? Then, use `git help clone`
-
 
 Note: `git help` can also be used as a standalone command or as `git help --all` to list the most common or all available commands, respectively
 
@@ -87,6 +91,7 @@ Note: `git help` can also be used as a standalone command or as `git help --all`
 Commits create a snapshot of the current state of your code.
 
 `git add <file>`
+
 `git commit -m “YOUR COMMIT MESSAGE”`
 
 How to write commit messages: [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
@@ -98,11 +103,12 @@ Branches are a set of code changes that can operate without affecting the main c
 Essentially, a branch has a separate history from the main codebase.
 
 `git branch <branch_name>`
+
 `git checkout <branch_name>`
 
-To create a new branch, use `git checkout -b “feature/branch_name”`
+To create a new branch, use `git checkout -b “feature/<branch_name>”`
 
-Note: the “feature/” part is there as our naming system for our branches. When creating a new branch for our repos, use this syntax.
+Note: the “feature/” part is there as our naming system for our branches. "feature/" is the most common type of naming convention you will use; it indicates a new feature will be added to the branch. You can also use "bugfix/" to indicate your branch is for smaller updates and fixes to the current code.
 
 ### Pushing
 
