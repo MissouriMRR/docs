@@ -1,3 +1,7 @@
+---
+permalink: /flight_testing/
+---
+
 # Flight Testing
 
 ### Introduction
