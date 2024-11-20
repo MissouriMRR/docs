@@ -51,6 +51,7 @@ pip install <package_name>
 
 ## Past Competition Vision Code
 
+- [SUAS-2023](https://github.com/MissouriMRR/SUAS-2023/tree/develop/vision)
 - [SUAS 2022](https://github.com/MissouriMRR/SUAS-2022/tree/develop/vision)
 - [IARC Mission 9](https://github.com/MissouriMRR/IARC-2020/tree/develop/vision)
 
