@@ -26,6 +26,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 ## Previous Competitions
 
+- [SUAS-2023 (2022-24)](https://github.com/MissouriMRR/SUAS-2023) 
 - [SUAS-2022 (2021-22)](https://github.com/MissouriMRR/SUAS-2022)
 - [IARC-2020 (2019-21)](https://github.com/MissouriMRR/IARC-2020)
 - [IARC-2019 (2018-19)](https://github.com/MissouriMRR/IARC-2019)
