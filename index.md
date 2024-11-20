@@ -15,6 +15,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 - [Flight](/docs/flight/)
 - [Vision](/docs/vision/)
 - [Simulation](/docs/simulation/)
+- [Apps](/docs/app)
 
 ## Tools and Technologies
 
@@ -22,10 +23,6 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 - [Git](/docs/git/)
 - [Virtual Machines](/docs/virtual_machines)
 - [Flight Testing](/docs/flight_testing/)
-
-## Archived
-
-- [Apps](/docs/apps/)
 
 ## Previous Competitions
 
