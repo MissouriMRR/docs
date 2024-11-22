@@ -34,12 +34,49 @@ Next, open QGroundControl. This is where you will be able to see the drone's tel
 ![rtl1.png](rtl1.png)
 ![rtl3.png](rtl3.png)
 
-## Step 3: Run Code
-TODO
+Lastly, check all of the flight parameters that are in the code. Make sure all waypoints are where they should be, the altitude isn't set to anything crazy, and that you know what units the data is in. Don't fly all the way to Maryland!
 
-* Add connection string and "the dance" and manual flights
+## Step 3: Run Tests
+We have a few tests before we test our code to make sure the drone is acting as it should be.
+
+We start with a quick manual flight. Have the safety pilot take off, fly around for a bit, hold in the air for 10-15 seconds, then land again.
+
+Next, run a connection test to the drone, just to check that you are able to establish a stable connection to the drone again.
+
+You also want to run any unit tests for any external components that are on the drone. Like running the camera test to check the camera, or a servo test for the servos. Just to check all connections from the computer or the flight controller to any "external" devices.
+
+If you notice any inconsistencies with how the drone is flying, consider doing "the dance". This is a calibration routine that can be started either through QGroundControl or MissionPlanner.
+![calib.png](calib.png)
+In ArduPilot & MissionPlanner you should just have to rotate it around a lot to calibrate it.
+
+## Step 4: Run the Code
+
+Now that you have done all the pre-flight tests and checks, you can finally run the code. Make sure to log any flights in the EHS binder.
+
+To run a specific file within the repo from the base folder:
+```bash
+# To run flight/test_files/connection_test.py
+python -m flight.test_files.connection_test
+```
 
 ## Tips
+### Connection Strings
+```bash
+# Connect to simulator (ardupilot)
+tcp:127.0.0.1:5762
+
+# Connect to physical drone using telemetry radio
+# First, find the serial device
+ls /dev/ttyUSB*
+ls /dev/ttyACM*
+# The address will be something like /dev/ttyUSB0 or /dev/ttyACM0
+
+# Then, use mavproxy to split the connection between code & QGround/MissionPlanner
+mavproxy.py --master=/dev/ttyUSB0 --out 127.0.0.1:14550 --out 127.0.0.1:14446
+# Port 14446 is used for the code
+# Port 14550 is used for QGC/MissionPlanner (QGC should auto connect)
+```
+
 ### SSH over USB
 While testing Maverick there would be a lot of times where the TX2 computer would not autoconnect to the router's network. Instead of bringing out a monitor and using a GUI to fix it, SSHing over USB using minicom saves a lot of time.
 ```bash
@@ -56,7 +93,10 @@ minicom -D /dev/ttyUSB0
 # Now you will have an emulated terminal to the onboard computer
 ```
 
-
 ## Troubleshooting
 ### Connection Troubles
-TODO
+List of things to try if you can't connect to the onboard computer:
+* Try different baudrates/ip addrs
+* Make sure address in code is correct (and has correct baudrate if needed)
+* Use mavproxy/mavsdk_server to attempt connections to get more error details
+    * mavsdk_server is a executable that is included in the MAVSDK library for Python. You can find it under (local library path)/mavsdk/bin/mavsdk_server, local library path is usually ~/.local/lib/python3.10/site-packages/
