@@ -50,8 +50,7 @@ permalink: /simulation/cesiumforunreal/
 10. This should create terrain for your level, to change where you're at:
     - Select the **CesiumGeoreference** object and go to details
     - Where it says **Origin Latitute**/**Origin Longitude**/**Origin Height**, you are able to change the coordinates of where your level is centered.
-  
-
-
-
-
+11. You will have to set up the collisions so the drone does not fall through the world
+    - Select 'Cesium World Terrain' and go to the Details tab for it
+    - Under 'Navigation' select Create Nav Collision
+    - Under 'Collision Presets' select PhysicsActor
