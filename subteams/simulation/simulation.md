@@ -10,7 +10,7 @@ Here you will find documentation and tutorials relating to the simulation subtea
 
 ## Getting Started
 
-To get started with installation of the simulator, follow the guide here: [Simulation Installations](/docs/simulation/install/)
+To get started with installation of the simulator, follow the guide here: [Simulation Installation](/docs/simulation/install/)
 
 After you have installed the simulator, proceed to [Flying the Drone with Code](/docs/simulation/flying/).
 
@@ -21,10 +21,8 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 
 ## Docs Directory
 
-- [Simulation Installations](/docs/simulation/install)
-    - [Intalling Pre-Configured Enviroment](/docs/simulation/install/pre-configured/easy)
-    - [Installing on Windows (Advanced)](/docs/simulation/install/windows)
-    - [Installing on Linux (Advanced)](/docs/simulation/install/linux)
+- [Simulation Installation](/docs/simulation/install)
+    - [Simulation Installation (Old)](/docs/simulation/install/legacy)
 - [Flying the Drone with Code](/docs/simulation/flying/)
 - [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
 - [Using Satellite Data in Unreal Engine](/docs/simulation/importing_satellite_data)
