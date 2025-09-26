@@ -6,22 +6,22 @@ permalink: /flight/installation_guide/
 
 [Back to Flight Docs](/docs/flight/)
 
-# Installation Process
+## Installation Process
 
-## Step 1: Install a Linux Virtual Machine (Optional)
+### Step 1: Install a Linux Virtual Machine (Optional)
 
 In order to run Multirotor code and program effectively with DroneKit and ArduPilot, a Linux virtual machine (VM) with Ubuntu 24.04 is recommended. If you're on Windows 11, [using Windows Subsystem for Linux (WSL) is recommended](#alternative-using-windows-subsystem-for-linux-wsl), instead.
 
 Use the following link to download the Ubuntu OS:
 
--   [https://releases.ubuntu.com/noble/](https://releases.ubuntu.com/noble/)
+- [https://releases.ubuntu.com/noble/](https://releases.ubuntu.com/noble/)
 
 And choose among the following links for your preferred hypervisor:
 
--   [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
--   [https://www.vmware.com/products/workstation-player.html](https://www.vmware.com/products/workstation-player.html)
+- [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+- [https://www.vmware.com/products/workstation-player.html](https://www.vmware.com/products/workstation-player.html)
 
-### Alternative: Using Windows Subsystem for Linux (WSL):
+#### Alternative: Using Windows Subsystem for Linux (WSL):
 
 On Windows, you can install a more lightweight Linux VM using Windows
 Subsystem for Linux (WSL). To install Ubuntu 24.04 using WSL, open a PowerShell instance and run the following:
@@ -32,7 +32,7 @@ wsl --install "Ubuntu-24.04"
 
 To run your virtual machine, execute `wsl` in any PowerShell/Terminal. To see more commands, you can use `wsl --help`.
 
-If you will be using our custom Unreal-based simulation (or need to network between native Windows programs and programs running in WSL), it is easiest to use mirrored networking mode. Unfortunately, this is only compatible with WSL2, meaning that Windows 11 is required. 
+If you will be using our custom Unreal-based simulation (or need to network between native Windows programs and programs running in WSL), it is easiest to use mirrored networking mode. Unfortunately, this is only compatible with WSL2, meaning that Windows 11 is required.
 
 Run the following command in PowerShell to set up mirrored networking:
 
@@ -54,20 +54,20 @@ wsl --shutdown
 wsl # restart wsl
 ```
 
-### More Information on Virtual Machines
+#### More Information on Virtual Machines
 
 You can read more about virtual machines on
 [our page about virtual machines](/docs/virtual_machines/).
 
-## Step 2: Installing Git
+### Step 2: Installing Git
 
 > For the rest of this guide, make sure to execute commands within your virtual machine!
 
 We manage our source files using [Git](https://git-scm.com) and [GitHub](https://github.com); you will need Git installed on your computer and a GitHub account to contribute to our projects.
 
-### Install Git
+#### Install Git
 
-#### Linux/WSL (Ubuntu)
+##### Linux/WSL (Ubuntu)
 
 Run the following command:
 
@@ -75,7 +75,7 @@ Run the following command:
 sudo apt update && sudo apt install git
 ```
 
-#### Windows Native
+##### Windows Native
 
 To install on Windows natively, you must use an installer:
 
@@ -83,7 +83,7 @@ To install on Windows natively, you must use an installer:
 
 WSL has access to your files on your Windows machine, so you can use Git directly on Windows if you desire. Keep in mind that only the commands involving `git` will work outside of WSL in the context of this guide; everything else should be executed within WSL.
 
-### Create a GitHub Account
+#### Create a GitHub Account
 
 _If you don't have a GitHub account_, visit this link to create an account:
 
@@ -91,16 +91,15 @@ _If you don't have a GitHub account_, visit this link to create an account:
 
 It is recommended you use a personal email and not your school email when creating your account so you have complete control over your account even after you graduate.
 
-#### SSH Keys
+##### SSH Keys
 
 You will need to associate an SSH key with your GitHub account to push to our repository. GitHub has a good tutorial on how to set this up, so check it out:
 
 - [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
+### Step 3: Environment Setup
 
-## Step 3: Environment Setup
-
-### Clone The Repository
+#### Clone The Repository
 
 First, you must clone the flight team's Git repository. Run the following in your shell:
 
@@ -109,10 +108,9 @@ git clone git@github.com:MissouriMRR/SUAS-2025.git
 ```
 
 > This will create a new folder, `SUAS-2025`, in your current working directory. Make sure to run that command in the folder into which you want to download the code!
-
 > You will need to have [SSH Keys](#ssh-keys) set up for this command to work.
 
-### Install Host Dependencies
+#### Install Host Dependencies
 
 Next, change directories to the repository:
 
@@ -138,10 +136,12 @@ If you need GPU access, run the following:
 
 You will also need the drivers corresponding to your GPU:
 
-- Nvidia CUDA Toolkit: https://developer.nvidia.com/cuda-zone
-- AMD ROCm Install: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html
+- Nvidia CUDA Toolkit: <https://developer.nvidia.com/cuda-zone>
+- AMD ROCm Install: <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html>
 
-### Building Containers
+**You will need to restart your terminal/shell for the installation to complete.**
+
+#### Building Containers
 
 To simplify (most) of environment setup, we have [containerized](https://en.wikipedia.org/wiki/Containerization_(computing)) our environment. Specifically, we use [Podman](https://podman.io), which is pretty much the same as its more popular counterpart, [Docker](https://www.docker.com). (Podman and Docker both follow the [Open Container Initiative](https://opencontainers.org) standards, so they are largely interchangable.)
 
@@ -155,7 +155,7 @@ podman-compose build
 
 This may take a while, so do something else in the meantime.
 
-## Step 4: Running Containers (Using the Environment)
+### Step 4: Running Containers (Using the Environment)
 
 We have two containers: `env` and `sim`. The `env` container contains everything you need to run your code; the `sim` container will run an [ArduPilot](https://ardupilot.org) drone simulation upon startup.
 
@@ -209,7 +209,7 @@ If you want to take matters into your own hands, you'll need to know how to run/
    - 99% of stuff that applies to Docker applies to Podman 
 - `docker-compose` Documentation: https://docs.docker.com/compose/
 
-### Configuring the Containers
+#### Configuring the Containers
 
 If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying up `compose.yml`. If you ran `install.sh` with a GPU selected, `compose.override.yml` should already exist.
 
@@ -218,7 +218,7 @@ For more information on compose files, see the following:
 - `podman-compose` Documentation: https://docs.podman.io/en/latest/markdown/podman-compose.1.html
 - `docker-compose` Documentation: https://docs.docker.com/compose/
 
-#### Example: Overriding The `sim` Container's Start Command
+##### Example: Overriding The `sim` Container's Start Command
 
 By default, the `sim` container is configured to run the following command on startup:
 
@@ -256,9 +256,9 @@ services:
 
 The above combines the alternate `sim` command with an Nvidia GPU-enabled `env` container.
 
-## Step 5: Installing Useful Programming Tools
+### Step 5: Installing Useful Programming Tools
 
-### Visual Studio Code
+#### Visual Studio Code
 
 Visual Studio Code (VS Code) is a popular code editor with numerous free extensions you
 can download to add features and customizations; however, if you wish to use a different IDE/text editor, feel free to do so.
@@ -290,7 +290,7 @@ will auto-format your code and make it look somewhat nice.
 
 For the next piece of software, open a web browser and use the following link:
 
--   [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+- [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
 
 This page redirects you to the instructions for downloading QGroundControl, a
 supplementary software that allows you to get an overhead map of the drone during flight.
@@ -298,7 +298,7 @@ Follow the instructions for Linux download, or if you’re the brave soul using 
 the instructions for that operating system. Be sure to follow the instructions for
 downloading the installer file as well as any extra packages required (like libfuse2).
 
-### Mission Planner (WSL users)
+#### Mission Planner (WSL users)
 
 If you're using WSL, you should install Mission Planner instead of QGroundControl:
 [https://ardupilot.org/planner/docs/mission-planner-installation.html](https://ardupilot.org/planner/docs/mission-planner-installation.html).
