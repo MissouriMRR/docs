@@ -161,22 +161,22 @@ We have two containers: `env` and `sim`. The `env` container contains everything
 
 > By default, the `sim` container is meant to be used with the Simulation Subteam's Unreal simulation. If you need to override this, use the `compose.override.yml` file to override the `command` property for the `sim` service to the desired command you can run ([see here](#example-overriding-the-sim-containers-start-command)). If you don't know how compose files work, you can look to `compose.yml` for reference or [read this](https://docs.docker.com/compose/).
 
-For ease of use, we have a `run_containers.sh` script. To run both `env` and `sim`, simply run:
+For ease of use, we have a `run_container.sh` script. To run both `env` and `sim`, simply run:
 
 ```bash
-./run_containers.sh
+./run_container.sh
 ```
 
 To run the `env` container on its own, run:
 
 ```bash
-./run_containers.sh env
+./run_container.sh env
 ```
 
 To attach to the `env` container (connect to it using an interactive shell), run:
 
 ```bash
-./run_containers.sh attach env
+./run_container.sh attach env
 ```
 
 > Your local SUAS repository code will be mounted in the `env` container, so any changes made to your local copy of the code is automatically reflected in the container, and vice versa. Essentially, the `env` container is a glorified virtual environment.
