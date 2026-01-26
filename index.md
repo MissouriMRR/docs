@@ -21,7 +21,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 - [Python](/docs/python/)
 - [Git](/docs/git/)
-- [Github Pages](/docs/github_pages)
+- [Github Pages](/docs/github_pages/)
 - [Virtual Machines](/docs/virtual_machines)
 - [Windows Subsystem for Linux (WSL)](/docs/wsl)
 - [Flight Testing](/docs/flight_testing/)
