@@ -46,12 +46,13 @@ Ordered and unordered lists:
 https://github.com
 
 #### Linking to a section on the same page
-[Links](#my-section) `[Links](#my-section)`
+[To Links Section Header](#my-section) `[To Links Section Header](#my-section)`
 
 ### Code Blocks
-Inline: `git status`
+Inline: `git status` ``git status``
 
 Fenced:
+(Use \`\`\`)
 ```
 git add .
 git commit -m "Message"
