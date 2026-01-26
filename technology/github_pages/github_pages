@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /github_pages/
+---
 # Markdown and Navigation Basics for GitHub Pages
 
 GitHub Pages uses the **jekyll-commonmark** Markdown engine, supporting headings, lists, links, tables, code blocks, and more. 
