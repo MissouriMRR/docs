@@ -64,7 +64,7 @@ git commit -m "Message"
 (Another Page)[anotherpage.md] `(Another Page)[anotherpage.md]`
 
 ### Linking to a Page in a Subfolder
-tutorial/start.md
+(Sub Folder)[sub_folder_example/sub_folder_example.md] `(Sub Folder)[sub_folder_example/sub_folder_example.md]`
 
 ### Linking to a Parent Directory
 ../index.md
@@ -72,7 +72,17 @@ tutorial/start.md
 ### Linking with Absolute Paths
 /docs/contact.md
 
-### Linking to HTML Pages
+Setting the page permalink by including the following at the top of the page allows you to access the page as if it is in the base directory
+```
+---
+layout: default
+permalink: /github_pages/
+---
+```
+See this page for an example:
+[Github Pages](/docs/github_pages/) `[Github Pages](/docs/github_pages/)`
+
+### Linking to Images
 contact.html
 
 
