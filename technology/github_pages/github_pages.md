@@ -25,9 +25,10 @@ Headings are created using one to six `#` symbols. GitHub automatically assigns 
 ### Styling Text
 Standard Markdown formatting, such as bold, italic, and combined emphasis.
 
-**Bold text**
-*Italic text*
-***Bold and italic***
+**Bold text:** `**Bold text:**`
+
+*Italic text* `*Italic text*`
+***Bold and italic*** `***Bold and italic***`
 
 ### Lists
 Ordered and unordered lists:
