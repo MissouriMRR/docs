@@ -28,15 +28,16 @@ Standard Markdown formatting, such as bold, italic, and combined emphasis.
 **Bold text:** `**Bold text:**`
 
 *Italic text* `*Italic text*`
+
 ***Bold and italic*** `***Bold and italic***`
 
 ### Lists
 Ordered and unordered lists:
 
-- Item 1
+- Item 1 `- Item 1`
 - Item 2
 
-1. First
+1. First `1. First`
 2. Second
 
 ### Links
