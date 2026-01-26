@@ -16,12 +16,11 @@ This page explains:
 
 ### Headings
 Headings are created using one to six `#` symbols. GitHub automatically assigns IDs to headings, enabling internal page links.
-`#H1 Title`
-# H1 Title 
-`## H2 Section`
-## H2 Section
-`### H2 Section`
-### H3 Subsection
+
+# H1 Title `#H1 Title`
+## H2 Section `## H2 Section`
+### H3 Subsection `### H2 Section`
+
 
 ### Styling Text
 Standard Markdown formatting, such as bold, italic, and combined emphasis.
