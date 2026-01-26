@@ -61,15 +61,16 @@ git commit -m "Message"
 ## Navigating Between Pages in Your Repository
 
 ### Linking to Another Page in the Same Folder
-(Another Page)[anotherpage.md] `(Another Page)[anotherpage.md]`
+[Another Page](anotherpage.md) `(Another Page)[anotherpage.md]`
 
 ### Linking to a Page in a Subfolder
-(Sub Folder)[sub_folder_example/sub_folder_example.md] `(Sub Folder)[sub_folder_example/sub_folder_example.md]`
+[Sub Folder](sub_folder_example/sub_folder_example.md) `(Sub Folder)[sub_folder_example/sub_folder_example.md]`
 
 ### Linking to a Parent Directory
 ../index.md
 
 ### Linking with Absolute Paths
+(Base directory is always /docs/ ...)
 /docs/contact.md
 
 Setting the page permalink by including the following at the top of the page allows you to access the page as if it is in the base directory
