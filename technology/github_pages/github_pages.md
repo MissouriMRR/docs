@@ -86,6 +86,8 @@ See this page for an example:
 [Github Pages](/docs/github_pages/) `[Github Pages](/docs/github_pages/)`
 
 ### Linking to Images (Also the File Organization Used for Examples)
-![File Organization](File_organization.png "File Organization")
+`![File Organization](File_organization.png)`
+
+![File Organization](File_organization.png)
 
 
