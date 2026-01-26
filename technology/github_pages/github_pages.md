@@ -43,7 +43,7 @@ Ordered and unordered lists:
 ### Links
 
 #### Standard hyperlink
-[https://github.com](https://github.com)
+[https://github.com](https://github.com) `[https://github.com](https://github.com)`
 
 #### Linking to a section on the same page
 [To Links Section Header](#Headings) `[To Links Section Header](#Headings)`
