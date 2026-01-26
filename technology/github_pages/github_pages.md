@@ -6,11 +6,7 @@ permalink: /github_pages/
 
 GitHub Pages uses the **jekyll-commonmark** Markdown engine, supporting headings, lists, links, tables, code blocks, and more. 
 
-This page explains:
-- The essential Markdown syntax you’ll use on GitHub Pages  
-- How to use permalinks in the Jekyll Markdown engine
-- How to link between pages using relative paths  
-- How to link within a page using heading anchors  
+
 
 ## Markdown Essentials
 
