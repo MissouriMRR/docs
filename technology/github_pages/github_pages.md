@@ -46,7 +46,7 @@ Ordered and unordered lists:
 [https://github.com](https://github.com)
 
 #### Linking to a section on the same page
-[To Links Section Header](#Links) `[To Links Section Header](#my-section)`
+[To Links Section Header](#Headings) `[To Links Section Header](#Headings)`
 
 ### Code Blocks
 Inline: `git status` \`git status\`
