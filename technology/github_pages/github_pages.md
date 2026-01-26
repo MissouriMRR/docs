@@ -43,7 +43,7 @@ Ordered and unordered lists:
 ### Links
 
 #### Standard hyperlink
-https://github.com
+[https://github.com](https://github.com)
 
 #### Linking to a section on the same page
 [To Links Section Header](#Links) `[To Links Section Header](#my-section)`
@@ -61,7 +61,7 @@ git commit -m "Message"
 ## Navigating Between Pages in Your Repository
 
 ### Linking to Another Page in the Same Folder
-about.md
+(Another Page)[anotherpage.md] `(Another Page)[anotherpage.md]`
 
 ### Linking to a Page in a Subfolder
 tutorial/start.md
