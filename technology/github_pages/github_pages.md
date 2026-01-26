@@ -46,7 +46,7 @@ Ordered and unordered lists:
 https://github.com
 
 #### Linking to a section on the same page
-#my-section
+[Links](#my-section) `[Links](#my-section)`
 
 ### Code Blocks
 Inline: `git status`
