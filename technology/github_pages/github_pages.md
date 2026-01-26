@@ -71,6 +71,7 @@ git commit -m "Message"
 
 ### Linking with Absolute Paths
 (Base directory is always /docs/ ...)
+
 /docs/contact.md
 
 Setting the page permalink by including the following at the top of the page allows you to access the page as if it is in the base directory
