@@ -22,6 +22,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 ## Docs Directory
 
 - [Simulation Installations](/docs/simulation/install)
+    - [Docker Install for Ardupilot]
     - [Intalling Pre-Configured Enviroment](/docs/simulation/install/pre-configured/easy)
     - [Installing on Windows (Advanced)](/docs/simulation/install/windows)
     - [Installing on Linux (Advanced)](/docs/simulation/install/linux)
