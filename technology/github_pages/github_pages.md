@@ -84,7 +84,7 @@ permalink: /github_pages/
 See this page for an example:
 [Github Pages](/docs/github_pages/) `[Github Pages](/docs/github_pages/)`
 
-### Linking to Images
-contact.html
+### Linking to Images (Also File Organization Used For Examples)
+![File Organization](File_organization.png "File Organization")
 
 
