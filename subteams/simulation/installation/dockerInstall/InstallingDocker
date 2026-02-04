@@ -1,0 +1,16 @@
+---
+permalink: /simulation/flying/
+---
+
+# Installing And Configuring Docker 
+Docker is an open-source platform that automates the deployment, scaling, and management of applications using containerization. Containers package an application and its dependencies together, ensuring consistency across different environments. This makes it easier to develop, ship, and run applications reliably on various systems.
+## Download Docker Desktop
+
+* Go to this [link](https://www.docker.com/products/docker-desktop/) and download the correct docker version for your system. 
+* Sign in to docker with your multirotor-associated github. 
+* Once signed in, go to settings -> resources -> network and turn on "Enable Host Networking" as shown in the image below
+
+* Continue to the next step
+![title](NetworkHost.png)
+
+
