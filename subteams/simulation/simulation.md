@@ -21,12 +21,12 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 
 ## Docs Directory
 
-- [Simulation Installation](/docs/simulation/install)
-    - [Simulation Installation (Old)](/docs/simulation/install/legacy)
+- [Simulation Installation](/docs/simulation/installation/simulation_install)
 - [Flying the Drone with Code](/docs/simulation/flying/)
-- [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
 - [Using RealityScan to Create 3-D Models](/docs/simulation/realityscan)
 
 ### Legacy
 - [Loading Real World Data with Cesium for Unreal](/docs/simulation/cesiumforunreal/)
 - [Using Satellite Data in Unreal Engine](/docs/simulation/importing_satellite_data)
+- [Simulation Installation (Old)](/docs/simulation/install/legacy)
+- - [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)

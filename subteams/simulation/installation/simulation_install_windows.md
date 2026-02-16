@@ -8,19 +8,18 @@ permalink: /simulation/install/windows/
 
 **Note:** This page applies only to Windows users.
 
-- [git](https://git-scm.com)
-
 ## Table of Contents
 
 It is recommended you follow this tutorial in the order listed.
 
 - [Installing Unreal Engine](#installing-unreal-engine)
-- [Installing Project AirSim](#installing-projectairsim)
+- [Installing Git](#installing-git)
+- [Installing Docker](#installing-docker)
+- [Installing Project AirSim](#installing-project-airsim)
     - [Visual Studio](#visual-studio)
     - [Project AirSim](#project-airsim)
 - [Initial Environment Setup](#environment-setup)
     - [Simulation Git Repo](#simulation-git-repository)
-    - [Configuration File Setup](#configuration-file-setup)
 - [Next Steps](#next-steps)
 
 ## Installing Unreal Engine
@@ -29,7 +28,15 @@ We will be using Unreal Engine for simulating virtual drones. If you have the Ep
 
 The Unreal Engine version you will download is **5.2.1**. Project AirSim, which allows us to simulate multirotors in Unreal, will only work for this version.
 
-Finally, run Unreal Engine at least once before continuing to the next steps.
+Once Unreal Engine has finished downloading, you **will need to run it once before doing anything else**. You can continue on to the following steps until told otherwise.
+
+## Installing Git
+
+Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories
+
+## Installing Docker
+
+Head to our Docker download page and follow the instructions [there](/docs/simulation/docker/installing_docker)
 
 ## Installing Project AirSim
 
@@ -77,13 +84,14 @@ To install Project AirSim, follow these steps:
 
 ### Simulation Git Repository
 
-The simulation git repository contains many useful files that streamline running code. Open a terminal instance and clone it to your desired location using `git clone https://github.com/MissouriMRR/Simulation-2023.git`. This creates a new directory called `\Simulation-2023\` in the current working directory of your terminal.
+The simulation git repository contains many useful files that streamline running code. Open a terminal (by typing `Terminal` in the Windows search), and `cd C:/path/to/where/you/want/the/repo/at`.
+
+Now run `git clone https://github.com/MissouriMRR/Simulation-2023.git`. This will create a new directory called `\Simulation-2023\`
+
+
 
 ## Next Steps
 
 If you've run all the above steps, you're environment should be set up! 
 
-Next, you should go the the [flying page](/docs/simulation/flying) to see how to fly the virtual drone with Python code.
-
-Also, if you run into problems while attempting to fly the drone, check out the [environment debugging](/docs/simulation/environment-debug/windows) page.
-
+Next, you should go to the [flying page](/docs/simulation/flying) to see how to fly the virtual drone with Python code.

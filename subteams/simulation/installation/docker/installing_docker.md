@@ -4,19 +4,33 @@ permalink: /simulation/flying/
 
 # Installing And Configuring Docker 
 Docker is an open-source platform that automates the deployment, scaling, and management of applications using containerization. Containers package an application and its dependencies together, ensuring consistency across different environments. This makes it easier to develop, ship, and run applications reliably on various systems.
+
+## Table of Contents
+
+It is recommended you follow this tutorial in the order listed.
+
+- [Download Docker Desktop](#download-docker-desktop)
+- [Using Windows Subsystem for Linux (WSL)](#using-windows-subsystem-for-linux-wsl)
+- [Install Host Dependencies](#install-host-dependencies)
+- [Building Containers](#building-containers)
+- [Running Containers (Using the Environment)](#running-containers-using-the-environment)
+- [Configuring Containers](#configuring-the-containers)
+- [Installing Useful Programming Tools](#installing-useful-programming-tools)
+
 ## Download Docker Desktop
 
 * Go to this [link](https://www.docker.com/products/docker-desktop/) and download the correct docker version for your system. 
-* Sign in to docker with your multirotor-associated github. 
-* Once signed in, go to settings -> resources -> network and turn on "Enable Host Networking" as shown in the image below
+* Sign in to docker with your multirotor-associated GitHub. 
+* Once signed in, go to settings → resources → network and turn on "Enable Host Networking" as shown in the image below
 
 * Continue to the next step
+
 ![title](NetworkHost.png)
 
 
 
 
-#### Using Windows Subsystem for Linux (WSL):
+## Using Windows Subsystem for Linux (WSL):
 
 On Windows, you can install a more lightweight Linux VM using Windows
 Subsystem for Linux (WSL). To install Ubuntu 24.04 using WSL, open a PowerShell instance and run the following:
@@ -29,7 +43,7 @@ To run your virtual machine, execute `wsl` in any PowerShell/Terminal. To see mo
 
 If you will be using our custom Unreal-based simulation (or need to network between native Windows programs and programs running in WSL), it is easiest to use mirrored networking mode. Unfortunately, this is only compatible with WSL2, meaning that Windows 11 is required.
 
-#### Install Host Dependencies
+## Install Host Dependencies
 
 Next, change directories to the repository:
 
@@ -37,7 +51,7 @@ Next, change directories to the repository:
 cd SUAS-2025
 ```
 
-In the repository, we have a script to install the necessary host packages. If you will not need GPU access when coding, run the following:
+In the repository, we have a script to install the necessary host packages. If you do not need GPU access when coding, run the following:
 
 ```bash
 ./install.sh
@@ -51,7 +65,7 @@ If you need GPU access, run the following:
 ./install.sh amd     # if you have an AMD GPU
 ```
 
-> AMD GPUs are currently not supported (I have an nvidia GPU, so I don't know the AMD install stuff). If you have an AMD GPU, feel free to add to the install script and docs!
+> AMD GPUs are currently not supported (I have an Nvidia GPU, so I don't know the AMD install stuff). If you have an AMD GPU, feel free to add to the installation script and docs!
 
 You will also need the drivers corresponding to your GPU:
 
@@ -60,9 +74,9 @@ You will also need the drivers corresponding to your GPU:
 
 **You will need to restart your terminal/shell for the installation to complete.**
 
-#### Building Containers
+## Building Containers
 
-To simplify (most) of environment setup, we have [containerized](https://en.wikipedia.org/wiki/Containerization_(computing)) our environment. Specifically, we use [Podman](https://podman.io), which is pretty much the same as its more popular counterpart, [Docker](https://www.docker.com). (Podman and Docker both follow the [Open Container Initiative](https://opencontainers.org) standards, so they are largely interchangable.)
+To simplify (most) of environment setup, we have [containerized](https://en.wikipedia.org/wiki/Containerization_(computing)) our environment. Specifically, we use [Podman](https://podman.io), which is pretty much the same as its more popular counterpart, [Docker](https://www.docker.com). (Podman and Docker both follow the [Open Container Initiative](https://opencontainers.org) standards, so they are largely interchangeable.)
 
 We use a companion command called `podman-compose` (similar to `docker-compose`) that allows us to define how to run our containers in a `compose.yml` file.
 
@@ -74,7 +88,7 @@ podman-compose build
 
 This may take a while, so do something else in the meantime.
 
-### Step 4: Running Containers (Using the Environment)
+## Running Containers (Using the Environment)
 
 We have two containers: `env` and `sim`. The `env` container contains everything you need to run your code; the `sim` container will run an [ArduPilot](https://ardupilot.org) drone simulation upon startup.
 
@@ -114,7 +128,7 @@ To shutdown any running containers, do:
 ./run_containers.sh shutdown
 ```
 
-For more commmands, run:
+For more commands, run:
 
 ```bash
 ./run_containers.sh help
@@ -122,13 +136,15 @@ For more commmands, run:
 
 If you want to take matters into your own hands, you'll need to know how to run/use containers:
 
-- `podman` Documenation: https://docs.podman.io/en/latest/Tutorials.html
+- `podman` Documentation: https://docs.podman.io/en/latest/Tutorials.html
 - `podman-compose` Documentation: https://docs.podman.io/en/latest/markdown/podman-compose.1.html
 - `docker` Documentation: https://docs.docker.com/build/
    - 99% of stuff that applies to Docker applies to Podman 
 - `docker-compose` Documentation: https://docs.docker.com/compose/
 
-#### Configuring the Containers
+**You have completed the docker installation and can head back to the previous instructions. Below is information about how to modify the docker containers.**
+
+## Configuring the Containers
 
 If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying up `compose.yml`. If you ran `install.sh` with a GPU selected, `compose.override.yml` should already exist.
 
@@ -175,7 +191,7 @@ services:
 
 The above combines the alternate `sim` command with an Nvidia GPU-enabled `env` container.
 
-### Step 5: Installing Useful Programming Tools
+## Installing Useful Programming Tools
 
 #### Visual Studio Code
 
