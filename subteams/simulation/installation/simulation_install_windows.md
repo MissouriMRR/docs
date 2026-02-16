@@ -32,11 +32,11 @@ Once Unreal Engine has finished downloading, you **will need to run it once befo
 
 ## Installing Git
 
-Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories
+Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories.
 
 ## Installing Docker
 
-Head to our Docker download page and follow the instructions [there](/docs/simulation/docker/installing_docker)
+Head to our Docker download page and follow the instructions [there](/docs/simulation/docker/installing_docker).
 
 ## Installing Project AirSim
 
@@ -51,8 +51,8 @@ When installing, you must select the following under the **Individual Components
 - `.NET Framework 4.8 SDK`
 - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
 
-You will need to go to `C:\Users\<YOUR_USER>\AppData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
-- If you cannot find the AppData folder, you will need to enable
+You will need to go to `C:\Users\<YOUR_USER>\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
+- If you cannot find the AppData folder, the easiest way to get there is to press the `Windows` and `R` keys at the same time. This should open a prompt in the bottom left of your screen called `Run`. In the search box type `%appdata%` and press enter. This should put you in your `C:\Users\<YOUR_USER>\AppData\Roaming` folder.
 
 Now replace the contents of BuildConfiguration.xml with the following:
 ```
