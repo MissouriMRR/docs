@@ -1,9 +1,13 @@
+---
+permalink: /simulation/installation/
+---
+
 # Simulation Installations
 [Back to Simulation Docs](/docs/simulation/simulation)
 
 There are several pieces of software needed to get up and running with the simulator. Go to the page corresponding to your system for installation instructions.
 
-- [Installation for Windows](/docs/simulation/installation/simulation_install_windows)
+- [Installation for Windows](/docs/simulation/installation/windows/)
 
 **NOTE: Currently our project only works on Windows, Linux has not been tested**
 

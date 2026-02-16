@@ -36,7 +36,7 @@ Go to the following link and download [Git](https://git-scm.com). The installer 
 
 ## Installing Docker
 
-Head to our Docker download page and follow the instructions [there](/docs/simulation/installation/docker/installing_docker).
+Head to our Docker download page and follow the instructions [there](/docs/simulation/installation/docker/).
 
 ## Installing Project AirSim
 

@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/flying/
+permalink: /simulation/installation/docker
 ---
 
 # Installing And Configuring Docker 

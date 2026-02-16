@@ -10,7 +10,7 @@ Here you will find documentation and tutorials relating to the simulation subtea
 
 ## Getting Started
 
-To get started with installation of the simulator, follow the guide here: [Simulation Installation](/docs/simulation/installation/simulation_install)
+To get started with installation of the simulator, follow the guide here: [Simulation Installation](/docs/simulation/installation/)
 
 After you have installed the simulator, proceed to [Flying the Drone with Code](/docs/simulation/flying/).
 
@@ -21,7 +21,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 
 ## Docs Directory
 
-- [Simulation Installation](/docs/simulation/installation/simulation_install)
+- [Simulation Installation](/docs/simulation/installation/)
 - [Flying the Drone with Code](/docs/simulation/flying/)
 - [Using RealityScan to Create 3-D Models](/docs/simulation/realityscan)
 
