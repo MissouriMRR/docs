@@ -14,4 +14,4 @@ There are several pieces of software needed to get up and running with the simul
 - [Installation for Linux(Legacy)](/docs/simulation/legacy/simulation_install_linux)
   - Mac users go here too
 
-After you have completed the installations, you can proceed to [Flying the Drone with Code]().
+After you have completed the installations, you can proceed to [Flying the Drone with Code](/docs/simulation/flying/).
