@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/installation/docker
+permalink: /simulation/installation/docker/
 ---
 
 # Installing And Configuring Docker 
