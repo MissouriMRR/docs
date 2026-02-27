@@ -1,6 +1,5 @@
 
 # Raspberry Pi
-=======
 ---
 permalink: /interdrone/
 ---
