@@ -16,7 +16,7 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 - [Vision](/docs/vision/)
 - [Simulation](/docs/simulation/)
 - [Apps](/docs/app)
-- [Interdrone](/docs/interdrone/)
+- [Interdrone](/docs/subteams/interdrone/)
 
 ## Tools and Technologies
 
