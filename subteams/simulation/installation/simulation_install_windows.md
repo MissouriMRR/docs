@@ -42,17 +42,20 @@ Head to our Docker download page and follow the instructions [there](/docs/simul
 
 ### Visual Studio
 
-To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://visualstudio.microsoft.com). This will also be the IDE you will use for programming C++ code for Unreal.
+To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://drive.google.com/file/d/1lOeKHzdT0Mi3cQxRBX1IQXTz3lq9xBdu/view?usp=drive_link). This will also be the IDE you will use for programming C++ code for Unreal.
+- **NOTE:** Microsoft does not keep their older Visual Studio versions on their downloads page, so this is a google drive link to a known working installer.
 
-When installing, you must select the following under the **Individual Components** tab:
-- `C++ Development Pack`
-- `Windows SDK 10`
-- `.NET 8.0 Runtime (Long Term Support)`
-- `.NET Framework 4.8 SDK`
-- `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
+When installing Visual Studio, there are several things you must check for the simulation to work.
+- Under **Workloads** (you should start in this page):
+  - `Desktop development with C++`
+- Under **Individual Components** (to the right of **Workloads**):
+  - `Windows SDK 10`
+  - `.NET 8.0 Runtime (Long Term Support)`
+  - `.NET Framework 4.8 SDK`
+  - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
 
 You will need to go to `C:\Users\<YOUR_USER>\AppData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
-- If you cannot find the AppData folder, you will need to enable
+- If you cannot find the AppData folder, you will need to enable `Hidden Items` in File Explorer. You can do this by going to `view`>`show`>`Hidden Items`.
 
 Now replace the contents of BuildConfiguration.xml with the following:
 ```
