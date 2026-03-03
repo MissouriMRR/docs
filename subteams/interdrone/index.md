@@ -1,8 +1,8 @@
-# Home Page
-
 ---
 permalink: /interdrone/
 ---
+
+# Home Page
 [Back to Software Docs](/docs/)
 Here you will find all the documentation related to the interdrone-communication subteam of 
 MultiRotor.
