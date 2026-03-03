@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/installation/windows/
+permalink: /simulation/install/windows/
 ---
 
 # Simulation Installation and Environment Setup (Windows)
@@ -13,8 +13,6 @@ permalink: /simulation/installation/windows/
 It is recommended you follow this tutorial in the order listed.
 
 - [Simulation Installation and Environment Setup (Windows)](#simulation-installation-and-environment-setup-windows)
-  - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
   - [Installing Unreal Engine](#installing-unreal-engine)
   - [Installing Project AirSim](#installing-project-airsim)
     - [Visual Studio](#visual-studio)
@@ -22,10 +20,6 @@ It is recommended you follow this tutorial in the order listed.
   - [Environment Setup](#environment-setup)
     - [Simulation Git Repository](#simulation-git-repository)
   - [Next Steps](#next-steps)
-
-## Prerequisites
-
-The installation process below is an extension of flight's installation process, so complete that first (**follow all WSL- and Windows-based options**): [Flight Installation Docs](/docs/flight/installation_guide/).
 
 ## Installing Unreal Engine
 
@@ -35,21 +29,33 @@ The Unreal Engine version you will download is **5.2.1**. Project AirSim, which 
 
 Once Unreal Engine has finished downloading, you **will need to run it once before doing anything else**. You can continue on to the following steps until told otherwise.
 
+## Installing Git
+
+Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories
+
+## Installing Docker
+
+Head to our Docker download page and follow the instructions [there](/docs/simulation/docker/installing_docker)
+
 ## Installing Project AirSim
 
 ### Visual Studio
 
-To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://visualstudio.microsoft.com). This will also be the IDE you will use for programming C++ code for Unreal.
+To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://drive.google.com/file/d/1lOeKHzdT0Mi3cQxRBX1IQXTz3lq9xBdu/view?usp=drive_link). This will also be the IDE you will use for programming C++ code for Unreal.
+- **NOTE:** Microsoft does not keep their older Visual Studio versions on their downloads page, so this is a google drive link to a known working installer.
 
-When installing, you must select the following under the **Individual Components** tab:
-- `C++ Development Pack`
-- `Windows SDK 10`
-- `.NET 8.0 Runtime (Long Term Support)`
-- `.NET Framework 4.8 SDK`
-- `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
+When installing Visual Studio, there are several things you must check for the simulation to work.
+- Under **Workloads** (you should start in this page):
+  - `Desktop development with C++`
+- Under **Individual Components** (to the right of **Workloads**):
+  - `Windows SDK 10`
+  - `.NET 8.0 Runtime (Long Term Support)`
+  - `.NET Framework 4.8 SDK`
+  - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
 
-You will need to go to `C:\Users\<YOUR_USER>\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
-- If you cannot find the AppData folder, the easiest way to get there is to press the `Windows` and `R` keys at the same time. This should open a prompt in the bottom left of your screen called `Run`. In the search box type `%appdata%` and press enter. This should put you in your `C:\Users\<YOUR_USER>\AppData\Roaming` folder.
+You will need to go to `C:\Users\<YOUR_USER>\AppData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
+- If you cannot find the AppData folder, the easiest way it to enable `Hidden Items` in File Explorer. You can do this by going to `view`>`show`>`Hidden Items`.
+- If that does not work you can try pressing the `Windows` and `R` keys at the same time. This should open a prompt in the bottom left of your screen called `Run`. In the search box type `%appdata%` and press enter. This should put you in your `C:\Users\<YOUR_USER>\AppData\Roaming` folder.
 
 Now replace the contents of BuildConfiguration.xml with the following:
 ```

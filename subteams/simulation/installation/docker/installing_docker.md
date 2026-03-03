@@ -54,15 +54,15 @@ cd SUAS-2025
 In the repository, we have a script to install the necessary host packages. If you do not need GPU access when coding, run the following:
 
 ```bash
-./install.sh
+./simulation/install.sh
 ```
 
 If you need GPU access, run the following:
 
 ```bash
-./install.sh nvidia  # if you have an nvidia GPU
+./simulation/install.sh nvidia  # if you have an nvidia GPU
 # OR
-./install.sh amd     # if you have an AMD GPU
+./simulation/install.sh amd     # if you have an AMD GPU
 ```
 
 > AMD GPUs are currently not supported (I have an Nvidia GPU, so I don't know the AMD install stuff). If you have an AMD GPU, feel free to add to the installation script and docs!
@@ -146,7 +146,7 @@ If you want to take matters into your own hands, you'll need to know how to run/
 
 ## Configuring the Containers
 
-If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying up `compose.yml`. If you ran `install.sh` with a GPU selected, `compose.override.yml` should already exist.
+If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying up `compose.yml`. If you ran `simulation/install.sh` with a GPU selected, `compose.override.yml` should already exist.
 
 For more information on compose files, see the following:
 
