@@ -1,9 +1,7 @@
 ---
 permalink: /interdrone/
 ---
----
-permalink: /interdrone/
----
+
 
 # Setup and other information
 Welcome to the code setup portion of the Interdrone Communication documentation. THis guide walks through everything needed to have everything set up and running. Warning in advanced, this is a very long and detailed document so I wish you luck in going through all of it.
