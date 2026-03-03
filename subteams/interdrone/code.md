@@ -9,7 +9,7 @@ permalink: /interdrone/
 Welcome to the code setup portion of the Interdrone Communication documentation. THis guide walks through everything needed to have everything set up and running. Warning in advanced, this is a very long and detailed document so I wish you luck in going through all of it.
 
 
-# 🛸 Drone Mesh Network Setup Guide
+#  Drone Mesh Network Setup Guide
 **Project:** IARC-10 | **Hardware:** Raspberry Pi Zero 2W | **OS:** Ubuntu 25.10
 
 ---
@@ -102,7 +102,7 @@ sudo netplan apply
 
 ---
 
-# 🦇 BATMAN Mesh (Manual Setup)
+#  BATMAN Mesh (Manual Setup)
 
 Find USB adapter name:
 
@@ -127,7 +127,7 @@ sudo ip addr add 169.254.97.X/24 dev bat0
 
 ---
 
-# 🚀 Startup Script Setup
+#  Startup Script Setup
 
 Set hostname:
 
@@ -161,7 +161,7 @@ sudo journalctl -u batman-mesh.service -f
 
 ---
 
-# 📦 Message Structure
+#  Message Structure
 
 ### Option 1
 
