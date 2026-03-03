@@ -10,7 +10,7 @@ MultiRotor.
 
 # Important Links and Setup Information
 -  [Code](https://github.com/MissouriMRR/IARC-10/tree/IARC-LVP/Interdrone-Communication)
--  [Setup](/docs/interdrone/code/)
+-  [Setup](https://github.com/MissouriMRR/docs/blob/main/subteams/interdrone/code.md)
 
 
 # What We do/ Who we are
