@@ -5,19 +5,20 @@ permalink: /interdrone/
 ---
 # Virtual Machine Setup
 Plug in your wifi adapter
-Setup a ubuntu desktop vm on your windows computer with virtual box  [Virtual_Box](https://ubuntu.com/download/server)
+Setup a ubuntu desktop vm on your windows computer with virtual box [Virtual_Box](https://ubuntu.com/download/server)
+<br>
 Set username to mrrdt-iarc-desk-initals
 EX: mrrdt-iarc-desk-mw
 Set password to mrrdt
 System Settings: 
 Memory: 4096mb or 8192mb
 Processor: 4-6 cpu cores
-
+<br>
 Display Settings: 
 Video Memory: 128mb
 Graphics Controller:VMSVGA
 3D Acceleration: Enabled
-
+<br>
 USB Settings:
 Make sure USB 3.0 is enabled
 Right click and add filter from device for the wifi adapter
