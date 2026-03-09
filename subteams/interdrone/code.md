@@ -56,7 +56,7 @@ ssh <drone-name>@<ip-addr>
 
 ---
 
-## 2️⃣ Update + Install Dependencies
+## 4 Update + Install Dependencies
 
 ```bash
 sudo apt update
@@ -65,7 +65,7 @@ sudo apt install net-tools network-manager batctl iw -y
 
 ---
 
-## 3️⃣ Install Python (uv)
+## 5 Install Python (uv)
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -79,7 +79,7 @@ source .venv/bin/activate
 
 ---
 
-## 4️⃣ Clone Repo
+## 6 Clone Repo
 
 ```bash
 cd ~
@@ -90,7 +90,7 @@ git checkout IARC-LVP
 
 ---
 
-## 5️⃣ (Optional) Change Network
+## 7 (Optional) Change Network
 
 ```bash
 cd /etc/netplan
