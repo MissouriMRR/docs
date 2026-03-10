@@ -63,25 +63,44 @@ source $HOME/.local/bin/env
 
 uv python install 3.12
  ```
+
 Create a folder for iarc and enter it
+```
+
 mkdir IARC-DEV
+
 cd IARC-DEV
+```
 Git clone the IARC repo in
+
 Go to interdrone-communication or wherever the vm-batman-setup.sh is stored
+
 Run the vm-batman-setup.sh 
+```
 sudo bash vm-batman-setup.sh
+```
 Batman should be running. Verify with 
 
 Troubleshooting:
+
 Copy and paste not working:
+
 Devices - > copy and paste -> bidirectional 
+
 Reboot
+
 Use below to check batman status
+
 iw dev wlx08beac45dcb7 link
+
 VM not booting correctly
+
 Make sure settings are correct as seen in setup
+
 Literally just keep powercycling it (if setup is correct, this will hopefully always work)
+
 VM not joining batman network correctly
+
 Make sure wifi adapter is connected and setup correctly
 Make sure you’re running the correct vm startup script
 
