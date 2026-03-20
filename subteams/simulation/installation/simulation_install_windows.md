@@ -12,15 +12,20 @@ permalink: /simulation/installation/windows/
 
 It is recommended you follow this tutorial in the order listed.
 
-- [Installing Unreal Engine](#installing-unreal-engine)
-- [Installing Git](#installing-git)
-- [Installing Docker](#installing-docker)
-- [Installing Project AirSim](#installing-project-airsim)
+- [Simulation Installation and Environment Setup (Windows)](#simulation-installation-and-environment-setup-windows)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Installing Unreal Engine](#installing-unreal-engine)
+  - [Installing Project AirSim](#installing-project-airsim)
     - [Visual Studio](#visual-studio)
     - [Project AirSim](#project-airsim)
-- [Initial Environment Setup](#environment-setup)
-    - [Simulation Git Repo](#simulation-git-repository)
-- [Next Steps](#next-steps)
+  - [Environment Setup](#environment-setup)
+    - [Simulation Git Repository](#simulation-git-repository)
+  - [Next Steps](#next-steps)
+
+## Prerequisites
+
+The installation process below is an extension of flight's installation process, so complete that first (**follow all WSL- and Windows-based options**): [Flight Installation Docs](/docs/flight/installation_guide/).
 
 ## Installing Unreal Engine
 
@@ -29,14 +34,6 @@ We will be using Unreal Engine for simulating virtual drones. If you have the Ep
 The Unreal Engine version you will download is **5.2.1**. Project AirSim, which allows us to simulate multirotors in Unreal, will only work for this version.
 
 Once Unreal Engine has finished downloading, you **will need to run it once before doing anything else**. You can continue on to the following steps until told otherwise.
-
-## Installing Git
-
-Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories.
-
-## Installing Docker
-
-Head to our Docker download page and follow the instructions [there](/docs/simulation/installation/docker/).
 
 ## Installing Project AirSim
 
