@@ -155,6 +155,16 @@ podman-compose build
 
 This may take a while, so do something else in the meantime.
 
+##### Rebuilding Containers
+
+If you ever need to rebuild a container (such as when you modify its corresponding `Containerfile` or a file linked to that, such as `multidrone.parm`), you can rebuild them individually:
+
+```bash
+podman-compose build env
+# or
+podman-compose build env
+```
+
 ### Step 4: Running Containers (Using the Environment)
 
 We have two containers: `env` and `sim`. The `env` container contains everything you need to run your code; the `sim` container will run an [ArduPilot](https://ardupilot.org) drone simulation upon startup.
@@ -203,30 +213,24 @@ For more commmands, run:
 
 If you want to take matters into your own hands, you'll need to know how to run/use containers:
 
-- `podman` Documenation: https://docs.podman.io/en/latest/Tutorials.html
-- `podman-compose` Documentation: https://docs.podman.io/en/latest/markdown/podman-compose.1.html
-- `docker` Documentation: https://docs.docker.com/build/
-   - 99% of stuff that applies to Docker applies to Podman 
-- `docker-compose` Documentation: https://docs.docker.com/compose/
+- `podman` Documentation: <https://docs.podman.io/en/latest/Tutorials.html>
+- `podman-compose` Documentation: <https://docs.podman.io/en/latest/markdown/podman-compose.1.html>
+- `docker` Documentation: <https://docs.docker.com/build/>
+  - 99% of stuff that applies to Docker applies to Podman
+- `docker-compose` Documentation: <https://docs.docker.com/compose/>
 
 #### Configuring the Containers
 
-If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying up `compose.yml`. If you ran `install.sh` with a GPU selected, `compose.override.yml` should already exist.
+If you need to configure how a container is run, create a file called `compose.override.yml` in the `SUAS` repository's root directory. This file will allow you to override parameters set in `compose.yml` without modifying `compose.yml`. If you ran `install.sh` with a GPU selected, `compose.override.yml` should already exist.
 
 For more information on compose files, see the following:
 
-- `podman-compose` Documentation: https://docs.podman.io/en/latest/markdown/podman-compose.1.html
-- `docker-compose` Documentation: https://docs.docker.com/compose/
+- `podman-compose` Documentation: <https://docs.podman.io/en/latest/markdown/podman-compose.1.html>
+- `docker-compose` Documentation: <https://docs.docker.com/compose/>
 
 ##### Example: Overriding The `sim` Container's Start Command
 
-By default, the `sim` container is configured to run the following command on startup:
-
-```bash
-python /ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --out=127.0.0.1:14550
-```
-
-This is the command needed to connect to AirSim (the foundation of the Simulation Subteam's Unreal-based simulation of the SUAS competition). If you need to run a different command, you can use `compose.override.yml`:
+By default, the `sim` container is configured to a custom start script for the Unreal Simulation, `start_drones.sh`. If you need to run a different command, you can use `compose.override.yml`:
 
 ```yaml
 version: "3"
