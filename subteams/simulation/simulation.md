@@ -30,3 +30,4 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 - [Using Satellite Data in Unreal Engine](/docs/simulation/importing_satellite_data)
 - [Simulation Installation (Old)](/docs/simulation/install/legacy)
 - [Environment Debugging (Windows)](/docs/simulation/environment-debug/windows)
+- [AirSim Setup(Windows)](/docs/simulation/legacy/install/windows)
