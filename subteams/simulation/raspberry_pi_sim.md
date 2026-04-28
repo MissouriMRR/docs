@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/simulation/raspberry_pi_sim/
+permalink: /simulation/raspberry_pi_sim/
 title: Run Simulation from Raspberry Pi
 ---
 
