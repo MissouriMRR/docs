@@ -24,6 +24,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 - [Simulation Installation](/docs/simulation/installation/)
 - [Flying the Drone with Code](/docs/simulation/flying/)
 - [Using RealityScan to Create 3-D Models](/docs/simulation/realityscan)
+- [Run Sim On Pi](/raspberry_pi_sim/)
 
 ### Legacy
 - [Loading Real World Data with Cesium for Unreal](/docs/simulation/cesiumforunreal/)
