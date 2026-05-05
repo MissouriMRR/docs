@@ -5,6 +5,7 @@
 - [Install Flutter](https://docs.flutter.dev/install/custom)
 - [Add Flutter to PATH](https://docs.flutter.dev/install/add-to-path)
 
+
 ## Pushing Code to Phone
 
 Uses [ADB (Android Debug Bridge)](https://developer.android.com/tools/adb).
@@ -25,3 +26,19 @@ Uses [ADB (Android Debug Bridge)](https://developer.android.com/tools/adb).
    adb install /path/to/apk
    ```
     > **Note:** on my computer the path was build/app/outputs/flutter-apk/app-release.apk 
+
+
+##Running in Debug Mode
+
+1. Pair and connect normally
+
+2. Run
+```
+flutter devices
+```
+    To see currently connected devices 
+3. Run 
+```
+flutter run <DEVICE>
+```
+    (Should simply be flutter run android)
