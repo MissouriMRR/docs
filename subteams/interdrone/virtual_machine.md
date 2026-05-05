@@ -4,53 +4,45 @@ permalink: /interdrone/
 
 ---
 # Virtual Machine Setup
-Plug in your wifi adapter
-Setup a ubuntu desktop vm on your windows computer with virtual box 
-[Virtual_Box](https://ubuntu.com/download/server)
 
-Set username to mrrdt-iarc-desk-initals
+1) Setup a ubuntu desktop vm on your windows computer with vmware 
+[vmware](https://www.techspot.com/downloads/1969-vmware-player.html)
+[Ubuntu Desktop](https://ubuntu.com/download/desktop)
 
-EX: mrrdt-iarc-desk-mw
+2) Set username to mrrdt-iarc-desk-initals 
+    - (EX: mrrdt-iarc-desk-mw)
 
-Set password to mrrdt
+3) Set password to mrrdt
 
-System Settings: 
+4) System Settings: 
+   - Memory: 4096mb or 8192mb
 
-Memory: 4096mb or 8192mb
+   - Processor: 4-6 cpu cores
 
-Processor: 4-6 cpu cores
 
-Display Settings: 
+5) USB Settings:
 
-Video Memory: 128mb
+    - Make sure USB 3.0 is enabled
 
-Graphics Controller:VMSVGA
+    - Right click and add filter from device for the wifi adapter
 
-3D Acceleration: Enabled
+6) Power up the vm and login
 
-USB Settings:
+7) Plug in your wifi adapter 
+    - (Make sure to select "Connect to virtual machine" and click the select the virtual machine from the list when you plug usb in)
+![usb prompt](./images/usb.png)
+    - If you forget go to VM -> Removable Devices -> Wifi Adapter and assign to VM (This step needs to be done every time vm is booted up)
 
-Make sure USB 3.0 is enabled
+8) Open the terminal
 
-Right click and add filter from device for the wifi adapter
+9) Run  ``` lsusb  ``` and verify that wifi adapter is there
 
-Power up the vm and login
+10) Run  ``` iplink ``` and verify that wlx08beac45dcb0 (<UAIN>) is there
 
-Click Devices -> USB -> Wifi Adapter (startech) in the top left corner
+## BATMAN Setup
 
-Open the terminal
-
-Run  ``` lsusb  ```
-
-and verify that wifi adapter is there
-
-Run  ``` iplink ``` and verify that wlx08beac45dcb0 (<UAIN>) is there
-
-Now we can start actually setting ts up
-
-Use these commands to install uv
+1) Use these commands to install uv
  ```
-
 sudo apt install curl
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -64,43 +56,33 @@ source $HOME/.local/bin/env
 uv python install 3.12
  ```
 
-Create a folder for iarc and enter it
+2) Create a folder for iarc and enter it
 ```
-
 mkdir IARC-DEV
 
 cd IARC-DEV
 ```
-Git clone the IARC repo in
+3) Git clone the IARC repo in
 
-Go to interdrone-communication or wherever the vm-batman-setup.sh is stored
+4) Go to interdrone-communication or wherever the vm-batman-setup.sh is stored
 
-Run the vm-batman-setup.sh 
+5) Run the vm-batman-setup.sh (This step needs to be done every time vm is booted up)
 ```
 sudo bash vm-batman-setup.sh
 ```
-Batman should be running. Verify with 
+## Batman should be running. Verify with 
+    - `sudo batctl o`
+    - `iw dev wlx08beac45dcb7 link`
 
-Troubleshooting:
+## Troubleshooting:
 
-Copy and paste not working:
+1) VM not booting correctly
 
-Devices - > copy and paste -> bidirectional 
+    - Make sure settings are correct as seen in setup
 
-Reboot
+    - Literally just keep powercycling it (if setup is correct, this will hopefully always work)
 
-Use below to check batman status
-
-iw dev wlx08beac45dcb7 link
-
-VM not booting correctly
-
-Make sure settings are correct as seen in setup
-
-Literally just keep powercycling it (if setup is correct, this will hopefully always work)
-
-VM not joining batman network correctly
-
-Make sure wifi adapter is connected and setup correctly
-Make sure you’re running the correct vm startup script
+2) VM not joining batman network correctly
+    - First make sure USB Wifi Adapter is setup correctly with virtual machine
+    - run sudo bash vm-batman-setup.sh
 
