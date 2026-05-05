@@ -9,9 +9,8 @@ Here you will find all the documentation related to the interdrone-communication
 MultiRotor.
 
 # Important Links and Setup Information
--  [Code](https://github.com/MissouriMRR/IARC-10/tree/IARC-LVP/Interdrone-Communication)
--  [Setup](/docs/subteams/interdone/code.md)
--  [Virtual Machine](/docs/subteams/interdone/virtual_machine.md)
+-  [Code](/docs/interdrone/code/)
+-  [Virtual Machine](/docs/interdrone/virtual_machine/)
 
 
 # What We do/ Who we are
