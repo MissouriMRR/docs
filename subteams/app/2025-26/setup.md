@@ -24,3 +24,4 @@ Uses [ADB (Android Debug Bridge)](https://developer.android.com/tools/adb).
    ```
    adb install /path/to/apk
    ```
+    > **Note:** on my computer the path was build/app/outputs/flutter-apk/app-release.apk 
