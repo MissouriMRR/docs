@@ -28,7 +28,7 @@ Uses [ADB (Android Debug Bridge)](https://developer.android.com/tools/adb).
     > **Note:** on my computer the path was build/app/outputs/flutter-apk/app-release.apk 
 
 
-##Running in Debug Mode
+## Running in Debug Mode
 
 1. Pair and connect normally
 
