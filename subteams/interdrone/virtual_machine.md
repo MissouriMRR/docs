@@ -1,6 +1,4 @@
----
-permalink: /interdrone/
----
+
 
 ---
 # Virtual Machine Setup
