@@ -1,6 +1,4 @@
----
-permalink: /interdrone/
----
+
 
 
 # Setup and other information
