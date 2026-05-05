@@ -1,5 +1,5 @@
 ---
-permalink: /interdrone/
+permalink: /interdrone/virtual_machine/
 ---
 
 ---

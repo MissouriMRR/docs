@@ -12,11 +12,11 @@ Welcome to the Multirotor Design Team's Software Docs! Here, you will find docum
 
 ## Subteams
 
-- [Flight](/docs/flight/)
-- [Vision](/docs/vision/)
-- [Simulation](/docs/simulation/)
-- [Apps](/docs/app)
-- [Interdrone](/docs/interdrone/)
+- [Flight](https://missourimrr.github.io/docs/flight/)
+- [Vision](https://missourimrr.github.io/docs/vision/)
+- [Simulation](https://missourimrr.github.io/docs/simulation/)
+- [Apps](https://missourimrr.github.io/docs/app)
+- [Interdrone](https://missourimrr.github.io/docs/interdrone/)
 
 ## Tools and Technologies
 
