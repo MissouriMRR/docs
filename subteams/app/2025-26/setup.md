@@ -37,11 +37,11 @@ Uses [ADB (Android Debug Bridge)](https://developer.android.com/tools/adb).
 flutter devices
 ```
 
-    To see currently connected devices 
+To see currently connected devices 
 
 3. Run 
 ```
 flutter run <DEVICE>
 ```
 
-    (Should simply be flutter run android)
+(Should simply be flutter run android)
