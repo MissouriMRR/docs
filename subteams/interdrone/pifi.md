@@ -1,5 +1,5 @@
 ---
-permalink: /interdrone/wifi_access_point/
+permalink: /interdrone/pifi/
 ---
 ---
 # WiFi Access Point Setup (Pi 1)
