@@ -1,6 +1,9 @@
 ---
 permalink: /interdrone/pifi/
 ---
+
+[Back to index](/docs/interdrone/)
+
 ---
 # WiFi Access Point Setup (Pi 1)
 
