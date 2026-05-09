@@ -37,7 +37,7 @@ permalink: /interdrone/virtual_machine/
 
 9) Run  ``` lsusb  ``` and verify that wifi adapter is there
 
-10) Run  ``` iplink ``` and verify that wlx08beac45dcb0 (<UAIN>) is there
+10) Run  ``` ip link ``` and verify that wlx08beac45dcb0 (<UAIN>) is there
 
 ## BATMAN Setup
 
@@ -53,26 +53,38 @@ sudo mv ~/.local/bin/uvx /usr/local/bin/uvx
 
 source $HOME/.local/bin/env
 
-uv python install 3.12
+uv python install 3.14
  ```
 
-2) Create a folder for iarc and enter it
+2) Set the regulatory domain permanently (required for 5GHz mesh on channel 40):
+```
+sudo apt install -y iw wireless-regdb
+echo 'REGDOMAIN=US' | sudo tee /etc/default/crda
+sudo reboot
+```
+
+3) Create a folder for iarc and enter it
 ```
 mkdir IARC-DEV
 
 cd IARC-DEV
 ```
-3) Git clone the IARC repo in
+4) Git clone the IARC repo in
 
-4) Go to interdrone-communication or wherever the vm-batman-setup.sh is stored
+5) Go to interdrone-communication or wherever the vm-batman-setup.sh is stored
 
-5) Run the vm-batman-setup.sh (This step needs to be done every time vm is booted up)
+6) Run the vm-batman-setup.sh (This step needs to be done every time vm is booted up)
 ```
 sudo bash vm-batman-setup.sh
 ```
 ## Batman should be running. Verify with 
-    - `sudo batctl o`
-    - `iw dev wlx08beac45dcb7 link`
+    sudo batctl o
+    iw dev wlx08beac45dcb7 link
+    sudo batctl n
+
+If the Pis are runing you should see mesh neighbors including Pi 1 (169.254.97.1) and other nodes.
+
+---
 
 ## Troubleshooting:
 
@@ -85,4 +97,31 @@ sudo bash vm-batman-setup.sh
 2) VM not joining batman network correctly
     - First make sure USB Wifi Adapter is setup correctly with virtual machine
     - run sudo bash vm-batman-setup.sh
+
+3) ibss join fails with Invalid argument (-22)
+    
+    First try rebooting the virtual machine and re-plugin the usb wifi adapter ensuring you select the option to pass it through to the virtual machine. If that doesn't work try the solution below:
+
+    This is a regulatory domain issue.Fix it by setting the regulatory domain before joining:
+    ```
+    bashsudo iw reg set US
+    sudo bash vm-batman-setup.sh
+    ```
+
+4) Adapter shows NO-CARRIER or state DOWN
+    The adapter may not have joined the mesh. Run manually:
+    ```
+    bashsudo iw reg set US
+    sudo ip link set wlx08beac45dcb0 down
+    sudo iw dev wlx08beac45dcb0 set type ibss
+    sudo ip link set wlx08beac45dcb0 up
+    sleep 2
+    sudo iw dev wlx08beac45dcb0 ibss join my-batman-mesh 5200 02:ca:fe:ca:ca:40
+    sudo batctl n
+    ```
+5) VM times out or suspends
+
+    In VMware go to Edit Virtual Machine Settings → Options → Power
+    Uncheck "Suspend when closing window"
+    Also disable sleep on the host machine under Windows power settings
 
