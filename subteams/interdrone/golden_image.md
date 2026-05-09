@@ -11,7 +11,7 @@ These steps were done using WSL. The steps may be different on Linux (primarily 
 Windows:
 
 - Attach SD card
-- Download Win32DiskImager https://sourceforge.net/projects/win32diskimager/files/latest/download
+- Download Win32DiskImager [Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download)
 
     Note: You can use WSL instead of this software but it’s a pain
 - Specify a path for your image in the “Image File” text box and select the SD card device on the right
