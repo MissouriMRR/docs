@@ -2,7 +2,7 @@
 permalink: /interdrone/app_connection/
 ---
 
-Back to index: [Index](/docs/interdrone/index/)
+[Back to index](/docs/interdrone/)
 
 ---
 # Flutter App Connection
