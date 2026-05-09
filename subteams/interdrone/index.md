@@ -11,6 +11,7 @@ MultiRotor.
 # Important Links and Setup Information
 -  [App Connection](/docs/interdrone/app_connection)
 -  [Code](/docs/interdrone/code/)
+-  [Golden Image](docs/interdrone/golden_image)
 -  [Pifi (Pi 1 wifi access point)](/docs/interdrone/pifi)
 -  [Virtual Machine](/docs/interdrone/virtual_machine/)
   
