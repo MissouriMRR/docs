@@ -1,5 +1,5 @@
 ---
-permalink: /interdrone/golen_image/
+permalink: /interdrone/golden_image/
 ---
 
 # Golden Image Instructions
