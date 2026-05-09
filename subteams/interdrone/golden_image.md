@@ -2,6 +2,9 @@
 permalink: /interdrone/golden_image/
 ---
 
+[Back to index](/docs/interdrone/)
+
+---
 # Golden Image Instructions
 
 These steps were done using WSL. The steps may be different on Linux (primarily mounting the sd card)
