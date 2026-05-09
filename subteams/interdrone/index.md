@@ -9,10 +9,10 @@ Here you will find all the documentation related to the interdrone-communication
 MultiRotor.
 
 # Important Links and Setup Information
--  [App Connection](/docs/interdrone/app_connection)
+-  [App Connection](/docs/interdrone/app_connection/)
 -  [Code](/docs/interdrone/code/)
--  [Golden Image](docs/interdrone/golden_image)
--  [Pifi (Pi 1 wifi access point)](/docs/interdrone/pifi)
+-  [Golden Image](/docs/interdrone/golden_image/)
+-  [Pifi (Pi 1 wifi access point)](/docs/interdrone/pifi/)
 -  [Virtual Machine](/docs/interdrone/virtual_machine/)
   
 
