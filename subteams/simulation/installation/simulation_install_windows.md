@@ -89,7 +89,7 @@ To install Project AirSim, follow these steps:
 ### Simulation Git Repository
 
 For accessing/editing the actual simulation repository do: 
-```commandline
+```
 git clone https://github.com/MissouriMRR/Simulation.git
 ```
 
