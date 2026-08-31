@@ -100,6 +100,8 @@ You only need this if you have changed `Env.Containerfile` or `Sim.Containerfile
 
 This may take a while, so do something else in the meantime.
 
+> If you are the one publishing images for the team, see [Publishing Container Images](/docs/simulation/containers/publishing/).
+
 ## Running Containers (Using the Environment)
 
 We have two containers: `env` and `sim`. The `env` container contains everything you need to run your code; the `sim` container will run an [ArduPilot](https://ardupilot.org) drone simulation upon startup.
