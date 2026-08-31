@@ -87,6 +87,11 @@ To install Project AirSim, follow these steps:
 
 ### Simulation Git Repository
 
+For accessing/editing the actual simulation repository do: 
+```commandline
+git clone https://github.com/MissouriMRR/Simulation.git
+```
+
 The simulation code lives as a submodule inside the competition repository, so clone the competition repo *with submodules* rather than cloning the simulation repo on its own.
 
 Open a terminal (by typing `Terminal` in the Windows search), `cd` to where you want the repository, and run:
@@ -103,7 +108,22 @@ git submodule update --init --recursive
 
 > The containers run inside WSL, so clone somewhere WSL can reach. A path on your Windows drive is fine — WSL sees it under `/mnt/c/...`.
 
+### Simulation Unreal Repository
 
+We have our own self-hosted GitHub repository on the bay computer (Ricky), to get access to you will need to do a few things: 
+1. Run ```ssh-keygen -t ed25519 -C "your_email@example.com"``` in a terminal.
+   1. You can press 'Enter' 3x to skip through setting whether you want the file to require a passphrase. Or you can set it, just don't forget it
+   2. Run ```cat ~/.ssh/id_ed25518.pub``` in a terminal
+   3. Copy the output to your clipboard
+2. Message this to the Simulation Project Lead or Special Projects Lead with context, and they should be able to get you set up
+3. Once they give you the go-ahead, you will need to be on the school's network.
+   1. If you are not, you can still access it, you just need to download the school's VPN
+   2. At `https://openvpn.mst.edu/` download the correct OpenVPN client for your computer
+   3. Also download the latest .ovpn file under `Configuration Files`
+   4. Once both have downloaded and you have installed the OpenVPN software, there will be a button to upload a file
+   5. Press said button and select the .ovpn file you downloaded earlier
+   6. You are now on the school's WiFi!
+4. Now you should be able to download the repository with `git clone git@131.151.19.149:SimulationRepository.git`
 
 ## Next Steps
 
