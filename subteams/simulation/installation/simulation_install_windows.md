@@ -14,7 +14,7 @@ It is recommended you follow this tutorial in the order listed.
 
 - [Installing Unreal Engine](#installing-unreal-engine)
 - [Installing Git](#installing-git)
-- [Installing Docker](#installing-docker)
+- [Installing Containers](#installing-containers)
 - [Installing Project AirSim](#installing-project-airsim)
     - [Visual Studio](#visual-studio)
     - [Project AirSim](#project-airsim)
@@ -34,9 +34,9 @@ Once Unreal Engine has finished downloading, you **will need to run it once befo
 
 Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories
 
-## Installing Docker
+## Installing Containers
 
-Head to our Docker download page and follow the instructions [there](/docs/simulation/docker/installing_docker)
+We run the flight-code environment and the ArduPilot simulation in containers, managed with Podman inside WSL. Head to our container setup page and follow the instructions [there](/docs/simulation/containers/), then come back here.
 
 ## Installing Project AirSim
 
@@ -87,9 +87,21 @@ To install Project AirSim, follow these steps:
 
 ### Simulation Git Repository
 
-The simulation git repository contains many useful files that streamline running code. Open a terminal (by typing `Terminal` in the Windows search), and `cd C:/path/to/where/you/want/the/repo/at`.
+The simulation code lives as a submodule inside the competition repository, so clone the competition repo *with submodules* rather than cloning the simulation repo on its own.
 
-Now run `git clone https://github.com/MissouriMRR/Simulation-2023.git`. This will create a new directory called `\Simulation-2023\`
+Open a terminal (by typing `Terminal` in the Windows search), `cd` to where you want the repository, and run:
+
+```
+git clone --recurse-submodules https://github.com/MissouriMRR/<REPO>.git
+```
+
+This creates a `<REPO>\` directory, with the simulation code at `<REPO>\simulation\`. If you have already cloned it without `--recurse-submodules`, run this from inside the repository to fill the submodule in:
+
+```
+git submodule update --init --recursive
+```
+
+> The containers run inside WSL, so clone somewhere WSL can reach. A path on your Windows drive is fine — WSL sees it under `/mnt/c/...`.
 
 
 

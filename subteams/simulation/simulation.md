@@ -22,6 +22,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 ## Docs Directory
 
 - [Simulation Installation](/docs/simulation/installation/simulation_install)
+- [Installing and Configuring Containers](/docs/simulation/containers/)
 - [Flying the Drone with Code](/docs/simulation/flying/)
 - [Using RealityScan to Create 3-D Models](/docs/simulation/realityscan)
 
