@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/installation/windows/
+permalink: /simulation/install/windows/
 ---
 
 # Simulation Installation and Environment Setup (Windows)
@@ -12,20 +12,15 @@ permalink: /simulation/installation/windows/
 
 It is recommended you follow this tutorial in the order listed.
 
-- [Simulation Installation and Environment Setup (Windows)](#simulation-installation-and-environment-setup-windows)
-  - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
-  - [Installing Unreal Engine](#installing-unreal-engine)
-  - [Installing Project AirSim](#installing-project-airsim)
+- [Installing Unreal Engine](#installing-unreal-engine)
+- [Installing Git](#installing-git)
+- [Installing Containers](#installing-containers)
+- [Installing Project AirSim](#installing-project-airsim)
     - [Visual Studio](#visual-studio)
     - [Project AirSim](#project-airsim)
   - [Environment Setup](#environment-setup)
     - [Simulation Git Repository](#simulation-git-repository)
   - [Next Steps](#next-steps)
-
-## Prerequisites
-
-The installation process below is an extension of flight's installation process, so complete that first (**follow all WSL- and Windows-based options**): [Flight Installation Docs](/docs/flight/installation_guide/).
 
 ## Installing Unreal Engine
 
@@ -35,21 +30,33 @@ The Unreal Engine version you will download is **5.2.1**. Project AirSim, which 
 
 Once Unreal Engine has finished downloading, you **will need to run it once before doing anything else**. You can continue on to the following steps until told otherwise.
 
+## Installing Git
+
+Go to the following link and download [Git](https://git-scm.com). The installer should prompt you to set up your credentials needed for downloading GitHub repositories
+
+## Installing Containers
+
+We run the flight-code environment and the ArduPilot simulation in containers, managed with Podman inside WSL. Head to our container setup page and follow the instructions [there](/docs/simulation/containers/), then come back here.
+
 ## Installing Project AirSim
 
 ### Visual Studio
 
-To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://visualstudio.microsoft.com). This will also be the IDE you will use for programming C++ code for Unreal.
+To install Project AirSim, you must first install Microsoft's [Visual Studio Community 2022](https://drive.google.com/file/d/1lOeKHzdT0Mi3cQxRBX1IQXTz3lq9xBdu/view?usp=drive_link). This will also be the IDE you will use for programming C++ code for Unreal.
+- **NOTE:** Microsoft does not keep their older Visual Studio versions on their downloads page, so this is a google drive link to a known working installer.
 
-When installing, you must select the following under the **Individual Components** tab:
-- `C++ Development Pack`
-- `Windows SDK 10`
-- `.NET 8.0 Runtime (Long Term Support)`
-- `.NET Framework 4.8 SDK`
-- `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
+When installing Visual Studio, there are several things you must check for the simulation to work.
+- Under **Workloads** (you should start in this page):
+  - `Desktop development with C++`
+- Under **Individual Components** (to the right of **Workloads**):
+  - `Windows SDK 10`
+  - `.NET 8.0 Runtime (Long Term Support)`
+  - `.NET Framework 4.8 SDK`
+  - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.37-17.7)(Out of support)`
 
-You will need to go to `C:\Users\<YOUR_USER>\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
-- If you cannot find the AppData folder, the easiest way to get there is to press the `Windows` and `R` keys at the same time. This should open a prompt in the bottom left of your screen called `Run`. In the search box type `%appdata%` and press enter. This should put you in your `C:\Users\<YOUR_USER>\AppData\Roaming` folder.
+You will need to go to `C:\Users\<YOUR_USER>\AppData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml`
+- If you cannot find the AppData folder, the easiest way it to enable `Hidden Items` in File Explorer. You can do this by going to `view`>`show`>`Hidden Items`.
+- If that does not work you can try pressing the `Windows` and `R` keys at the same time. This should open a prompt in the bottom left of your screen called `Run`. In the search box type `%appdata%` and press enter. This should put you in your `C:\Users\<YOUR_USER>\AppData\Roaming` folder.
 
 Now replace the contents of BuildConfiguration.xml with the following:
 ```
@@ -81,11 +88,43 @@ To install Project AirSim, follow these steps:
 
 ### Simulation Git Repository
 
-The simulation git repository contains many useful files that streamline running code. Open a terminal (by typing `Terminal` in the Windows search), and `cd C:/path/to/where/you/want/the/repo/at`.
+For accessing/editing the actual simulation repository do: 
+```
+git clone https://github.com/MissouriMRR/Simulation.git
+```
 
-Now run `git clone https://github.com/MissouriMRR/Simulation-2023.git`. This will create a new directory called `\Simulation-2023\`
+The simulation code lives as a submodule inside the competition repository, so clone the competition repo *with submodules* rather than cloning the simulation repo on its own.
 
+Open a terminal (by typing `Terminal` in the Windows search), `cd` to where you want the repository, and run:
 
+```
+git clone --recurse-submodules https://github.com/MissouriMRR/<REPO>.git
+```
+
+This creates a `<REPO>\` directory, with the simulation code at `<REPO>\simulation\`. If you have already cloned it without `--recurse-submodules`, run this from inside the repository to fill the submodule in:
+
+```
+git submodule update --init --recursive
+```
+
+> The containers run inside WSL, so clone somewhere WSL can reach. A path on your Windows drive is fine — WSL sees it under `/mnt/c/...`.
+
+### Simulation Unreal Repository
+
+We have our own self-hosted GitHub repository on the bay computer (Ricky), to get access to you will need to do a few things: 
+1. Run ```ssh-keygen -t ed25519 -C "your_email@example.com"``` in a terminal.
+   1. You can press 'Enter' 3x to skip through setting whether you want the file to require a passphrase. Or you can set it, just don't forget it
+   2. Run ```cat ~/.ssh/id_ed25518.pub``` in a terminal
+   3. Copy the output to your clipboard
+2. Message this to the Simulation Project Lead or Special Projects Lead with context, and they should be able to get you set up
+3. Once they give you the go-ahead, you will need to be on the school's network.
+   1. If you are not, you can still access it, you just need to download the school's VPN
+   2. At `https://openvpn.mst.edu/` download the correct OpenVPN client for your computer
+   3. Also download the latest .ovpn file under `Configuration Files`
+   4. Once both have downloaded and you have installed the OpenVPN software, there will be a button to upload a file
+   5. Press said button and select the .ovpn file you downloaded earlier
+   6. You are now on the school's WiFi!
+4. Now you should be able to download the repository with `git clone git@131.151.19.149:SimulationRepository.git`
 
 ## Next Steps
 
