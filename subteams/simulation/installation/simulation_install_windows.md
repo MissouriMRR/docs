@@ -1,5 +1,5 @@
 ---
-permalink: /simulation/install/windows/
+permalink: /simulation/installation/windows/
 ---
 
 # Simulation Installation and Environment Setup (Windows)
