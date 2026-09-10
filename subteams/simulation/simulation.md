@@ -21,7 +21,7 @@ After you have installed the simulator, proceed to [Flying the Drone with Code](
 
 ## Docs Directory
 
-- [Simulation Installation](/docs/simulation/installation/simulation_install)
+- [Simulation Installation](/docs/simulation/installation/)
 - [Installing and Configuring Containers](/docs/simulation/containers/)
 - [Publishing Container Images](/docs/simulation/containers/publishing/)
 - [Flying the Drone with Code](/docs/simulation/flying/)
