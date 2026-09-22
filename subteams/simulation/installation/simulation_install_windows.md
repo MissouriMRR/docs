@@ -114,7 +114,7 @@ git submodule update --init --recursive
 We have our own self-hosted GitHub repository on the bay computer (Ricky), to get access to you will need to do a few things: 
 1. Run ```ssh-keygen -t ed25519 -C "your_email@example.com"``` in a terminal.
    1. You can press 'Enter' 3x to skip through setting whether you want the file to require a passphrase. Or you can set it, just don't forget it
-   2. Run ```cat ~/.ssh/id_ed25518.pub``` in a terminal
+   2. Run ```cat ~/.ssh/id_ed25519.pub``` in a terminal
    3. Copy the output to your clipboard
 2. Message this to the Simulation Project Lead or Special Projects Lead with context, and they should be able to get you set up
 3. Once they give you the go-ahead, you will need to be on the school's network.
